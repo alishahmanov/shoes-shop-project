@@ -165,16 +165,11 @@ body {
 .what-do-you-searching p {
     font-size: 42px;
 }
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
 .card p {
     font-size: 25px;
 }
 .card {
-    flex: 1 1 calc(33.333% - 20px); /* 3 в ряд */
+    flex: 1 1 calc(33.333% - 20px);
     background: white;
     border-radius: 12px;
     padding: 20px;
@@ -244,6 +239,7 @@ body {
 }
 
 /*categoryPageCSS*/
+
 .page{
     display:grid;
     grid-template-columns: 280px 1fr;
@@ -274,6 +270,16 @@ body {
     cursor:pointer;
     font-size:15px;
 }
+.catalog{display:flex; flex-direction:column; gap:24px}
+.cards{
+  --min:240px;                  
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--min), 1fr));
+  gap:24px;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
 .card:hover{
     box-shadow:0 10px 28px rgba(0,0,0,.12);
     transform:translateY(-2px);
@@ -286,7 +292,7 @@ body {
     background:#fafafa;
     border-radius:12px;
     overflow:hidden;
-    aspect-ratio: 1 / 1;          /* квадрат как на макете */
+    aspect-ratio: 1 / 1;          
     display:flex; align-items:center; justify-content:center;
 }
 .card__media img{
@@ -370,4 +376,81 @@ nav a {
 nav a:hover {
     text-decoration: underline;
     color: #000;
+}
+/*servicesPageCSS*/
+.services {
+  background: #fff;
+  padding: 40px 20px;
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow);
+  margin: 20px auto;
+  max-width: 900px;
+}
+.services h2 {
+  margin-top: 0;
+}
+.services__intro {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+.chip {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 8px 14px;
+  box-shadow: var(--shadow);
+  font-size: 14px;
+}
+.portfolio {
+  margin: 40px auto;
+  max-width: 900px;
+}
+.portfolio h3 {
+  margin-bottom: 16px;
+}
+.portfolio__gallery {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+.portfolio__gallery img {
+  width: 200px;
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow);
+}
+.details {
+  background: #fff;
+  padding: 30px;
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow);
+  margin: 40px auto;
+  max-width: 1000px;
+}
+.details__grid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 20px;
+}
+.details__map img {
+  width: 100%;
+  border-radius: var(--card-radius);
+}
+.contact {
+  text-align: center;
+  margin: 50px auto;
+  max-width: 600px;
+}
+.contact__actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
 }
