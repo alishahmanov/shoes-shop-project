@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name = "description" content = "Assignment 2">
+    <meta name = "author" content = "Manat Alikhan, Iskander Akipov, Rauan Kuntuganov">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>Shoes Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header>
+    <div class="top-header">
+        <div class="top-header-left">
+            <span>Режим работы: 10:00–20:00</span>
+            <span>Телефон: <a href="#">8(771)2159509</a></span>
+        </div>
+        <div class="top-header-right">
+            <span>Почта: <a href="#">iskander_alipov@mail.ru</a></span>
+            <span>Язык сайта: EN/RU</span>
+        </div>
+    </div>
+
+    <nav class="navbar container">
+        <ul class="nav-list">
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="catalog.html">Каталог</a></li>
+            <li><a href="category.html">Категория</a></li>
+            <li><a href="order.html">Форма под заказ</a></li>
+            <li><a href="#">Вопросы</a></li>
+            <li><a href="#">Отзывы</a></li>
+            <li><a href="services.html">Услуги</a></li>
+        </ul>
+
+        <div class="navbar-actions">
+            <a class="button-create-your-own-design" href="order.html">Создать свой дизайн</a>
+            <a class="cart" href="#">Корзина</a>
+        </div>
+    </nav>
+</header>
+<div class="container breadcrumbs">
+    <a href="#">Каталог обуви</a> · <a href="#">Спортивная обувь</a> · <span>Обувь под заказ</span>
+</div>
+
+
+<section class="hero">
+    <div class="container">
+        <div class="hero__grid">
+            <div>
+                <h1 class="hero__title">Разработка и пошив спортивной обуви с индивидуальным дизайном</h1>
+            </div>
+            <div class ="hero__img">
+                <img src="Assets/sneaker23.jpeg" alt="sneakers">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section cats" id="cats">
+    <div class="container">
+        <h2>Какая обувь вам нужна?</h2>
+        <div class="cats__grid" style="margin-top:14px">
+            <figure class="cat">
+                <img src="Assets/sneaker18.jpeg" alt="Боксерки" />
+                <figcaption class="cat__title">Боксерки</figcaption>
+            </figure>
+
+            <figure class="cat">
+                <img src="Assets/sneaker20.jpeg" alt="Борцовки" />
+                <figcaption class="cat__title">Борцовки</figcaption>
+            </figure>
+
+            <figure class="cat">
+                <img src="Assets/sneaker19.jpeg" alt="Бутцы" />
+                <figcaption class="cat__title">Бутцы</figcaption>
+            </figure>
+
+            <figure class="cat">
+                <img src="Assets/sneaker22.jpeg" alt="Волейбольные кроссовки" />
+                <figcaption class="cat__title">Волейбольные кроссовки</figcaption>
+            </figure>
+
+            <figure class="cat">
+                <img src="Assets/sneaker4.jpeg" alt="Беговые кроссовки" />
+                <figcaption class="cat__title">Беговые кроссовки</figcaption>
+            </figure>
+
+            <figure class="cat">
+                <img src="Assets/sneaker2.jpeg" alt="Баскетбольные кроссовки" />
+                <figcaption class="cat__title">Баскетбольный кроссовки</figcaption>
+            </figure>
+        </div>
+    </div>
+</section>
+
+
+<section class="section why" id="why">
+    <div class="container why__box">
+        <h2>Почему изготовление обуви нужно заказать у нас:</h2>
+        <ul class="ul">
+            <li>Быстрое изготовление.</li>
+            <li>Контролируем качество на каждом этапе.</li>
+            <li>Создаём заметные и яркие модели.</li>
+            <li>Обувь уникальна и отражает дух команды.</li>
+            <li>Профессиональные «дышащие» материалы.</li>
+            <li>Износостойкость, выдерживает постоянные стирки.</li>
+            <li>Комфорт: не жмёт и не натирает.</li>
+        </ul>
+    </div>
+</section>
+
+
+<section class="section req" id="req">
+    <div class="container">
+        <h2>Что вам требуется?</h2>
+        <div class="req__grid" style="margin-top:12px">
+            <div class="card req__item">
+                <div>
+                    <h3>Разработка уникального дизайна командной обуви</h3>
+                    <p class="muted">Единый стиль обуви разрабатывается по вашему запросу профессиональными дизайнерами с учётом пожеланий и фирменной айдентики.</p>
+                    <p class="muted">Дальнейшее шьём по меркам и с возможностью корректировок.</p>
+
+                    <form class="req__cta">
+                        <input type="text" name="name" placeholder="Введите ваше имя" required>
+                        <button type="submit" class="btn">Оставить заявку</button>
+                    </form>
+                </div>
+                    <img src="Assets/planOfSneaker.jpeg" alt="planOfSneaker" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer__text">
+        Команда: <strong>KAA</strong> • Участники: Rauan K., Alikhan M., Iskander A. • Группа: SE-2401
+    </div>
+    <a href="https://github.com/alishahmanov/shoes-shop-project"
+       target="_blank" rel="noopener"
+       aria-label="Открыть наш GitHub">
+        <img src="Assets/git-hub-logo.png" alt="GitHub" id="footer__logo">
+    </a>
+</footer>
+
+</body>
+</html>
