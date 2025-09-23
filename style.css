@@ -169,6 +169,19 @@ body {
 .what-do-you-searching p {
     font-size: 42px;
 }
+.cards-for-index {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.card img {
+    width: 100%;
+    height: 220px;        /* фиксированная высота для всех картинок */
+    object-fit: contain;  /* сохраняет пропорции, картинка вписывается */
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+}
 .card p {
     font-size: 25px;
 }
@@ -284,6 +297,7 @@ body {
   margin:0;
   padding:0;
 }
+
 .card:hover{
     box-shadow:0 10px 28px rgba(0,0,0,.12);
     transform:translateY(-2px);
