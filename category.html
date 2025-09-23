@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name = "description" content = "Assignment 2">
+    <meta name = "author" content = "Manat Alikhan, Iskander Akipov, Rauan Kuntuganov">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
+    <title>Shoes Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<header>
+    <div class="top-header">
+        <div class="top-header-left">
+            <span>Режим работы: 10:00–20:00</span>
+            <span>Телефон: <a href="#">8(771)2159509</a></span>
+        </div>
+        <div class="top-header-right">
+            <span>Почта: <a href="#">iskander_alipov@mail.ru</a></span>
+            <span>Язык сайта: EN/RU</span>
+        </div>
+    </div>
+
+    <nav class="navbar container">
+        <ul class="nav-list">
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Каталог</a></li>
+            <li><a href="#">Категория</a></li>
+            <li><a href="#">Форма под заказ</a></li>
+            <li><a href="#">Вопросы</a></li>
+            <li><a href="#">Отзывы</a></li>
+            <li><a href="#">Услуги</a></li>
+        </ul>
+
+        <div class="navbar-actions">
+            <a class="button-create-your-own-design" href="#">Создать свой дизайн</a>
+            <a class="cart" href="#">Корзина</a>
+        </div>
+    </nav>
+</header>
+<body>
+    <!-- page -->
+<div class="page">
+  <aside class="filters">
+  <h3>Пол:</h3>
+  <label><input type="checkbox"> Мужские</label>
+  <label><input type="checkbox"> Женские</label>
+  <label><input type="checkbox"> Унисекс</label>
+
+  <h3>Категория:</h3>
+  <label><input type="checkbox"> Кроссовки</label>
+  <label><input type="checkbox"> Кеды</label>
+  <label><input type="checkbox"> Ботинки</label>
+  <label><input type="checkbox"> Туфли</label>
+  <label><input type="checkbox"> Сандалии</label>
+  <label><input type="checkbox"> Шлёпанцы</label>
+
+  <h3>Цвет:</h3>
+  <label><input type="checkbox"> Чёрный</label>
+  <label><input type="checkbox"> Белый</label>
+  <label><input type="checkbox"> Серый</label>
+  <label><input type="checkbox"> Коричневый</label>
+  <label><input type="checkbox"> Синий</label>
+  <a href="#">Показать все</a>
+
+  <h3>Размер (EU):</h3>
+  <label><input type="checkbox"> 36–37</label>
+  <label><input type="checkbox"> 38–39</label>
+  <label><input type="checkbox"> 40–41</label>
+  <label><input type="checkbox"> 42–43</label>
+  <label><input type="checkbox"> 44–46</label>
+  <a href="#">Показать все</a>
+
+  <h3>Материал:</h3>
+  <label><input type="checkbox"> Кожа</label>
+  <label><input type="checkbox"> Замша</label>
+  <label><input type="checkbox"> Текстиль</label>
+  <label><input type="checkbox"> Нубук</label>
+
+  <h3>Сезон:</h3>
+  <label><input type="checkbox"> Лето</label>
+  <label><input type="checkbox"> Демисезон</label>
+  <label><input type="checkbox"> Зима</label>
+
+  <h3>Бренд:</h3>
+  <label><input type="checkbox"> Nike</label>
+  <label><input type="checkbox"> Adidas</label>
+  <label><input type="checkbox"> Puma</label>
+  <a href="#">Показать все</a>
+</aside>
+
+
+  <main class="catalog">
+    <ul class="cards">
+      <!-- одна карточка -->
+      <li class="card">
+        <a class="card__link" href="#">
+          <div class="card__media">
+            <img src="/img/right.avif" alt="Мужская футболка">
+          </div>
+          <h4 class="card__title">Jordan</h4>
+          <dl class="card__meta">
+            <div><dt>Размер:</dt><dd>39-45</dd></div>
+            <div><dt>Цена:</dt><dd class="price">150 ₸</dd></div>
+          </dl>
+        </a>
+        <button class="btn">В корзину</button>
+      </li>
+
+      <li class="card">
+        <a class="card__link" href="#">
+          <div class="card__media">
+            <img src="/img/71697_right_feed1000.avif" alt="Мужская футболка">
+          </div>
+          <h4 class="card__title">Nike</h4>
+          <dl class="card__meta">
+            <div><dt>Размер:</dt><dd>39-45</dd></div>
+            <div><dt>Цена:</dt><dd class="price">150 ₸</dd></div>
+          </dl>
+        </a>
+        <button class="btn">В корзину</button>
+      </li>
+      
+      <li class="card">
+        <a class="card__link" href="#">
+          <div class="card__media">
+            <img src="/img/39208_right_feed1000.avif" alt="Мужская футболка" style="width: 310px;">
+          </div>
+          <h4 class="card__title">New Balance</h4>
+          <dl class="card__meta">
+            <div><dt>Размер:</dt><dd>40–46</dd></div>
+            <div><dt>Цена:</dt><dd class="price">150 ₸</dd></div>
+          </dl>
+        </a>
+        <button class="btn">В корзину</button>
+      </li>
+
+      <li class="card">
+        <a class="card__link" href="#">
+          <div class="card__media">
+            <img src="/img/joedan.avif" alt="Мужская футболка">
+          </div>
+          <h4 class="card__title">Jordan</h4>
+          <dl class="card__meta">
+            <div><dt>Размер:</dt><dd>39-45</dd></div>
+            <div><dt>Цена:</dt><dd class="price">500 ₸</dd></div>
+          </dl>
+        </a>
+        <button class="btn">В корзину</button>
+      </li>
+
+      <li class="card">
+        <a class="card__link" href="#">
+          <div class="card__media">
+            <img src="/img/70413_right_feed1000.avif" alt="Мужская футболка">
+          </div>
+          <h4 class="card__title">DC shoes</h4>
+          <dl class="card__meta">
+            <div><dt>Размер:</dt><dd>39-45</dd></div>
+            <div><dt>Цена:</dt><dd class="price">500 ₸</dd></div>
+          </dl>
+        </a>
+        <button class="btn">В корзину</button>
+      </li>
+
+      <li class="card">
+        <a class="card__link" href="#">
+          <div class="card__media">
+            <img src="/img/71707_right_feed1000.avif" alt="Мужская футболка">
+          </div>
+          <h4 class="card__title">Nike</h4>
+          <dl class="card__meta">
+            <div><dt>Размер:</dt><dd>39-45</dd></div>
+            <div><dt>Цена:</dt><dd class="price">500 ₸</dd></div>
+          </dl>
+        </a>
+        <button class="btn">В корзину</button>
+      </li>
+
+      <li class="card">
+        <a class="card__link" href="#">
+          <div class="card__media">
+            <img src="/img/35314_right_feed1000.avif" alt="Мужская футболка">
+          </div>
+          <h4 class="card__title">Nike</h4>
+          <dl class="card__meta">
+            <div><dt>Размер:</dt><dd>39-45</dd></div>
+            <div><dt>Цена:</dt><dd class="price">500 ₸</dd></div>
+          </dl>
+        </a>
+        <button class="btn">В корзину</button>
+      </li>
+
+      <li class="card">
+        <a class="card__link" href="#">
+          <div class="card__media">
+            <img src="/img/93507_right_feed1000.avif" alt="Мужская футболка">
+          </div>
+          <h4 class="card__title">Crocs</h4>
+          <dl class="card__meta">
+            <div><dt>Размер:</dt><dd>39-45</dd></div>
+            <div><dt>Цена:</dt><dd class="price">200 ₸</dd></div>
+          </dl>
+        </a>
+        <button class="btn">В корзину</button>
+      </li>
+
+      <li class="card">
+        <a class="card__link" href="#">
+          <div class="card__media">
+            <img src="/img/44020_right_feed1000.avif" alt="Мужская футболка">
+          </div>
+          <h4 class="card__title">Vans</h4>
+          <dl class="card__meta">
+            <div><dt>Размер:</dt><dd>39-45</dd></div>
+            <div><dt>Цена:</dt><dd class="price">400 ₸</dd></div>
+          </dl>
+        </a>
+        <button class="btn">В корзину</button>
+      </li>
+
+    </ul>
+
+    <button class="btn btn--ghost">Показать ещё</button>
+
+    <nav class="pagination" aria-label="Страницы каталога">
+      <a href="#" aria-current="page">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <span>…</span>
+      <a href="#">45 ›</a>
+    </nav>
+  </main>
+</div>
+
+ <footer class="footer">
+  <div class="footer__text">
+    Команда: <strong>KAA</strong> • Участники: Rauan K., Alikhan M., Iskander A. • Группа: SE-2401
+  </div>
+  <a href="https://github.com/alishahmanov/shoes-shop-project"
+   target="_blank" rel="noopener"
+   aria-label="Открыть наш GitHub">
+  <img src="/img/GitHub_Logo_White.png" alt="GitHub" class="footer__logo">
+</a>
+</footer>
+
+
+
+</body>
+</html>
