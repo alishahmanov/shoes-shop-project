@@ -541,10 +541,40 @@ nav a:hover {
 
 .req__cta {
     margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 300px;
 }
 
+.req__cta input {
+    padding: 12px 15px;
+    border: 1px solid whitesmoke;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s;
+}
 
+.req__cta input:focus {
+    border-color: black;
+}
 
+.req__cta .btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: black;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.req__cta .btn:hover {
+    background: #333;
+}
 
 img {
     max-width: 100%;
