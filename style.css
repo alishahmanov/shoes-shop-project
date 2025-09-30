@@ -10,6 +10,87 @@ body {
     max-width: 1440px;
     margin: 0 auto;
 }
+/*Tablet (iPad, 1024px)*/
+@media (max-width: 1024px) {
+    .banner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .banner-text h1 {
+        font-size: 48px;
+    }
+
+    .banner-text p {
+        font-size: 24px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .cards-for-index {
+        justify-content: center;
+    }
+
+    .card {
+        flex: 1 1 calc(50% - 20px);  /* в два ряда */
+    }
+}
+
+/*Mobile (телефон, 768px)*/
+@media (max-width: 768px) {
+    .top-header {
+        flex-direction: column;
+        gap: 5px;
+        height: auto;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        padding: 10px 20px;
+        gap: 10px;
+    }
+
+    .banner {
+        padding: 20px;
+    }
+
+    .banner-text h1 {
+        font-size: 32px;
+    }
+
+    .banner-text p {
+        font-size: 18px;
+    }
+
+    .banner-img img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .cards-for-index {
+        flex-direction: column;
+    }
+
+    .card {
+        flex: 1 1 100%;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
+
 :root{
     --bg:#fff;
     --ink:#1f2328;
