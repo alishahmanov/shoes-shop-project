@@ -684,7 +684,10 @@ a {
     text-decoration: none;
 }
 
-
+.card .btn:hover {
+    background: black;
+    color: white;
+}
 
 
 
