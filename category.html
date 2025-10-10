@@ -70,9 +70,8 @@
   <main id="main" class="py-4">
     <div class="container">
       <div class="row g-4">
-        <!-- Sidebar filters: visible as column on lg+, offcanvas on <lg -->
+        <!-- Sidebar -->
         <aside class="col-lg-3">
-          <!-- Mobile / tablet trigger -->
           <button class="btn btn-outline-dark d-lg-none w-100 mb-3" type="button"
                   data-bs-toggle="offcanvas" data-bs-target="#filtersCanvas" aria-controls="filtersCanvas"
                   aria-label="Открыть фильтры">
@@ -86,7 +85,6 @@
               <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Закрыть"></button>
             </div>
             <div class="offcanvas-body">
-              <!-- same filter form duplicated via shared component class -->
               <form class="vstack gap-3" aria-describedby="filtersNote">
                 <p id="filtersNote" class="text-muted small">Отметьте параметры и примените фильтр.</p>
 
@@ -178,9 +176,7 @@
           <!-- Static sidebar (desktop) -->
           <div class="d-none d-lg-block bg-white rounded-4 shadow-sm p-3">
             <h2 class="h5 mb-3">Фильтры</h2>
-            <!-- Вставляем тот же набор контролов, но короче визуально -->
             <form class="vstack gap-3" aria-label="Фильтры каталога (desktop)">
-              <!-- Пол -->
               <fieldset>
                 <legend class="fs-6 text-uppercase text-secondary mb-2">Пол</legend>
                 <div class="form-check"><input class="form-check-input" id="sexM2" type="checkbox"><label class="form-check-label" for="sexM2">Мужские</label></div>
@@ -188,7 +184,6 @@
                 <div class="form-check"><input class="form-check-input" id="sexU2" type="checkbox"><label class="form-check-label" for="sexU2">Унисекс</label></div>
               </fieldset>
 
-              <!-- Категория -->
               <fieldset>
                 <legend class="fs-6 text-uppercase text-secondary mb-2">Категория</legend>
                 <div class="form-check"><input class="form-check-input" id="dc1" type="checkbox"><label class="form-check-label" for="dc1">Кроссовки</label></div>
@@ -199,7 +194,6 @@
                 <div class="form-check"><input class="form-check-input" id="dc6" type="checkbox"><label class="form-check-label" for="dc6">Шлёпанцы</label></div>
               </fieldset>
 
-              <!-- Применить -->
               <div class="d-grid">
                 <button type="button" class="btn btn-dark">Применить</button>
               </div>
@@ -212,7 +206,7 @@
           <h1 class="h3 mb-3 text-center text-lg-start">Модельный ряд</h1>
 
           <ul class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 list-unstyled">
-            <!-- Card 1 -->
+            <!-- 9 карточек товаров -->
             <li class="col">
               <article class="card h-100 shadow-sm">
                 <img src="Assets/sneaker1.jpeg" class="card-img-top object-fit-contain p-3" alt="Кроссовки Jordan" />
@@ -227,7 +221,6 @@
               </article>
             </li>
 
-            <!-- Card 2 -->
             <li class="col">
               <article class="card h-100 shadow-sm">
                 <img src="Assets/sneaker10.jpeg" class="card-img-top object-fit-contain p-3" alt="Кроссовки Nike" />
@@ -242,7 +235,6 @@
               </article>
             </li>
 
-            <!-- Card 3 -->
             <li class="col">
               <article class="card h-100 shadow-sm">
                 <img src="Assets/sneaker6.jpeg" class="card-img-top object-fit-contain p-3" alt="Кроссовки New Balance" />
@@ -257,7 +249,6 @@
               </article>
             </li>
 
-            <!-- Card 4 -->
             <li class="col">
               <article class="card h-100 shadow-sm">
                 <img src="Assets/sneaker13.jpeg" class="card-img-top object-fit-contain p-3" alt="Кроссовки Jordan модель 2" />
@@ -272,7 +263,6 @@
               </article>
             </li>
 
-            <!-- Card 5 -->
             <li class="col">
               <article class="card h-100 shadow-sm">
                 <img src="Assets/sneaker7.jpeg" class="card-img-top object-fit-contain p-3" alt="Кеды DC Shoes" />
@@ -287,7 +277,6 @@
               </article>
             </li>
 
-            <!-- Card 6 -->
             <li class="col">
               <article class="card h-100 shadow-sm">
                 <img src="Assets/sneaker9.jpeg" class="card-img-top object-fit-contain p-3" alt="Кроссовки Nike модель 2" />
@@ -302,7 +291,6 @@
               </article>
             </li>
 
-            <!-- Card 7 -->
             <li class="col">
               <article class="card h-100 shadow-sm">
                 <img src="Assets/sneaker5.jpeg" class="card-img-top object-fit-contain p-3" alt="Кроссовки Nike модель 3" />
@@ -317,7 +305,6 @@
               </article>
             </li>
 
-            <!-- Card 8 -->
             <li class="col">
               <article class="card h-100 shadow-sm">
                 <img src="Assets/sneaker12.jpeg" class="card-img-top object-fit-contain p-3" alt="Сабо Crocs" />
@@ -332,7 +319,6 @@
               </article>
             </li>
 
-            <!-- Card 9 -->
             <li class="col">
               <article class="card h-100 shadow-sm">
                 <img src="Assets/sneaker8.jpeg" class="card-img-top object-fit-contain p-3" alt="Кеды Vans" />
@@ -348,12 +334,10 @@
             </li>
           </ul>
 
-          <!-- Show more -->
           <div class="text-center my-3">
             <button type="button" class="btn btn-outline-dark btn-lg">Показать ещё</button>
           </div>
 
-          <!-- Pagination -->
           <nav class="d-flex justify-content-center" aria-label="Страницы каталога">
             <ul class="pagination pagination-sm mb-0">
               <li class="page-item active" aria-current="page"><span class="page-link">1</span></li>
