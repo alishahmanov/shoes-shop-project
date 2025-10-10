@@ -9,10 +9,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <title>Shoes Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 <header>
     <div class="top-header">
         <div class="top-header-left">
@@ -25,7 +28,7 @@
         </div>
     </div>
 
-    <nav class="navbar container">
+    <nav class="site-navbar container">
         <a href="index.html" class="logo">
             <img src="Assets/sneaker21.jpeg" alt="Shoes Shop">
         </a>
@@ -39,19 +42,26 @@
             <li><a href="services.html">Услуги</a></li>
         </ul>
 
-        <div class="navbar-actions">
+        <div class="site-navbar-actions">
             <a class="button-create-your-own-design" href="order.html">Создать свой дизайн</a>
             <a class="cart" href="#">Корзина</a>
         </div>
     </nav>
 </header>
-<div class="container breadcrumbs">
+<div class="container breadcrumbs my-3 my-lg-4">
+
     <a href="#">Каталог обуви</a> · <a href="#">Спортивная обувь</a> · <span>Обувь под заказ</span>
+    <hr>
+    <section class="typography-demo container my-3 my-lg-4">
+        <h1>Shoes Shop — кастом кроссовок</h1>
+        <h2>Дизайн под ваш стиль</h2>
+        <p>Носибельные материалы, стойкое покрытие, индивидуальные эскизы.</p>
+    </section>
 </div>
 
 
-<section class="hero">
-    <div class="container">
+<section class="hero py-3 py-lg-4">
+    <div class="container py-3 py-lg-4">
         <div class="hero__grid">
             <div>
                 <h1 class="hero__title">Разработка и пошив спортивной обуви с индивидуальным дизайном</h1>
@@ -65,7 +75,7 @@
 
 
 <section class="section cats" id="cats">
-    <div class="container">
+    <div class="container py-3 py-lg-4">
         <h2>Какая обувь вам нужна?</h2>
         <div class="cats__grid" style="margin-top:14px">
             <figure class="cat">
@@ -119,10 +129,10 @@
 
 
 <section class="section req" id="req">
-    <div class="container">
+    <div class="container py-3 py-lg-4">
         <h2>Что вам требуется?</h2>
         <div class="req__grid" style="margin-top:12px">
-            <div class="index-card req__item">
+            <div class="card req__item">
                 <div>
                     <h3>Разработка уникального дизайна командной обуви</h3>
                     <p class="muted">Единый стиль обуви разрабатывается по вашему запросу профессиональными дизайнерами с учётом пожеланий и фирменной айдентики.</p>
@@ -130,13 +140,13 @@
 
                     <form class="req__cta">
                         <input type="text" name="name" placeholder="Введите ваше имя" required>
-                        <button type="submit" class="btn">Оставить заявку</button>
+                        <button type="submit" class="btn w-100 mt-2">Оставить заявку</button>
                     </form>
                 </div>
-                    <img src="Assets/planOfSneaker.jpeg" alt="planOfSneaker" />
-                </div>
+                <img src="Assets/planOfSneaker.jpeg" alt="planOfSneaker" />
             </div>
         </div>
+    </div>
 </section>
 
 <footer class="footer">

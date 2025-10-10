@@ -1,254 +1,382 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name = "description" content = "Assignment 2">
-  <meta name = "author" content = "Manat Alikhan, Iskander Akipov, Rauan Kuntuganov">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <title>Shoes Shop</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Assignment 4 • Shoes Shop — Категория" />
+  <meta name="author" content="Manat Alikhan, Iskander Akipov, Rauan Kuntuganov" />
+  <title>Shoes Shop — Категория</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Custom overrides -->
+  <link rel="stylesheet" href="style.css" />
 </head>
+<body class="bg-light">
+<!-- Skip link -->
+<a class="visually-hidden-focusable position-absolute top-0 start-0 m-2 p-2 bg-white rounded shadow-sm" href="#main">Перейти к основному содержимому</a>
 
-<body>
-
-  <header>
-    <div class="top-header">
-        <div class="top-header-left">
-            <span>Режим работы: 10:00–20:00</span>
-            <span>Телефон: <a href="#">8(771)2159509</a></span>
-        </div>
-        <div class="top-header-right">
-            <span>Почта: <a href="#">iskander_alipov@mail.ru</a></span>
-            <span>Язык сайта: EN/RU</span>
-        </div>
+<!-- Top header -->
+<div class="bg-body-secondary text-body d-none d-lg-block" role="region" aria-label="Контактная панель">
+  <div class="container py-2 d-flex justify-content-between align-items-center small">
+    <div class="d-flex gap-4 flex-wrap">
+      <span>Режим работы: 10:00–20:00</span>
+      <span>Телефон: <a class="link-dark fw-semibold" href="tel:+77712159509">8(771)215-95-09</a></span>
     </div>
+    <div class="d-flex gap-4 flex-wrap">
+      <span>Почта: <a class="link-dark fw-semibold" href="mailto:iskander_alipov@mail.ru">iskander_alipov@mail.ru</a></span>
+      <span>Язык сайта: EN/RU</span>
+    </div>
+  </div>
+</div>
 
-    <nav class="navbar container">
-        <a href="index.html" class="logo">
-            <img src="Assets/sneaker21.jpeg" alt="Shoes Shop">
-        </a>
-        <ul class="nav-list">
-          <li><a href="about.html">О нас</a></li>
-          <li><a href="catalog.html">Каталог</a></li>
-          <li><a href="category.html">Категория</a></li>
-          <li><a href="order.html">Форма под заказ</a></li>
-          <li><a href="#">Вопросы</a></li>
-          <li><a href="#">Отзывы</a></li>
-          <li><a href="services.html">Услуги</a></li>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-white border-bottom" aria-label="Основная навигация">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <img src="Assets/sneaker21.jpeg" alt="Логотип Shoes Shop" width="48" height="48" class="rounded-circle object-fit-cover" />
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+            aria-controls="mainNav" aria-expanded="false" aria-label="Переключить навигацию">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="mainNav" class="collapse navbar-collapse gap-2">
+      <ul class="navbar-nav mx-auto gap-lg-2">
+        <li class="nav-item"><a class="nav-link" href="about.html">О нас</a></li>
+        <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог</a></li>
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="category.html">Категория</a></li>
+        <li class="nav-item"><a class="nav-link" href="order.html">Форма под заказ</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Вопросы</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Отзывы</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Услуги</a></li>
+      </ul>
+
+      <div class="d-flex gap-2">
+        <a class="btn btn-outline-dark rounded-pill btn-sm px-4 me-3" href="order.html">Создать свой дизайн</a>
+        <a class="btn btn-outline-dark rounded-pill btn-sm px-4 me-3" href="#" aria-label="Перейти в корзину">Корзина</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main id="main" class="py-4">
+  <div class="container">
+    <div class="row g-4">
+      <!-- Sidebar filters: visible as column on lg+, offcanvas on <lg -->
+      <aside class="col-lg-3">
+        <!-- Mobile / tablet trigger -->
+        <button class="btn btn-outline-dark d-lg-none w-100 mb-3" type="button"
+                data-bs-toggle="offcanvas" data-bs-target="#filtersCanvas" aria-controls="filtersCanvas"
+                aria-label="Открыть фильтры">
+          Фильтр
+        </button>
+
+        <!-- Offcanvas (mobile/tablet) -->
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="filtersCanvas" aria-labelledby="filtersTitle">
+          <div class="offcanvas-header">
+            <h2 id="filtersTitle" class="offcanvas-title h5 mb-0">Фильтры</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Закрыть"></button>
+          </div>
+          <div class="offcanvas-body">
+            <!-- same filter form duplicated via shared component class -->
+            <form class="vstack gap-3" aria-describedby="filtersNote">
+              <p id="filtersNote" class="text-muted small">Отметьте параметры и примените фильтр.</p>
+
+              <fieldset>
+                <legend class="fs-6 text-uppercase text-secondary mb-2">Пол</legend>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="sexM" />
+                  <label class="form-check-label" for="sexM">Мужские</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="sexW" />
+                  <label class="form-check-label" for="sexW">Женские</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="sexU" />
+                  <label class="form-check-label" for="sexU">Унисекс</label>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend class="fs-6 text-uppercase text-secondary mb-2">Категория</legend>
+                <div class="row row-cols-1 gy-1">
+                  <div class="col"><div class="form-check"><input class="form-check-input" id="cat1" type="checkbox"><label class="form-check-label" for="cat1">Кроссовки</label></div></div>
+                  <div class="col"><div class="form-check"><input class="form-check-input" id="cat2" type="checkbox"><label class="form-check-label" for="cat2">Кеды</label></div></div>
+                  <div class="col"><div class="form-check"><input class="form-check-input" id="cat3" type="checkbox"><label class="form-check-label" for="cat3">Ботинки</label></div></div>
+                  <div class="col"><div class="form-check"><input class="form-check-input" id="cat4" type="checkbox"><label class="form-check-label" for="cat4">Туфли</label></div></div>
+                  <div class="col"><div class="form-check"><input class="form-check-input" id="cat5" type="checkbox"><label class="form-check-label" for="cat5">Сандалии</label></div></div>
+                  <div class="col"><div class="form-check"><input class="form-check-input" id="cat6" type="checkbox"><label class="form-check-label" for="cat6">Шлёпанцы</label></div></div>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend class="fs-6 text-uppercase text-secondary mb-2">Цвет</legend>
+                <div class="row row-cols-1 gy-1">
+                  <div class="col"><div class="form-check"><input class="form-check-input" id="c1" type="checkbox"><label class="form-check-label" for="c1">Чёрный</label></div></div>
+                  <div class="col"><div class="form-check"><input class="form-check-input" id="c2" type="checkbox"><label class="form-check-label" for="c2">Белый</label></div></div>
+                  <div class="col"><div class="form-check"><input class="form-check-input" id="c3" type="checkbox"><label class="form-check-label" for="c3">Серый</label></div></div>
+                  <div class="col"><div class="form-check"><input class="form-check-input" id="c4" type="checkbox"><label class="form-check-label" for="c4">Коричневый</label></div></div>
+                  <div class="col"><div class="form-check"><input class="form-check-input" id="c5" type="checkbox"><label class="form-check-label" for="c5">Синий</label></div></div>
+                </div>
+                <a class="btn btn-link p-0 mt-1" href="#">Показать все</a>
+              </fieldset>
+
+              <fieldset>
+                <legend class="fs-6 text-uppercase text-secondary mb-2">Размер (EU)</legend>
+                <div class="row row-cols-1 gy-1">
+                  <div class="col"><div class="form-check"><input class="form-check-input" id="s1" type="checkbox"><label class="form-check-label" for="s1">36–37</label></div></div>
+                  <div class="col"><div class="form-check"><input class="form-check-input" id="s2" type="checkbox"><label class="form-check-label" for="s2">38–39</label></div></div>
+                  <div class="col"><div class="form-check"><input class="form-check-input" id="s3" type="checkbox"><label class="form-check-label" for="s3">40–41</label></div></div>
+                  <div class="col"><div class="form-check"><input class="form-check-input" id="s4" type="checkbox"><label class="form-check-label" for="s4">42–43</label></div></div>
+                  <div class="col"><div class="form-check"><input class="form-check-input" id="s5" type="checkbox"><label class="form-check-label" for="s5">44–46</label></div></div>
+                </div>
+                <a class="btn btn-link p-0 mt-1" href="#">Показать все</a>
+              </fieldset>
+
+              <fieldset>
+                <legend class="fs-6 text-uppercase text-secondary mb-2">Материал</legend>
+                <div class="row row-cols-1 gy-1">
+                  <div class="col"><div class="form-check"><input class="form-check-input" id="m1" type="checkbox"><label class="form-check-label" for="m1">Кожа</label></div></div>
+                  <div class="col"><div class="form-check"><input class="form-check-input" id="m2" type="checkbox"><label class="form-check-label" for="m2">Замша</label></div></div>
+                  <div class="col"><div class="form-check"><input class="form-check-input" id="m3" type="checkbox"><label class="form-check-label" for="m3">Текстиль</label></div></div>
+                  <div class="col"><div class="form-check"><input class="form-check-input" id="m4" type="checkbox"><label class="form-check-label" for="m4">Нубук</label></div></div>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend class="fs-6 text-uppercase text-secondary mb-2">Сезон</legend>
+                <div class="form-check"><input class="form-check-input" id="sz1" type="checkbox"><label class="form-check-label" for="sz1">Лето</label></div>
+                <div class="form-check"><input class="form-check-input" id="sz2" type="checkbox"><label class="form-check-label" for="sz2">Демисезон</label></div>
+                <div class="form-check"><input class="form-check-input" id="sz3" type="checkbox"><label class="form-check-label" for="sz3">Зима</label></div>
+              </fieldset>
+
+              <fieldset>
+                <legend class="fs-6 text-uppercase text-secondary mb-2">Бренд</legend>
+                <div class="form-check"><input class="form-check-input" id="b1" type="checkbox"><label class="form-check-label" for="b1">Nike</label></div>
+                <div class="form-check"><input class="form-check-input" id="b2" type="checkbox"><label class="form-check-label" for="b2">Adidas</label></div>
+                <div class="form-check"><input class="form-check-input" id="b3" type="checkbox"><label class="form-check-label" for="b3">Puma</label></div>
+                <a class="btn btn-link p-0 mt-1" href="#">Показать все</a>
+              </fieldset>
+
+              <div class="d-grid gap-2">
+                <button type="button" class="btn btn-dark">Применить</button>
+                <button type="reset" class="btn btn-outline-secondary">Сбросить</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Static sidebar (desktop) -->
+        <div class="d-none d-lg-block bg-white rounded-4 shadow-sm p-3">
+          <h2 class="h5 mb-3">Фильтры</h2>
+          <!-- Вставляем тот же набор контролов, но короче визуально -->
+          <form class="vstack gap-3" aria-label="Фильтры каталога (desktop)">
+            <!-- Пол -->
+            <fieldset>
+              <legend class="fs-6 text-uppercase text-secondary mb-2">Пол</legend>
+              <div class="form-check"><input class="form-check-input" id="sexM2" type="checkbox"><label class="form-check-label" for="sexM2">Мужские</label></div>
+              <div class="form-check"><input class="form-check-input" id="sexW2" type="checkbox"><label class="form-check-label" for="sexW2">Женские</label></div>
+              <div class="form-check"><input class="form-check-input" id="sexU2" type="checkbox"><label class="form-check-label" for="sexU2">Унисекс</label></div>
+            </fieldset>
+
+            <!-- Категория -->
+            <fieldset>
+              <legend class="fs-6 text-uppercase text-secondary mb-2">Категория</legend>
+              <div class="form-check"><input class="form-check-input" id="dc1" type="checkbox"><label class="form-check-label" for="dc1">Кроссовки</label></div>
+              <div class="form-check"><input class="form-check-input" id="dc2" type="checkbox"><label class="form-check-label" for="dc2">Кеды</label></div>
+              <div class="form-check"><input class="form-check-input" id="dc3" type="checkbox"><label class="form-check-label" for="dc3">Ботинки</label></div>
+              <div class="form-check"><input class="form-check-input" id="dc4" type="checkbox"><label class="form-check-label" for="dc4">Туфли</label></div>
+              <div class="form-check"><input class="form-check-input" id="dc5" type="checkbox"><label class="form-check-label" for="dc5">Сандалии</label></div>
+              <div class="form-check"><input class="form-check-input" id="dc6" type="checkbox"><label class="form-check-label" for="dc6">Шлёпанцы</label></div>
+            </fieldset>
+
+            <!-- Применить -->
+            <div class="d-grid">
+              <button type="button" class="btn btn-dark">Применить</button>
+            </div>
+          </form>
+        </div>
+      </aside>
+
+      <!-- Product grid -->
+      <section class="col-lg-9">
+        <h1 class="h3 mb-3 text-center text-lg-start">Модельный ряд</h1>
+
+        <ul class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 list-unstyled">
+          <!-- Card 1 -->
+          <li class="col">
+            <article class="card h-100 shadow-sm">
+              <img src="Assets/sneaker1.jpeg" class="card-img-top object-fit-contain p-3" alt="Кроссовки Jordan" />
+              <div class="card-body">
+                <h2 class="card-title h5 mb-2">Jordan</h2>
+                <dl class="row mb-3 small">
+                  <dt class="col-5">Размер:</dt><dd class="col-7">39–45</dd>
+                  <dt class="col-5">Цена:</dt><dd class="col-7 fw-semibold">150 ₸</dd>
+                </dl>
+                <a href="#" class="btn btn-dark w-100" role="button" aria-label="Добавить Jordan в корзину">В корзину</a>
+              </div>
+            </article>
+          </li>
+
+          <!-- Card 2 -->
+          <li class="col">
+            <article class="card h-100 shadow-sm">
+              <img src="Assets/sneaker10.jpeg" class="card-img-top object-fit-contain p-3" alt="Кроссовки Nike" />
+              <div class="card-body">
+                <h2 class="card-title h5 mb-2">Nike</h2>
+                <dl class="row mb-3 small">
+                  <dt class="col-5">Размер:</dt><dd class="col-7">39–45</dd>
+                  <dt class="col-5">Цена:</dt><dd class="col-7 fw-semibold">150 ₸</dd>
+                </dl>
+                <a href="#" class="btn btn-dark w-100">В корзину</a>
+              </div>
+            </article>
+          </li>
+
+          <!-- Card 3 -->
+          <li class="col">
+            <article class="card h-100 shadow-sm">
+              <img src="Assets/sneaker6.jpeg" class="card-img-top object-fit-contain p-3" alt="Кроссовки New Balance" />
+              <div class="card-body">
+                <h2 class="card-title h5 mb-2">New Balance</h2>
+                <dl class="row mb-3 small">
+                  <dt class="col-5">Размер:</dt><dd class="col-7">40–46</dd>
+                  <dt class="col-5">Цена:</dt><dd class="col-7 fw-semibold">150 ₸</dd>
+                </dl>
+                <a href="#" class="btn btn-dark w-100">В корзину</a>
+              </div>
+            </article>
+          </li>
+
+          <!-- Card 4 -->
+          <li class="col">
+            <article class="card h-100 shadow-sm">
+              <img src="Assets/sneaker13.jpeg" class="card-img-top object-fit-contain p-3" alt="Кроссовки Jordan модель 2" />
+              <div class="card-body">
+                <h2 class="card-title h5 mb-2">Jordan</h2>
+                <dl class="row mb-3 small">
+                  <dt class="col-5">Размер:</dt><dd class="col-7">39–45</dd>
+                  <dt class="col-5">Цена:</dt><dd class="col-7 fw-semibold">500 ₸</dd>
+                </dl>
+                <a href="#" class="btn btn-dark w-100">В корзину</a>
+              </div>
+            </article>
+          </li>
+
+          <!-- Card 5 -->
+          <li class="col">
+            <article class="card h-100 shadow-sm">
+              <img src="Assets/sneaker7.jpeg" class="card-img-top object-fit-contain p-3" alt="Кеды DC Shoes" />
+              <div class="card-body">
+                <h2 class="card-title h5 mb-2">DC Shoes</h2>
+                <dl class="row mb-3 small">
+                  <dt class="col-5">Размер:</dt><dd class="col-7">39–45</dd>
+                  <dt class="col-5">Цена:</dt><dd class="col-7 fw-semibold">500 ₸</dd>
+                </dl>
+                <a href="#" class="btn btn-dark w-100">В корзину</a>
+              </div>
+            </article>
+          </li>
+
+          <!-- Card 6 -->
+          <li class="col">
+            <article class="card h-100 shadow-sm">
+              <img src="Assets/sneaker9.jpeg" class="card-img-top object-fit-contain p-3" alt="Кроссовки Nike модель 2" />
+              <div class="card-body">
+                <h2 class="card-title h5 mb-2">Nike</h2>
+                <dl class="row mb-3 small">
+                  <dt class="col-5">Размер:</dt><dd class="col-7">39–45</dd>
+                  <dt class="col-5">Цена:</dt><dd class="col-7 fw-semibold">500 ₸</dd>
+                </dl>
+                <a href="#" class="btn btn-dark w-100">В корзину</a>
+              </div>
+            </article>
+          </li>
+
+          <!-- Card 7 -->
+          <li class="col">
+            <article class="card h-100 shadow-sm">
+              <img src="Assets/sneaker5.jpeg" class="card-img-top object-fit-contain p-3" alt="Кроссовки Nike модель 3" />
+              <div class="card-body">
+                <h2 class="card-title h5 mb-2">Nike</h2>
+                <dl class="row mb-3 small">
+                  <dt class="col-5">Размер:</dt><dd class="col-7">39–45</dd>
+                  <dt class="col-5">Цена:</dt><dd class="col-7 fw-semibold">500 ₸</dd>
+                </dl>
+                <a href="#" class="btn btn-dark w-100">В корзину</a>
+              </div>
+            </article>
+          </li>
+
+          <!-- Card 8 -->
+          <li class="col">
+            <article class="card h-100 shadow-sm">
+              <img src="Assets/sneaker12.jpeg" class="card-img-top object-fit-contain p-3" alt="Сабо Crocs" />
+              <div class="card-body">
+                <h2 class="card-title h5 mb-2">Crocs</h2>
+                <dl class="row mb-3 small">
+                  <dt class="col-5">Размер:</dt><dd class="col-7">39–45</dd>
+                  <dt class="col-5">Цена:</dt><dd class="col-7 fw-semibold">200 ₸</dd>
+                </dl>
+                <a href="#" class="btn btn-dark w-100">В корзину</a>
+              </div>
+            </article>
+          </li>
+
+          <!-- Card 9 -->
+          <li class="col">
+            <article class="card h-100 shadow-sm">
+              <img src="Assets/sneaker8.jpeg" class="card-img-top object-fit-contain p-3" alt="Кеды Vans" />
+              <div class="card-body">
+                <h2 class="card-title h5 mb-2">Vans</h2>
+                <dl class="row mb-3 small">
+                  <dt class="col-5">Размер:</dt><dd class="col-7">39–45</dd>
+                  <dt class="col-5">Цена:</dt><dd class="col-7 fw-semibold">400 ₸</dd>
+                </dl>
+                <a href="#" class="btn btn-dark w-100">В корзину</a>
+              </div>
+            </article>
+          </li>
         </ul>
 
-        <div class="navbar-actions">
-          <a class="button-create-your-own-design" href="order.html">Создать свой дизайн</a>
-            <a class="cart" href="#">Корзина</a>
+        <!-- Show more -->
+        <div class="text-center my-3">
+          <button type="button" class="btn btn-outline-dark btn-lg">Показать ещё</button>
         </div>
-    </nav>
-  </header>
-  
-  <main>
-    <div class="page">
-      <aside class="filters">
-      <h3>Пол:</h3>
-      <label><input type="checkbox"> Мужские</label>
-      <label><input type="checkbox"> Женские</label>
-      <label><input type="checkbox"> Унисекс</label>
 
-      <h3>Категория:</h3>
-      <label><input type="checkbox"> Кроссовки</label>
-      <label><input type="checkbox"> Кеды</label>
-      <label><input type="checkbox"> Ботинки</label>
-      <label><input type="checkbox"> Туфли</label>
-      <label><input type="checkbox"> Сандалии</label>
-      <label><input type="checkbox"> Шлёпанцы</label>
-
-      <h3>Цвет:</h3>
-      <label><input type="checkbox"> Чёрный</label>
-      <label><input type="checkbox"> Белый</label>
-      <label><input type="checkbox"> Серый</label>
-      <label><input type="checkbox"> Коричневый</label>
-      <label><input type="checkbox"> Синий</label>
-      <a href="#">Показать все</a>
-
-      <h3>Размер (EU):</h3>
-      <label><input type="checkbox"> 36–37</label>
-      <label><input type="checkbox"> 38–39</label>
-      <label><input type="checkbox"> 40–41</label>
-      <label><input type="checkbox"> 42–43</label>
-      <label><input type="checkbox"> 44–46</label>
-      <a href="#">Показать все</a>
-
-      <h3>Материал:</h3>
-      <label><input type="checkbox"> Кожа</label>
-      <label><input type="checkbox"> Замша</label>
-      <label><input type="checkbox"> Текстиль</label>
-      <label><input type="checkbox"> Нубук</label>
-
-      <h3>Сезон:</h3>
-      <label><input type="checkbox"> Лето</label>
-      <label><input type="checkbox"> Демисезон</label>
-      <label><input type="checkbox"> Зима</label>
-
-      <h3>Бренд:</h3>
-      <label><input type="checkbox"> Nike</label>
-      <label><input type="checkbox"> Adidas</label>
-      <label><input type="checkbox"> Puma</label>
-      <a href="#">Показать все</a>
-    </aside>
-
-    <ul class="cards">
-      <li class="index-card">
-        <a class="card__link" href="#">
-          <div class="card__media">
-            <img src="Assets/sneaker1.jpeg" alt="Мужская футболка">
-          </div>
-          <h4 class="card__title">Jordan</h4>
-          <dl class="card__meta">
-            <div><dt>Размер:</dt><dd>39-45</dd></div>
-            <div><dt>Цена:</dt><dd class="price">150 ₸</dd></div>
-          </dl>
-        </a>
-        <button class="btn">В корзину</button>
-      </li>
-
-      <li class="index-card">
-        <a class="card__link" href="#">
-          <div class="card__media">
-            <img src="Assets/sneaker10.jpeg" alt="Мужская футболка">
-          </div>
-          <h4 class="card__title">Nike</h4>
-          <dl class="card__meta">
-            <div><dt>Размер:</dt><dd>39-45</dd></div>
-            <div><dt>Цена:</dt><dd class="price">150 ₸</dd></div>
-          </dl>
-        </a>
-        <button class="btn">В корзину</button>
-      </li>
-      
-      <li class="index-card">
-        <a class="card__link" href="#">
-          <div class="card__media">
-            <img src="Assets/sneaker6.jpeg" alt="Мужская футболка" style="width: 310px;">
-          </div>
-          <h4 class="card__title">New Balance</h4>
-          <dl class="card__meta">
-            <div><dt>Размер:</dt><dd>40–46</dd></div>
-            <div><dt>Цена:</dt><dd class="price">150 ₸</dd></div>
-          </dl>
-        </a>
-        <button class="btn">В корзину</button>
-      </li>
-
-      <li class="index-card">
-        <a class="card__link" href="#">
-          <div class="card__media">
-            <img src="Assets/sneaker13.jpeg" alt="Мужская футболка">
-          </div>
-          <h4 class="card__title">Jordan</h4>
-          <dl class="card__meta">
-            <div><dt>Размер:</dt><dd>39-45</dd></div>
-            <div><dt>Цена:</dt><dd class="price">500 ₸</dd></div>
-          </dl>
-        </a>
-        <button class="btn">В корзину</button>
-      </li>
-
-      <li class="index-card">
-        <a class="card__link" href="#">
-          <div class="card__media">
-            <img src="Assets/sneaker7.jpeg" alt="Мужская футболка">
-          </div>
-          <h4 class="card__title">DC shoes</h4>
-          <dl class="card__meta">
-            <div><dt>Размер:</dt><dd>39-45</dd></div>
-            <div><dt>Цена:</dt><dd class="price">500 ₸</dd></div>
-          </dl>
-        </a>
-        <button class="btn">В корзину</button>
-      </li>
-
-      <li class="index-card">
-        <a class="card__link" href="#">
-          <div class="card__media">
-            <img src="Assets/sneaker9.jpeg" alt="Мужская футболка">
-          </div>
-          <h4 class="card__title">Nike</h4>
-          <dl class="card__meta">
-            <div><dt>Размер:</dt><dd>39-45</dd></div>
-            <div><dt>Цена:</dt><dd class="price">500 ₸</dd></div>
-          </dl>
-        </a>
-        <button class="btn">В корзину</button>
-      </li>
-
-      <li class="index-card">
-        <a class="card__link" href="#">
-          <div class="card__media">
-            <img src="Assets/sneaker5.jpeg" alt="Мужская футболка">
-          </div>
-          <h4 class="card__title">Nike</h4>
-          <dl class="card__meta">
-            <div><dt>Размер:</dt><dd>39-45</dd></div>
-            <div><dt>Цена:</dt><dd class="price">500 ₸</dd></div>
-          </dl>
-        </a>
-        <button class="btn">В корзину</button>
-      </li>
-
-      <li class="index-card">
-        <a class="card__link" href="#">
-          <div class="card__media">
-            <img src="Assets/sneaker12.jpeg" alt="Мужская футболка">
-          </div>
-          <h4 class="card__title">Crocs</h4>
-          <dl class="card__meta">
-            <div><dt>Размер:</dt><dd>39-45</dd></div>
-            <div><dt>Цена:</dt><dd class="price">200 ₸</dd></div>
-          </dl>
-        </a>
-        <button class="btn">В корзину</button>
-      </li>
-
-      <li class="index-card">
-        <a class="card__link" href="#">
-          <div class="card__media">
-            <img src="Assets/sneaker8.jpeg" alt="Мужская футболка">
-          </div>
-          <h4 class="card__title">Vans</h4>
-          <dl class="card__meta">
-            <div><dt>Размер:</dt><dd>39-45</dd></div>
-            <div><dt>Цена:</dt><dd class="price">400 ₸</dd></div>
-          </dl>
-        </a>
-        <button class="btn">В корзину</button>
-      </li>
-
-    </ul>
-
-    <button class="btn btn--ghost">Показать ещё</button>
-
-    <nav class="pagination" aria-label="Страницы каталога">
-      <a href="#" aria-current="page">1</a>
-      <a href="#">2</a>
-      <a href="#">3</a>
-      <span>…</span>
-      <a href="#">45 ›</a>
-    </nav>
+        <!-- Pagination -->
+        <nav class="d-flex justify-content-center" aria-label="Страницы каталога">
+          <ul class="pagination pagination-sm mb-0">
+            <li class="page-item active" aria-current="page"><span class="page-link">1</span></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item disabled"><span class="page-link">…</span></li>
+            <li class="page-item"><a class="page-link" href="#">45 ›</a></li>
+          </ul>
+        </nav>
+      </section>
     </div>
-  </main>
+  </div>
+</main>
 
-  <footer class="footer">
-    <div class="footer__text">
-      Команда: <strong>KAA</strong> • Участники: Rauan K., Alikhan M., Iskander A. • Группа: SE-2401
-    </div>
-    <a href="https://github.com/alishahmanov/shoes-shop-project"
-    target="_blank" rel="noopener"
-    aria-label="Открыть наш GitHub">
-    <img src="Assets/git-hub-logo.png" alt="GitHub" id="footer__logo">
+<footer class="bg-dark text-white mt-4" role="contentinfo">
+  <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between py-3 gap-3">
+    <div>Команда: <strong>KAA</strong> • Участники: Rauan K., Alikhan M., Iskander A. • Группа: SE-2401</div>
+    <a class="d-inline-flex align-items-center gap-2 link-light" href="https://github.com/alishahmanov/shoes-shop-project" target="_blank" rel="noopener" aria-label="Открыть наш GitHub">
+      <img src="Assets/git-hub-logo.png" alt="" width="60" height="50" />
     </a>
-  </footer>
+  </div>
+</footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
-
 </html>
