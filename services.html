@@ -116,6 +116,31 @@
         </a>
     </footer>
 
+        <!-- Popup overlay -->
+    <div id="popup" class="popup">
+    <div class="popup-content">
+        <span class="close-btn">&times;</span>
+        <h3>Свяжитесь с нами</h3>
+        <form id="contactForm">
+        <input type="text" placeholder="Ваше имя" required>
+        <input type="email" placeholder="Ваш e-mail" required>
+        <textarea placeholder="Ваш вопрос" required></textarea>
+        <button type="submit" class="btn">Отправить</button>
+        </form>
+    </div>
+    </div>
+
+    <script>
+    const popup = document.getElementById('popup');
+    const openBtns = document.querySelectorAll('.contact__actions .btn');
+    const closeBtn = document.querySelector('.close-btn');
+
+    openBtns.forEach(btn => btn.addEventListener('click', () => popup.style.display = 'flex'));
+    closeBtn.addEventListener('click', () => popup.style.display = 'none');
+    window.addEventListener('click', e => { if (e.target === popup) popup.style.display = 'none'; });
+    </script>
+
+
 </body>
 </html>
 
