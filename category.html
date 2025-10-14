@@ -42,7 +42,18 @@
 
         <div class="navbar-actions">
           <a class="button-create-your-own-design" href="order.html">Создать свой дизайн</a>
-            <a class="cart" href="#">Корзина</a>
+          <a class="cart" href="#">Корзина</a>
+          <button id="changeColorBtn" class="nav-btn">Сменить фон</button>
+
+          <script>
+            const btn = document.getElementById('changeColorBtn');
+            const colors = ['#f4f5f6', '#ffe4e1', '#e6f7ff', '#e8ffe8', '#fffbe6', '#f0e6ff'];
+
+            btn.addEventListener('click', () => {
+              const randomColor = colors[Math.floor(Math.random() * colors.length)];
+              document.body.style.backgroundColor = randomColor;
+            });
+          </script>
         </div>
     </nav>
   </header>
@@ -247,8 +258,7 @@
     aria-label="Открыть наш GitHub">
     <img src="Assets/git-hub-logo.png" alt="GitHub" id="footer__logo">
     </a>
-  </footer>
-
+  </footer>   
 </body>
 
 </html>
