@@ -849,4 +849,51 @@ a {
 
 
 
+.accordion {
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+.accordion-item {
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.accordion-header {
+    width: 100%;
+    background: #f8f8f8;
+    border: none;
+    outline: none;
+    text-align: left;
+    padding: 15px 20px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.accordion-header.active {
+    background: #eaeaea;
+}
+
+.accordion-content {
+    display: none;
+    padding: 15px 20px;
+    background: white;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.accordion-content.show {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+
 

@@ -105,6 +105,37 @@
     </div>
 </section>
 
+
+<section class="section faq" id="faq">
+    <div class="container">
+        <h1>Часто задаваемые вопросы</h1>
+
+        <div class="accordion">
+            <div class="accordion-item">
+                <button class="accordion-header">💬 Почему стоит выбрать Shoes Shop?</button>
+                <div class="accordion-content">
+                    <p>Мы создаём уникальную спортивную обувь с индивидуальным дизайном и гарантией качества. Каждая пара — это сочетание стиля, удобства и технологии.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">🎨 Можно ли заказать свой дизайн?</button>
+                <div class="accordion-content">
+                    <p>Да! Просто заполните форму «Создать свой дизайн» на странице заказа, и наш дизайнер поможет воплотить вашу идею.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">🚚 Делаете ли вы доставку по Казахстану?</button>
+                <div class="accordion-content">
+                    <p>Да, мы доставляем по всем регионам Казахстана. Также возможна международная доставка по запросу.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 <footer class="footer">
     <div class="footer__text">
         Команда: <strong>KAA</strong> • Участники: Rauan K., Alikhan M., Iskander A. • Группа: SE-2401
@@ -115,5 +146,26 @@
         <img src="Assets/git-hub-logo.png" alt="GitHub" id="footer__logo">
     </a>
 </footer>
+
+<script>
+    const headers = document.querySelectorAll(".accordion-header");
+
+    headers.forEach(header => {
+        header.addEventListener("click", () => {
+            const openItem = document.querySelector(".accordion-content.show");
+            const content = header.nextElementSibling;
+
+            if (openItem && openItem !== content) {
+                openItem.classList.remove("show");
+                openItem.previousElementSibling.classList.remove("active");
+            }
+
+            content.classList.toggle("show");
+            header.classList.toggle("active");
+        });
+    });
+</script>
+
+
 </body>
 </html>
