@@ -65,3 +65,42 @@ document.querySelectorAll(".btn").forEach((btn) => {
     setTimeout(() => (btn.style.transform = "scale(1)"), 200);
   });
 });
+
+// --- Switch Statement: фильтр по цене ---
+document.addEventListener("DOMContentLoaded", () => {
+  const priceFilter = document.getElementById("priceFilter");
+  const productCards = document.querySelectorAll(".card");
+
+  if (!priceFilter || !productCards.length) return;
+
+  priceFilter.addEventListener("change", () => {
+    const selected = priceFilter.value;
+
+    productCards.forEach((card) => {
+      const priceText = card.querySelector(".price").textContent;
+      const price = parseInt(priceText.replace(/\D/g, "")); // убираем символы ₸
+      let show = true;
+
+      switch (selected) {
+        case "cheap":
+          show = price < 300;
+          break;
+        case "medium":
+          show = price >= 300 && price <= 450;
+          break;
+        case "expensive":
+          show = price > 450;
+          break;
+        default:
+          show = true;
+      }
+
+      // применяем результат
+      card.style.display = show ? "block" : "none";
+      if (show) {
+        card.style.opacity = "0";
+        setTimeout(() => (card.style.opacity = "1"), 50);
+      }
+    });
+  });
+});
