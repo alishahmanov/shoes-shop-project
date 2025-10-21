@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     productCards.forEach((card) => {
       const priceText = card.querySelector(".price").textContent;
-      const price = parseInt(priceText.replace(/\D/g, "")); // убираем символы ₸
+      const price = parseInt(priceText.replace(/\D/g, ""));
       let show = true;
 
       switch (selected) {
@@ -94,8 +94,6 @@ document.addEventListener("DOMContentLoaded", () => {
         default:
           show = true;
       }
-
-      // применяем результат
       card.style.display = show ? "block" : "none";
       if (show) {
         card.style.opacity = "0";
