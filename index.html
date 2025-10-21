@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name = "description" content = "Assignment 2">
-  <meta name = "author" content = "Manat Alikhan, Iskander Akipov, Rauan Kuntuganov">
+  <meta name="description" content="Assignment 6 - Event Handling">
+  <meta name="author" content="Manat Alikhan, Iskander Akipov, Rauan Kuntuganov">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
@@ -25,9 +25,9 @@
   </div>
 
   <nav class="navbar container">
-      <a href="index.html" class="logo">
-          <img src="Assets/sneaker21.jpeg" alt="Shoes Shop">
-      </a>
+    <a href="index.html" class="logo">
+      <img src="Assets/sneaker21.jpeg" alt="Shoes Shop">
+    </a>
     <ul class="nav-list">
       <li><a href="about.html">О нас</a></li>
       <li><a href="catalog.html">Каталог</a></li>
@@ -44,17 +44,19 @@
     </div>
   </nav>
 </header>
+
 <main>
   <section class="banner container">
     <div class="banner-text">
       <h1>3 = 2</h1>
       <p>Закажи три пары обуви, а заплати только за две</p>
-      <a href="#" class="button-in-the-banner">Перейти в каталог</a>
+      <a href="catalog.html" class="button-in-the-banner">Перейти в каталог</a>
     </div>
     <div class="banner-img">
       <img src="Assets/shoes-for-banner.jpeg" alt="Shoes Shop Image">
     </div>
   </section>
+
   <section class="what-do-you-searching container">
     <p>Что вы ищете?</p>
     <div class="cards-for-index">
@@ -84,15 +86,16 @@
       </div>
     </div>
   </section>
+
+  <!-- Секция времени и кнопки -->
   <section id="current-time" class="text-center py-4 container">
     <h4 id="datetime"></h4>
-    <p class="time-message">
-      Время тикает, а вы так и не заказали кроссовки?
-    </p>
+    <p class="time-message">Время тикает, а вы так и не заказали кроссовки?</p>
+    <!-- Новая кнопка для Event Handling -->
+    <button id="showTimeBtn" class="time-button">Показать текущее время</button>
   </section>
-
-
 </main>
+
 <footer class="footer">
   <div class="footer__text">
     Команда: <strong>KAA</strong> • Участники: Rauan K., Alikhan M., Iskander A. • Группа: SE-2401
@@ -103,29 +106,9 @@
     <img src="Assets/git-hub-logo.png" alt="GitHub" id="footer__logo">
   </a>
 </footer>
-<script>
-  function updateDateTime() {
-    const now = new Date();
 
-    const options = {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit"
-    };
 
-    const formattedDate = now.toLocaleString("ru-RU", options);
-
-    document.getElementById("datetime").textContent = formattedDate;
-  }
-
-  setInterval(updateDateTime, 1000);
-
-  updateDateTime();
-</script>
+<script src="ascript.js"></script>
 
 </body>
 </html>
