@@ -104,6 +104,8 @@ function wireProductControls() {
 renderProductInfo();
 wireProductControls();
 
+/* Array */
+
 const benefits = [
     "Быстрое изготовление.",
     "Контролируем качество на каждом этапе.",
