@@ -14,6 +14,7 @@
 
 <body>
 
+
 <header>
     <div class="top-header">
         <div class="top-header-left">
@@ -47,9 +48,11 @@
     </nav>
 </header>
 
+
 <div class="container breadcrumbs">
     <a href="#">Каталог обуви</a> · <a href="#">Кроссовки</a> · <a href="#">С принтом</a>
 </div>
+
 
 <section class="section about" id="about">
     <div class="container">
@@ -93,17 +96,28 @@
     </div>
 </section>
 
+<section class="section sound-demo">
+    <div class="container">
+
+        <button id="playSound" class="btn btn-primary">Звук бега</button>
+    </div>
+</section>
+
+
+
+
 
 <section class="section works" id="works">
     <div class="container">
         <h1>Примеры наших работ</h1>
         <div class="works__grid">
-            <img src="https://ogcustom.ru/assets/images/products/405/rick-and-morty-nike-air-forse-season-new-one.png" alt="Пример работы #1">
-            <img src="https://ogcustom.ru/assets/images/products/336/ogcustom-cartoon-blue-4.png" alt="Пример работы #2">
-            <img src="https://ogcustom.ru/assets/images/products/391/bleach-nike-air-force-1.png" alt="Пример работы #3">
+            <img class="anim-card" src="https://ogcustom.ru/assets/images/products/405/rick-and-morty-nike-air-forse-season-new-one.png" alt="Пример работы #1">
+            <img class="anim-card" src="https://ogcustom.ru/assets/images/products/336/ogcustom-cartoon-blue-4.png" alt="Пример работы #2">
+            <img class="anim-card" src="https://ogcustom.ru/assets/images/products/391/bleach-nike-air-force-1.png" alt="Пример работы #3">
         </div>
     </div>
 </section>
+
 
 
 <section class="section faq" id="faq">
@@ -147,25 +161,7 @@
     </a>
 </footer>
 
-<script>
-    const headers = document.querySelectorAll(".accordion-header");
-
-    headers.forEach(header => {
-        header.addEventListener("click", () => {
-            const openItem = document.querySelector(".accordion-content.show");
-            const content = header.nextElementSibling;
-
-            if (openItem && openItem !== content) {
-                openItem.classList.remove("show");
-                openItem.previousElementSibling.classList.remove("active");
-            }
-
-            content.classList.toggle("show");
-            header.classList.toggle("active");
-        });
-    });
-</script>
-
+<script src="iscripts.js"></script>
 
 </body>
 </html>
