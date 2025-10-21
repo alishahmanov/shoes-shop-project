@@ -901,10 +901,24 @@ a {
   letter-spacing: 0.3px;
   animation: fadeInUp 1.2s ease;
 }
+
+
+
+
+.anim-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.anim-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(5px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+
 
 /* =========================================================
    Media Queries

@@ -73,6 +73,20 @@
     </div>
 </section>
 
+<section class="container my-3 my-lg-4">
+    <h2 class="h4">Текущий товар</h2>
+    <div id="productInfo" class="p-3 border rounded-3"></div>
+
+    <div class="d-flex gap-2 mt-2">
+        <button id="btnDiscount" class="btn btn-sm btn-primary">Применить скидку 10%</button>
+        <button id="btnToggleAvail" class="btn btn-sm btn-outline-secondary">Переключить наличие</button>
+    </div>
+</section>
+
+<div class="container my-3">
+    <h2>Фильтрованные модели </h2>
+    <p id="filtered"></p>
+</div>
 
 <section class="section cats" id="cats">
     <div class="container py-3 py-lg-4">
@@ -81,7 +95,9 @@
             <figure class="cat">
                 <img src="Assets/sneaker18.jpeg" alt="Боксерки" />
                 <figcaption class="cat__title">Боксерки</figcaption>
+
             </figure>
+
 
             <figure class="cat">
                 <img src="Assets/sneaker20.jpeg" alt="Борцовки" />
@@ -115,14 +131,7 @@
 <section class="section why" id="why">
     <div class="container why__box">
         <h2>Почему изготовление обуви нужно заказать у нас:</h2>
-        <ul class="ul">
-            <li>Быстрое изготовление.</li>
-            <li>Контролируем качество на каждом этапе.</li>
-            <li>Создаём заметные и яркие модели.</li>
-            <li>Обувь уникальна и отражает дух команды.</li>
-            <li>Профессиональные «дышащие» материалы.</li>
-            <li>Износостойкость, выдерживает постоянные стирки.</li>
-            <li>Комфорт: не жмёт и не натирает.</li>
+        <ul id="benefitsList" class="ul"></ul>
         </ul>
     </div>
 </section>
@@ -166,41 +175,7 @@
     </a>
 </footer>
 
-
-<script>
-    document.getElementById("requestForm").addEventListener("submit", function(event) {
-        event.preventDefault();
-
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const phone = document.getElementById("phone").value.trim();
-        const message = document.getElementById("formMessage");
-
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const phonePattern = /^[0-9+\-\s]{8,15}$/;
-
-        if (name === "") {
-            message.textContent = "Пожалуйста, введите ваше имя dad a.";
-            message.className = "mt-2 text-danger";
-            return;
-        }
-        if (!emailPattern.test(email)) {
-            message.textContent = "Введите корректный адрес электронной почты.";
-            message.className = "mt-2 text-danger";
-            return;
-        }
-        if (!phonePattern.test(phone)) {
-            message.textContent = "Введите корректный номер телефона (8–15 символов).";
-            message.className = "mt-2 text-danger";
-            return;
-        }
-
-        message.textContent = "Заявка успешно отправлена!";
-        message.className = "mt-2 text-success";
-
-        this.reset();
-    });
-</script>
+<script src="iscripts.js"></script>
 
 </body>
 </html>
