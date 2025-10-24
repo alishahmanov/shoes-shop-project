@@ -977,6 +977,143 @@ a {
   transform: scale(1.05);
   box-shadow: 0 6px 16px rgba(0,0,0,0.2);
 }
+
+.dark-theme {
+  background-color: #0f0f0f;
+  color: #f5f5f5;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+.dark-theme header,
+.dark-theme nav.navbar {
+  background: #1a1a1a;
+  border-bottom: 1px solid #333;
+}
+
+.dark-theme .nav-list {
+  background: #222;
+  border-color: #444;
+}
+
+.dark-theme .nav-list li a {
+  color: #f5f5f5;
+}
+
+.dark-theme .nav-btn,
+.dark-theme .button-create-your-own-design,
+.dark-theme .cart {
+  background: #222;
+  color: #f5f5f5;
+  border: 1px solid #666;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+.dark-theme .nav-btn:hover,
+.dark-theme .button-create-your-own-design:hover,
+.dark-theme .cart:hover {
+  background: #333;
+}
+
+.dark-theme .filters {
+  background: #1b1b1b;
+  color: #ddd;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+.dark-theme .filters h3 {
+  color: #999;
+}
+.dark-theme .filters label {
+  color: #ccc;
+}
+
+.dark-theme .card {
+  background: #1a1a1a;
+  color: #f5f5f5;
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.05);
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+.dark-theme .card:hover {
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+}
+
+.dark-theme .btn {
+  background: #f5f5f5;
+  color: #000;
+  border: 1px solid #aaa;
+}
+.dark-theme .btn:hover {
+  background: #e0e0e0;
+}
+
+.dark-theme footer {
+  background: #111;
+  color: #ccc;
+}
+
+.dark-theme .pagination a,
+.dark-theme .pagination span {
+  color: #ddd;
+}
+.dark-theme .pagination a[aria-current="page"] {
+  background: #222;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+/* ===== Темная тема: карточки и пагинация ===== */
+.dark-theme .card {
+  background: #1a1a1a;
+  color: #f0f0f0;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+.dark-theme .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 28px rgba(255, 255, 255, 0.1);
+}
+.dark-theme .card__title {
+  color: #ffffff;
+}
+.dark-theme .card__meta {
+  color: #cccccc;
+}
+
+/* кнопка "В корзину" */
+.dark-theme .btn {
+  background: linear-gradient(135deg, #7a3cff, #a770ef);
+  color: #fff;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 12px rgba(167, 112, 239, 0.3);
+}
+.dark-theme .btn:hover {
+  background: linear-gradient(135deg, #9552ff, #c68bff);
+  box-shadow: 0 0 18px rgba(180, 130, 255, 0.5);
+  transform: scale(1.05);
+}
+
+/* ===== Пагинация в тёмной теме ===== */
+.dark-theme .pagination {
+  background: transparent;
+}
+.dark-theme .pagination a,
+.dark-theme .pagination span {
+  background: #1e1e1e;
+  color: #f0f0f0;
+  border: 1px solid #333;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+.dark-theme .pagination a:hover {
+  background: #2a2a2a;
+  color: #a770ef;
+  box-shadow: 0 0 10px rgba(167, 112, 239, 0.4);
+}
+.dark-theme .pagination a[aria-current="page"] {
+  background: linear-gradient(135deg, #7a3cff, #a770ef);
+  color: #fff;
+  border: none;
+  box-shadow: 0 0 12px rgba(167, 112, 239, 0.5);
+}
+
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(5px); }
   to   { opacity: 1; transform: translateY(0); }
