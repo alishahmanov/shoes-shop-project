@@ -1,0 +1,71 @@
+#scrollProgress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 6px;
+    width: 0%;
+    background: #0000ff;
+    z-index: 9999;
+    transition: width 0.25s ease;
+    border-radius: 0 4px 4px 0;
+}
+
+
+.stats {
+    text-align: center;
+    padding: 60px 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    margin-top: 40px;
+}
+
+.stats h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.stats__grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.stat {
+    text-align: center;
+    min-width: 180px;
+}
+
+.stat .counter {
+    font-size: 52px;
+    font-weight: bold;
+    color: #0000ff;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.stat p {
+    font-size: 18px;
+    color: #444;
+    margin: 0;
+}
+
+
+.spinner {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #0000ff;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
