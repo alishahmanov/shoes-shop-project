@@ -10,6 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <title>Shoes Shop</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="rstyles.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -20,7 +22,10 @@
       <span>Телефон: <a href="#">8(771)2159509</a></span>
     </div>
     <div class="top-header-right">
-      <span>Почта: <a href="#">iskander_alipov@mail.ru</a></span>
+      <div class="copyable-text">
+        <span>Почта: <a href="#">iskander_alipov@mail.ru</a></span>
+        <button class="copy-btn copy-btn-small" data-text="iskander_alipov@mail.ru" title="Копировать email">Копировать</button>
+      </div>
       <span>Язык сайта: EN/RU</span>
     </div>
   </div>
@@ -112,7 +117,7 @@
       <li class="card">
         <a class="card__link" href="#">
           <div class="card__media">
-            <img src="Assets/sneaker1.jpeg" alt="Jordan" />
+            <img class="lazy-image" data-src="Assets/sneaker1.jpeg" alt="Jordan" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNHB4IiBmaWxsPSIjOTk5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+Загрузка...</text></svg>" />
           </div>
           <h4 class="card__title">Jordan</h4>
           <dl class="card__meta">
@@ -126,7 +131,7 @@
       <li class="card">
         <a class="card__link" href="#">
           <div class="card__media">
-            <img src="Assets/sneaker10.jpeg" alt="Nike" />
+            <img class="lazy-image" data-src="Assets/sneaker10.jpeg" alt="Nike" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNHB4IiBmaWxsPSIjOTk5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+Загрузка...</text></svg>" />
           </div>
           <h4 class="card__title">Nike</h4>
           <dl class="card__meta">
@@ -140,7 +145,7 @@
       <li class="card">
         <a class="card__link" href="#">
           <div class="card__media">
-            <img src="Assets/sneaker6.jpeg" alt="New Balance" style="width: 310px" />
+            <img class="lazy-image" data-src="Assets/sneaker6.jpeg" alt="New Balance" style="width: 310px" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNHB4IiBmaWxsPSIjOTk5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+Загрузка...</text></svg>" />
           </div>
           <h4 class="card__title">New Balance</h4>
           <dl class="card__meta">
@@ -154,7 +159,7 @@
       <li class="card">
         <a class="card__link" href="#">
           <div class="card__media">
-            <img src="Assets/sneaker13.jpeg" alt="Jordan" />
+            <img class="lazy-image" data-src="Assets/sneaker13.jpeg" alt="Jordan" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNHB4IiBmaWxsPSIjOTk5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+Загрузка...</text></svg>" />
           </div>
           <h4 class="card__title">Jordan</h4>
           <dl class="card__meta">
@@ -168,7 +173,7 @@
       <li class="card">
         <a class="card__link" href="#">
           <div class="card__media">
-            <img src="Assets/sneaker7.jpeg" alt="DC shoes" />
+            <img class="lazy-image" data-src="Assets/sneaker7.jpeg" alt="DC shoes" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNHB4IiBmaWxsPSIjOTk5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+Загрузка...</text></svg>" />
           </div>
           <h4 class="card__title">DC shoes</h4>
           <dl class="card__meta">
@@ -182,7 +187,7 @@
       <li class="card">
         <a class="card__link" href="#">
           <div class="card__media">
-            <img src="Assets/sneaker9.jpeg" alt="Nike" />
+            <img class="lazy-image" data-src="Assets/sneaker9.jpeg" alt="Nike" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNHB4IiBmaWxsPSIjOTk5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+Загрузка...</text></svg>" />
           </div>
           <h4 class="card__title">Nike</h4>
           <dl class="card__meta">
@@ -196,7 +201,7 @@
       <li class="card">
         <a class="card__link" href="#">
           <div class="card__media">
-            <img src="Assets/sneaker12.jpeg" alt="Crocs" />
+            <img class="lazy-image" data-src="Assets/sneaker12.jpeg" alt="Crocs" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNHB4IiBmaWxsPSIjOTk5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+Загрузка...</text></svg>" />
           </div>
           <h4 class="card__title">Crocs</h4>
           <dl class="card__meta">
@@ -210,7 +215,7 @@
       <li class="card">
         <a class="card__link" href="#">
           <div class="card__media">
-            <img src="Assets/sneaker8.jpeg" alt="Vans" />
+            <img class="lazy-image" data-src="Assets/sneaker8.jpeg" alt="Vans" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNHB4IiBmaWxsPSIjOTk5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+Загрузка...</text></svg>" />
           </div>
           <h4 class="card__title">Vans</h4>
           <dl class="card__meta">
@@ -234,6 +239,9 @@
   </div>
 </main>
 
+<!-- Toast Notification Container -->
+<div id="toast-container" style="position: fixed !important; top: 20px !important; right: 20px !important; z-index: 999999 !important; display: flex !important; flex-direction: column !important; gap: 12px !important; max-width: 380px !important;"></div>
+
 <footer class="footer">
   <div class="footer__text">
     Команда: <strong>KAA</strong> • Участники: Rauan K., Alikhan M., Iskander A. • Группа: SE-2401
@@ -243,6 +251,6 @@
   </a>
 </footer>
 
-<script src="rscript.js"></script>
+<script src="rscripts.js"></script>
 </body>
 </html>
