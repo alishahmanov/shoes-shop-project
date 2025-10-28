@@ -1,146 +1,174 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name = "description" content = "Assignment 2">
-  <meta name = "author" content = "Manat Alikhan, Iskander Akipov, Rauan Kuntuganov">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <title>Shoes Shop</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Assignment 2" />
+    <meta
+      name="author"
+      content="Manat Alikhan, Iskander Akipov, Rauan Kuntuganov"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Shoes Shop</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="rstyles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
 
-<body>
+  <body>
     <header>
-        <div class="top-header">
-            <div class="top-header-left">
-                <span>Режим работы: 10:00–20:00</span>
-                <span>Телефон: <a href="#">8(771)2159509</a></span>
-            </div>
-            <div class="top-header-right">
-                <span>Почта: <a href="#">iskander_alipov@mail.ru</a></span>
-                <span>Язык сайта: EN/RU</span>
-            </div>
+      <div class="top-header">
+        <div class="top-header-left">
+          <span>Режим работы: 10:00–20:00</span>
+          <span>Телефон: <a href="#">8(771)2159509</a></span>
         </div>
+        <div class="top-header-right">
+          <span>Почта: <a href="#">iskander_alipov@mail.ru</a></span>
+          <span>Язык сайта: EN/RU</span>
+        </div>
+      </div>
 
-        <nav class="navbar container">
-            <a href="index.html" class="logo">
-                <img src="Assets/sneaker21.jpeg" alt="Shoes Shop">
-            </a>
-            <ul class="nav-list">
-                <li><a href="about.html">О нас</a></li>
-                <li><a href="catalog.html">Каталог</a></li>
-                <li><a href="category.html">Категория</a></li>
-                <li><a href="order.html">Обувь под заказ</a></li>
-                <li><a href="#">Вопросы</a></li>
-                <li><a href="#">Отзывы</a></li>
-                <li><a href="services.html">Услуги</a></li>
-            </ul>
+      <nav class="navbar container">
+        <a href="index.html" class="logo">
+          <img src="Assets/sneaker21.jpeg" alt="Shoes Shop" />
+        </a>
+        <ul class="nav-list">
+          <li><a href="about.html">О нас</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="category.html">Категория</a></li>
+          <li><a href="order.html">Обувь под заказ</a></li>
+          <li><a href="#">Вопросы</a></li>
+          <li><a href="#">Отзывы</a></li>
+          <li><a href="services.html">Услуги</a></li>
+        </ul>
 
-            <div class="navbar-actions">
-                <a class="button-create-your-own-design" href="order.html">Создать свой дизайн</a>
-                <a class="cart" href="#">Корзина</a>
-            </div>
-        </nav>
+        <div class="navbar-actions">
+          <a class="button-create-your-own-design" href="order.html"
+            >Создать свой дизайн</a
+          >
+          <a class="cart" href="#">Корзина</a>
+        </div>
+      </nav>
     </header>
 
     <main>
-        <section class="services">
-            <h2>Услуги</h2>
-            <p class="services__intro">
-            Мы оказываем полный спектр услуг от проектирования до создания обуви
+      <section class="services">
+        <h2>Услуги</h2>
+        <p class="services__intro">
+          Мы оказываем полный спектр услуг от проектирования до создания обуви
+        </p>
+
+        <div class="chips">
+          <span class="chip">Подбор обуви по размеру и стилю</span>
+          <span class="chip">Индивидуальная примерка</span>
+          <span class="chip">Ремонт и уход за обувью</span>
+          <span class="chip">Доставка обуви</span>
+          <span class="chip">Консультация стилиста</span>
+          <span class="chip">Продажа аксессуаров</span>
+          <span class="chip">Чистка и уход за обувью</span>
+          <span class="chip">Заказ эксклюзивных моделей</span>
+        </div>
+      </section>
+
+      <section class="portfolio">
+        <h3>Примеры наших работ:</h3>
+        <div class="portfolio__gallery">
+          <img class="lazy-image" data-src="Assets/sneaker15.jpeg" alt="Пример работы #1" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNHB4IiBmaWxsPSIjOTk5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+Загрузка...</text></svg>" />
+          <img class="lazy-image" data-src="Assets/sneaker17.jpeg" alt="Пример работы #2" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNHB4IiBmaWxsPSIjOTk5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+Загрузка...</text></svg>" />
+          <img class="lazy-image" data-src="Assets/sneaker14.jpeg" alt="Пример работы #3" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNHB4IiBmaWxsPSIjOTk5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+Загрузка...</text></svg>" />
+        </div>
+      </section>
+
+      <section class="details">
+        <h3>Реквизиты</h3>
+        <div class="details__grid">
+          <div class="details__info">
+            <p>ООО «Shoes shop»</p>
+            <p>
+              Юридический адрес: 010000, г. Астана, ул.Кабанбай Батыра, д. 58Б,
+              стр. 7
             </p>
+            <p>
+              Почтовый адрес: 010000, г. Астана, ул.Кабанбай Батыра, д. 58Б,
+              стр. 7
+            </p>
+            <div class="copyable-text">
+              <span class="text-content">ИНН: 7712345678</span>
+              <button class="copy-btn" data-text="7712345678" title="Копировать ИНН">Копировать</button>
+            </div>
+            <div class="copyable-text">
+              <span class="text-content">КПП: 779101001</span>
+              <button class="copy-btn" data-text="779101001" title="Копировать КПП">Копировать</button>
+            </div>
+            <div class="copyable-text">
+              <span class="text-content">БИК: 044521234</span>
+              <button class="copy-btn" data-text="044521234" title="Копировать БИК">Копировать</button>
+            </div>
+            <div class="copyable-text">
+              <span class="text-content">Р/С: 40702810123450101230</span>
+              <button class="copy-btn" data-text="40702810123450101230" title="Копировать расчётный счёт">Копировать</button>
+            </div>
+            <div class="copyable-text">
+              <span class="text-content">К/С: 3010123450000000225</span>
+              <button class="copy-btn" data-text="3010123450000000225" title="Копировать корреспондентский счёт">Копировать</button>
+            </div>
+            <div class="copyable-text">
+              <span class="text-content">ОГРН: 1047712345678</span>
+              <button class="copy-btn" data-text="1047712345678" title="Копировать ОГРН">Копировать</button>
+            </div>
+          </div>
+          <div class="details__map">
+            <img src="Assets/map.jpeg" alt="Карта проезда" />
+          </div>
+        </div>
+      </section>
 
-            <div class="chips">
-                <span class="chip">Подбор обуви по размеру и стилю</span>
-                <span class="chip">Индивидуальная примерка</span>
-                <span class="chip">Ремонт и уход за обувью</span>
-                <span class="chip">Доставка обуви</span>
-                <span class="chip">Консультация стилиста</span>
-                <span class="chip">Продажа аксессуаров</span>
-                <span class="chip">Чистка и уход за обувью</span>
-                <span class="chip">Заказ эксклюзивных моделей</span>
-            </div>
-        </section>
-
-        <section class="portfolio">
-            <h3>Примеры наших работ:</h3>
-            <div class="portfolio__gallery">
-            <img src="Assets/sneaker15.jpeg" alt="Пример работы #1">
-            <img src="Assets/sneaker17.jpeg" alt="Пример работы #2">
-            <img src="Assets/sneaker14.jpeg" alt="Пример работы #3">
-            </div>
-        </section>
-
-        <section class="details">
-            <h3>Реквизиты</h3>
-            <div class="details__grid">
-            <div class="details__info">
-                <p>ООО «Shoes shop»</p>
-                <p>Юридический адрес: 010000, г. Астана, ул.Кабанбай Батыра, д. 58Б, стр. 7</p>
-                <p>Почтовый адрес: 010000, г. Астана, ул.Кабанбай Батыра, д. 58Б, стр. 7</p>
-                <p>ИНН: 7712345678</p>
-                <p>КПП: 779101001</p>
-                <p>БИК: 044521234</p>
-                <p>Р/С: 40702810123450101230</p>
-                <p>К/С: 3010123450000000225</p>
-                <p>ОГРН: 1047712345678</p>
-            </div>
-            <div class="details__map">
-                <img src="Assets/map.jpeg" alt="Карта проезда">
-            </div>
-            </div>
-        </section>
-
-        <section class="contact">
-            <h3>Остались вопросы?</h3>
-            <p>Заполните форму и менеджер свяжется с вами в ближайшее время.</p>
-            <div class="contact__actions">
-            <button class="btn">Задать вопрос</button>
-            <button class="btn">Заказать звонок</button>
-            </div>
-        </section>
-
+      <section class="contact">
+        <h3>Остались вопросы?</h3>
+        <p>Заполните форму и менеджер свяжется с вами в ближайшее время.</p>
+        <div class="contact__actions">
+          <button class="btn">Задать вопрос</button>
+          <button class="btn">Заказать звонок</button>
+        </div>
+      </section>
     </main>
 
+    <!-- Toast Notification Container -->
+    <div id="toast-container" style="position: fixed !important; top: 20px !important; right: 20px !important; z-index: 999999 !important; display: flex !important; flex-direction: column !important; gap: 12px !important; max-width: 380px !important;"></div>
+
     <footer class="footer">
-        <div class="footer__text">
-            Команда: <strong>KAA</strong> • Участники: Rauan K., Alikhan M., Iskander A. • Группа: SE-2401
-        </div>
-        <a href="https://github.com/alishahmanov/shoes-shop-project"
-        target="_blank" rel="noopener"
-        aria-label="Открыть наш GitHub">
-        <img src="Assets/git-hub-logo.png" alt="GitHub" id="footer__logo">
-        </a>
+      <div class="footer__text">
+        Команда: <strong>KAA</strong> • Участники: Rauan K., Alikhan M.,
+        Iskander A. • Группа: SE-2401
+      </div>
+      <a
+        href="https://github.com/alishahmanov/shoes-shop-project"
+        target="_blank"
+        rel="noopener"
+        aria-label="Открыть наш GitHub"
+      >
+        <img src="Assets/git-hub-logo.png" alt="GitHub" id="footer__logo" />
+      </a>
     </footer>
 
-        <!-- Popup overlay -->
+    <!-- Popup overlay -->
     <div id="popup" class="popup">
-    <div class="popup-content">
+      <div class="popup-content">
         <span class="close-btn">&times;</span>
         <h3>Свяжитесь с нами</h3>
         <form id="contactForm">
-        <input type="text" placeholder="Ваше имя" required>
-        <input type="email" placeholder="Ваш e-mail" required>
-        <textarea placeholder="Ваш вопрос" required></textarea>
-        <button type="submit" class="btn">Отправить</button>
+          <input type="text" placeholder="Ваше имя" required />
+          <input type="email" placeholder="Ваш e-mail" required />
+          <textarea placeholder="Ваш вопрос" required></textarea>
+          <button type="submit" class="btn">Отправить</button>
         </form>
+      </div>
     </div>
-    </div>
-
-    <script>
-    const popup = document.getElementById('popup');
-    const openBtns = document.querySelectorAll('.contact__actions .btn');
-    const closeBtn = document.querySelector('.close-btn');
-
-    openBtns.forEach(btn => btn.addEventListener('click', () => popup.style.display = 'flex'));
-    closeBtn.addEventListener('click', () => popup.style.display = 'none');
-    window.addEventListener('click', e => { if (e.target === popup) popup.style.display = 'none'; });
-    </script>
-
-
-</body>
+    <script src="rscripts.js"></script>
+  </body>
 </html>
-
