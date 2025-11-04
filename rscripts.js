@@ -1,281 +1,301 @@
-// ========== Смена случайного фона (из category.html) ==========
-const colorBtn = document.getElementById("changeColorBtn");
-if (colorBtn) {
-  const colors = [
-    "#f4f5f6",
-    "#ffe4e1",
-    "#e6f7ff",
-    "#e8ffe8",
-    "#fffbe6",
-    "#f0e6ff",
-  ];
-  colorBtn.addEventListener("click", () => {
-    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+/* ===== Part 2: чистый скрипт без дублей ===== */
+
+/* Утилита */
+const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
+
+/* 1) Тема День/Ночь — с защитой от дублей кнопки */
+(function themeToggleInit(){
+  if (document.getElementById('themeToggle')) return;           // защита
+  const navActions = document.querySelector('.navbar-actions') || document.querySelector('.site-navbar-actions');
+  if (!navActions) return;
+
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'nav-btn';
+  btn.id = 'themeToggle';
+  navActions.appendChild(btn);
+
+  function applyTheme(name){
+    if (name === 'dark'){
+      document.body.classList.add('dark-theme');
+      btn.textContent = 'День';
+      btn.setAttribute('aria-pressed','true');
+      btn.setAttribute('aria-label','Переключить на светлую тему');
+    } else {
+      document.body.classList.remove('dark-theme');
+      btn.textContent = 'Ночь';
+      btn.setAttribute('aria-pressed','false');
+      btn.setAttribute('aria-label','Переключить на тёмную тему');
+    }
+  }
+
+  const saved = localStorage.getItem('theme');
+  if (saved){ applyTheme(saved); }
+  else {
+    const prefersDark = window.matchMedia?.('(prefers-color-scheme: dark)').matches;
+    applyTheme(prefersDark ? 'dark' : 'light');
+  }
+
+  btn.addEventListener('click', ()=>{
+    const isDark = document.body.classList.toggle('dark-theme');
+    const t = isDark ? 'dark' : 'light';
+    applyTheme(t);
+    try{ localStorage.setItem('theme', t); }catch(_){}
+  });
+})();
+
+/* 2) Аккордеон с aria (один открыт за раз) */
+(function accordionInit(){
+  const accButtons = $$('.accordion-header');
+  if (!accButtons.length) return;
+
+  accButtons.forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const panelId = btn.getAttribute('aria-controls');
+      const panel = document.getElementById(panelId);
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+      const openedBtn = document.querySelector('.accordion-header[aria-expanded="true"]');
+      if (openedBtn && openedBtn !== btn){
+        const openedPanel = document.getElementById(openedBtn.getAttribute('aria-controls'));
+        openedBtn.setAttribute('aria-expanded','false');
+        openedBtn.classList.remove('active');
+        if (openedPanel){ openedPanel.hidden = true; openedPanel.classList.remove('show'); }
+      }
+
+      btn.setAttribute('aria-expanded', String(!isOpen));
+      btn.classList.toggle('active', !isOpen);
+      if (panel){ panel.hidden = isOpen; panel.classList.toggle('show', !isOpen); }
+    });
+  });
+})();
+
+/* 3) Popup / Modal — доступно, без автоподключения ко всем .btn
+      Используй data-open="popup" на кнопке-открывателе */
+(function popupInit(){
+  const popup = document.getElementById('popup');
+  if (!popup) return;
+
+  const content = popup.querySelector('.popup-content');
+  const closeBtn = popup.querySelector('.close-btn');
+  const openers = $$('[data-open="popup"]');           // только метки-открыватели
+
+  let lastFocused = null;
+  const getFocusable = (root) =>
+      $$('a,button,input,textarea,select,[tabindex]:not([tabindex="-1"])', root)
+          .filter(el => !el.disabled && el.getAttribute('aria-hidden') !== 'true');
+
+  function openPopup(){
+    lastFocused = document.activeElement;
+    popup.style.display = 'flex';
+    popup.setAttribute('aria-hidden','false');
+    const f = getFocusable(content);
+    (f[0] || content).focus();
+    document.addEventListener('keydown', trap);
+  }
+  function closePopup(){
+    popup.style.display = 'none';
+    popup.setAttribute('aria-hidden','true');
+    document.removeEventListener('keydown', trap);
+    lastFocused && lastFocused.focus();
+  }
+  function trap(e){
+    if (e.key === 'Escape') return closePopup();
+    if (e.key !== 'Tab') return;
+    const f = getFocusable(content);
+    if (!f.length) return;
+    const first = f[0], last = f[f.length-1];
+    if (e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+  }
+
+  openers.forEach(b => b.addEventListener('click', openPopup));
+  closeBtn?.addEventListener('click', closePopup);
+  window.addEventListener('click', (e)=>{ if (e.target === popup) closePopup(); });
+})();
+
+/* 4) Тосты / уведомления (aria-live), без jQuery */
+function showToast(message, type='success'){
+  let container = document.getElementById('toast-container');
+  if (!container){
+    container = document.createElement('div');
+    container.id = 'toast-container';
+    container.setAttribute('role','region');
+    container.setAttribute('aria-label','Уведомления');
+    document.body.appendChild(container);
+  }
+  const toast = document.createElement('div');
+  toast.className = `toast toast-${type} toast-show`;
+  toast.setAttribute('role','status');
+  toast.setAttribute('aria-live','polite');
+  toast.innerHTML = `
+    <div class="toast-content">
+      <span class="toast-message">${message}</span>
+      <button class="toast-close" aria-label="Закрыть уведомление">&times;</button>
+    </div>`;
+  container.appendChild(toast);
+
+  const remove = ()=>{ toast.classList.add('toast-hide'); setTimeout(()=>toast.remove(), 300); };
+  toast.querySelector('.toast-close')?.addEventListener('click', remove);
+  toast.addEventListener('click', remove);
+  setTimeout(remove, 3000);
+}
+
+/* 5) “Добавить в корзину” */
+(function cartButtonsInit(){
+  $$('.add-to-cart').forEach(btn=>{
+    btn.addEventListener('click', (e)=>{
+      e.preventDefault();
+      const name = btn.getAttribute('data-name') || 'Товар';
+      showToast(`Товар «${name}» добавлен в корзину!`, 'success');
+    });
+  });
+})();
+
+/* 6) Случайный фон (по id="changeColorBtn") */
+(function randomBgInit(){
+  const colorBtn = document.getElementById('changeColorBtn');
+  if (!colorBtn) return;
+  const colors = ['#f4f5f6','#ffe4e1','#e6f7ff','#e8ffe8','#fffbe6','#f0e6ff'];
+  colorBtn.addEventListener('click', ()=>{
+    const randomColor = colors[Math.floor(Math.random()*colors.length)];
     document.body.style.backgroundColor = randomColor;
   });
-}
+})();
 
-// ========== Popup из services.html ==========
-const popup = document.getElementById("popup");
-const openBtns = document.querySelectorAll(".contact__actions .btn");
-const closeBtn = document.querySelector(".close-btn");
+/* 7) Галерея: показать больше (id="showMoreBtn") + lazy подключение */
+(function showMoreInit(){
+  const gallery = document.querySelector('.portfolio__gallery');
+  const btn = document.getElementById('showMoreBtn');
+  if (!gallery || !btn) return;
 
-if (popup && openBtns && closeBtn) {
-  openBtns.forEach((btn) =>
-    btn.addEventListener("click", () => (popup.style.display = "flex"))
-  );
-  closeBtn.addEventListener("click", () => (popup.style.display = "none"));
-  window.addEventListener("click", (e) => {
-    if (e.target === popup) popup.style.display = "none";
-  });
-}
-
-// ========== Тема День/Ночь ==========
-const themeToggle = document.createElement("button");
-themeToggle.className = "nav-btn";
-// Append toggle to navbar actions if present
-// Append to header actions on all pages (support both .navbar-actions and .site-navbar-actions)
-const navActions = document.querySelector('.navbar-actions') || document.querySelector('.site-navbar-actions');
-navActions?.appendChild(themeToggle);
-
-// Apply theme by name ('light' or 'dark')
-function applyTheme(name) {
-  if (name === "dark") {
-    document.body.classList.add("dark-theme");
-    themeToggle.textContent = "День"; // show action to switch to day
-    themeToggle.setAttribute('aria-pressed', 'true');
-    themeToggle.setAttribute('aria-label', 'Переключить на светлую тему');
-  } else {
-    document.body.classList.remove("dark-theme");
-    themeToggle.textContent = "Ночь"; // show action to switch to night
-    themeToggle.setAttribute('aria-pressed', 'false');
-    themeToggle.setAttribute('aria-label', 'Переключить на темную тему');
-  }
-}
-
-// Load saved preference or system preference
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme) {
-  applyTheme(savedTheme);
-} else {
-  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  applyTheme(prefersDark ? 'dark' : 'light');
-}
-
-// Toggle handler: update DOM and persist
-themeToggle.addEventListener('click', () => {
-  const isDark = document.body.classList.toggle('dark-theme');
-  const newTheme = isDark ? 'dark' : 'light';
-  applyTheme(newTheme); // update label/aria
-  try {
-    localStorage.setItem('theme', newTheme);
-  } catch (err) {
-    console.warn('Could not save theme preference', err);
-  }
-});
-
-// ========== Манипуляция атрибутами: Галерея ==========
-const gallery = document.querySelector(".portfolio__gallery");
-if (gallery) {
-  const showMore = document.createElement("button");
-  showMore.textContent = "Показать больше";
-  showMore.className = "btn";
-  gallery.after(showMore);
-
-  showMore.addEventListener("click", () => {
-    const extra = document.createElement("img");
-    extra.src = "Assets/sneaker19.jpeg";
-    extra.alt = "Пример работы #4";
-    extra.style.animation = "fadeInDown 0.5s";
+  btn.addEventListener('click', ()=>{
+    const extra = document.createElement('img');
+    extra.className = 'lazy-image';
+    extra.alt = 'Пример работы #4';
+    extra.width = 200; extra.height = 200;
+    extra.src = 'Assets/placeholder.webp';
+    extra.setAttribute('data-src','Assets/sneaker14.jpeg');
     gallery.appendChild(extra);
-    showMore.disabled = true;
+    observeLazy([extra]);
+    btn.disabled = true;
   });
-}
+})();
 
-// ========== Анимация: масштаб кнопок при клике ==========
-document.querySelectorAll(".btn").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    btn.style.transform = "scale(1.1)";
-    setTimeout(() => (btn.style.transform = "scale(1)"), 200);
+/* 8) Лёгкий кликовый эффект (если motion не урезан) */
+(function clickScaleInit(){
+  const prefersReduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduced) return;
+  $$('.btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      btn.style.transform = 'scale(1.06)';
+      setTimeout(()=> btn.style.transform = 'scale(1)', 180);
+    });
   });
-});
+})();
 
-// --- Switch Statement: фильтр по цене ---
-document.addEventListener("DOMContentLoaded", () => {
-  const priceFilter = document.getElementById("priceFilter");
-  const productCards = document.querySelectorAll(".card");
+/* 9) Фильтр по цене (₸: 299 000 → 299000) */
+(function priceFilterInit(){
+  const priceFilter = document.getElementById('priceFilter');
+  const cards = $$('.cards-for-index .card');
+  if (!priceFilter || !cards.length) return;
 
-  if (!priceFilter || !productCards.length) return;
-
-  priceFilter.addEventListener("change", () => {
+  priceFilter.addEventListener('change', ()=>{
     const selected = priceFilter.value;
-
-    productCards.forEach((card) => {
-      const priceText = card.querySelector(".price").textContent;
-      const price = parseInt(priceText.replace(/\D/g, ""));
+    cards.forEach(card=>{
+      const priceText = card.querySelector('.price')?.textContent || '';
+      const price = parseInt(priceText.replace(/\D/g,''), 10) || 0; // в тенге
       let show = true;
-
-      switch (selected) {
-        case "cheap":
-          show = price < 300;
-          break;
-        case "medium":
-          show = price >= 300 && price <= 450;
-          break;
-        case "expensive":
-          show = price > 450;
-          break;
-        default:
-          show = true;
+      switch (selected){
+        case 'cheap': show = price < 300000; break;
+        case 'medium': show = price >= 300000 && price <= 450000; break;
+        case 'expensive': show = price > 450000; break;
+        default: show = true;
       }
-      card.style.display = show ? "block" : "none";
-      if (show) {
-        card.style.opacity = "0";
-        setTimeout(() => (card.style.opacity = "1"), 50);
-      }
+      card.style.display = show ? 'block' : 'none';
+      if (show){ card.style.opacity = '0'; setTimeout(()=> card.style.opacity = '1', 50); }
     });
   });
-});
+})();
 
-// ========== jQuery Functions ==========
-$(document).ready(function(){
-  console.log("jQuery is ready!");
-  
-  // Task 7: Notification System
-  function showToast(message, type = 'success') {
-    // Ensure container exists and is positioned correctly
-    let container = $('#toast-container');
-    if (container.length === 0) {
-      container = $('<div id="toast-container" style="position: fixed !important; top: 20px !important; right: 20px !important; z-index: 999999 !important; display: flex !important; flex-direction: column !important; gap: 12px !important; max-width: 380px !important;"></div>');
-      $('body').append(container);
-    }
-    
-    const toast = $(`
-      <div class="toast toast-${type}" style="position: relative !important; display: block !important;">
-        <div class="toast-content">
-          <span class="toast-message">${message}</span>
-          <button class="toast-close">&times;</button>
-        </div>
-      </div>
-    `);
-    
-    container.append(toast);
-    
-    // Show toast with enhanced animation
-    toast.css('display', 'block').addClass('toast-show');
-    
-    // Auto remove after 3 seconds with exit animation
-    setTimeout(() => {
-      toast.addClass('toast-hide').removeClass('toast-show');
-      setTimeout(() => {
-        toast.remove();
-      }, 400);
-    }, 3000);
-    
-    // Manual close button with animation
-    toast.find('.toast-close').on('click', function() {
-      toast.addClass('toast-hide fade-out').removeClass('toast-show');
-      setTimeout(() => {
-        toast.remove();
-      }, 300);
+/* 10) Lazy-loading для .lazy-image[data-src] */
+let io;
+function observeLazy(nodes){
+  if (!('IntersectionObserver' in window)){
+    nodes.forEach(img=>{
+      const src = img.getAttribute('data-src');
+      if (src) img.src = src;
+      img.classList.add('loaded');
     });
-    
-    // Click to dismiss
-    toast.on('click', function() {
-      toast.addClass('toast-hide fade-out').removeClass('toast-show');
-      setTimeout(() => {
-        toast.remove();
-      }, 300);
-    });
+    return;
   }
-  
-  // Add to cart functionality with notifications
-  $('.card .btn').on('click', function(e) {
-    e.preventDefault();
-    const productName = $(this).closest('.card').find('.card__title').text();
-    showToast(`Товар "${productName}" добавлен в корзину!`, 'success');
-  });
-  
-  // Form submission notification (for services page)
-  $('#contactForm').on('submit', function(e) {
-    e.preventDefault();
-    showToast('Форма успешно отправлена! Мы свяжемся с вами в ближайшее время.', 'info');
-    this.reset();
-  });
-  
-  // Task 8: Copy to Clipboard functionality
-  $('.copy-btn').on('click', function() {
-    const textToCopy = $(this).data('text');
-    const button = $(this);
-    const originalIcon = button.text();
-    
-    // Use the modern Clipboard API
-    navigator.clipboard.writeText(textToCopy).then(() => {
-      // Change text to checkmark
-      button.text('✓ Скопировано');
-      button.addClass('copied');
-      button.attr('title', 'Скопировано!');
-      
-      // Show tooltip
-      showToast('Скопировано в буфер обмена!', 'success');
-      
-      // Restore original text after 2 seconds
-      setTimeout(() => {
-        button.text(originalIcon);
-        button.removeClass('copied');
-        button.attr('title', button.attr('data-original-title') || 'Копировать');
-      }, 2000);
-    }).catch(err => {
-      // Fallback for older browsers
-      const textarea = $('<textarea>');
-      textarea.val(textToCopy);
-      $('body').append(textarea);
-      textarea.select();
-      document.execCommand('copy');
-      textarea.remove();
-      
-      button.text('✓ Скопировано');
-      button.addClass('copied');
-      showToast('Скопировано в буфер обмена!', 'success');
-      
-      setTimeout(() => {
-        button.text(originalIcon);
-        button.removeClass('copied');
-      }, 2000);
-    });
-  });
-  
-  // Task 9: Image Lazy Loading
-  function lazyLoadImages() {
-    const images = $('.lazy-image');
-    const windowHeight = $(window).height();
-    const scrollTop = $(window).scrollTop();
-    
-    images.each(function() {
-      const image = $(this);
-      const imageTop = image.offset().top;
-      
-      // Check if image is in viewport (with 100px buffer for smoother loading)
-      if (imageTop < scrollTop + windowHeight + 100 && !image.hasClass('loaded')) {
-        const dataSrc = image.attr('data-src');
-        
-        if (dataSrc) {
-          // Create new image to preload
-          const newImg = new Image();
-          newImg.onload = function() {
-            // Once loaded, replace src and add loaded class
-            image.attr('src', dataSrc);
-            image.addClass('loaded');
-            image.fadeIn(500); // Smooth fade-in effect
-          };
-          newImg.src = dataSrc;
+  if (!io){
+    io = new IntersectionObserver((entries, obs)=>{
+      entries.forEach(entry=>{
+        if (!entry.isIntersecting) return;
+        const img = entry.target;
+        const dataSrc = img.getAttribute('data-src');
+        if (dataSrc){
+          const tmp = new Image();
+          tmp.onload = ()=>{ img.src = dataSrc; img.classList.add('loaded'); };
+          tmp.src = dataSrc;
         }
-      }
-    });
+        obs.unobserve(img);
+      });
+    }, { rootMargin:'120px 0px' });
   }
-  
-  // Initial check and bind scroll event
-  lazyLoadImages();
-  $(window).on('scroll', lazyLoadImages);
-  $(window).on('resize', lazyLoadImages);
-});
+  nodes.forEach(n => io.observe(n));
+}
+observeLazy($$('.lazy-image[data-src]'));
+
+/* 11) Счётчики с учётом reduced motion */
+(function countersInit(){
+  const counters = $$('.counter');
+  if (!counters.length) return;
+  const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+
+  function animate(el){
+    const target = parseInt(el.getAttribute('data-target'),10) || 0;
+    if (reduced){ el.textContent = String(target); return; }
+    const duration = 800, start = performance.now(), from = 0;
+    function tick(now){
+      const p = Math.min(1, (now - start)/duration);
+      el.textContent = String(Math.floor(from + (target-from)*p));
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  const io = new IntersectionObserver((entries, obs)=>{
+    entries.forEach(e=>{
+      if (!e.isIntersecting) return;
+      animate(e.target);
+      obs.unobserve(e.target);
+    });
+  }, { rootMargin:'120px 0px' });
+
+  counters.forEach(c => io.observe(c));
+})();
+
+/* 12) Пример: форма подписки в модалке */
+(function subscribeFormInit(){
+  const form = document.getElementById('subscribeForm');
+  if (!form) return;
+  const email = document.getElementById('subEmail');
+  const err = document.getElementById('err-sub');
+
+  form.addEventListener('submit', (e)=>{
+    err.textContent = '';
+    if (!email.checkValidity()){
+      e.preventDefault();
+      email.setAttribute('aria-invalid','true');
+      err.textContent = 'Введите корректный email';
+      email.focus();
+      return;
+    }
+    e.preventDefault();
+    email.removeAttribute('aria-invalid');
+    showToast('Подписка оформлена! Проверьте почту.', 'info');
+    form.reset();
+  });
+})();
