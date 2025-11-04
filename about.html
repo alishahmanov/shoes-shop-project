@@ -10,9 +10,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <title>Shoes Shop</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="istyle.css">
+    <link rel="stylesheet" href="rstyles.css">
 </head>
 
 <body>
+<div id="scrollProgress"></div>
 
 <header>
     <div class="top-header">
@@ -135,6 +138,25 @@
     </div>
 </section>
 
+<section class="section stats">
+    <div class="container">
+        <h2>Наша статистика</h2>
+        <div class="stats__grid">
+            <div class="stat">
+                <span class="counter" data-target="13">0</span>
+                <p>Довольных клиентов</p>
+            </div>
+            <div class="stat">
+                <span class="counter" data-target="52">0</span>
+                <p>Выполненных заказов</p>
+            </div>
+            <div class="stat">
+                <span class="counter" data-target="3">0</span>
+                <p>Сотрудников</p>
+            </div>
+        </div>
+    </div>
+</section>
 
 <footer class="footer">
     <div class="footer__text">
@@ -166,6 +188,9 @@
     });
 </script>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="rscripts.js"></script>
+<script src="isscripts.js"></script>
 
 </body>
 </html>

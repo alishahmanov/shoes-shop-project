@@ -1,0 +1,923 @@
+/* =========================================================
+   jQuery Assignment 7, 8, 9 Styles for Category & Services Pages
+========================================================= */
+
+/* Theme variables: default is light */
+:root {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --text: #111827; /* gray-900 */
+  --muted: #6b7280; /* gray-500 */
+  --primary: #1f2937; /* near-black for headings */
+  --accent: #10b981;
+  --toast-bg: rgba(255, 255, 255, 0.98);
+  --toast-text: #1f2937;
+  --btn-bg: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+  --btn-text: #374151;
+  --link: #1d4ed8;
+}
+
+/* Dark theme overrides when body has .dark-theme */
+body.dark-theme {
+  --bg: #0b0f14; /* dark background */
+  --surface: #0f1724; /* slightly lighter surface */
+  --text: #e6eef8; /* light text */
+  --muted: #9ca3af;
+  --primary: #ffffff;
+  --accent: #34d399;
+  --toast-bg: rgba(15, 23, 36, 0.9);
+  --toast-text: #e6eef8;
+  --btn-bg: linear-gradient(135deg, #0f1724, #111827);
+  --btn-text: #e6eef8;
+  --link: #60a5fa;
+}
+
+/* Smoothly animate theme changes */
+body,
+.header,
+.navbar,
+.footer,
+.card,
+.toast {
+  transition: background-color 160ms ease, color 160ms ease,
+    border-color 160ms ease;
+}
+
+/* Apply variables */
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/* Links */
+a {
+  color: var(--link);
+}
+
+/* Buttons in navbar for toggle */
+.nav-btn {
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+.nav-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
+}
+
+/* Toast adapt to theme */
+body.dark-theme #toast-container .toast {
+  background: var(--toast-bg) !important;
+  color: var(--toast-text);
+  border: 1px solid rgba(255, 255, 255, 0.04) !important;
+}
+
+body.dark-theme .toast-message {
+  color: var(--toast-text);
+}
+
+/* Copy button adapt */
+.copy-btn {
+  background: var(--btn-bg);
+  color: var(--btn-text);
+}
+
+/* Toast Notification Styles - High Priority */
+body #toast-container {
+  position: fixed !important;
+  top: 20px !important;
+  right: 20px !important;
+  left: auto !important;
+  bottom: auto !important;
+  z-index: 999999 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
+  gap: 12px !important;
+  max-width: 380px !important;
+  width: auto !important;
+  height: auto !important;
+  pointer-events: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* More theme-aware component styles */
+header,
+.top-header,
+.navbar,
+.site-navbar,
+.site-navbar-actions,
+.header {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.top-header,
+.top-header-left,
+.top-header-right {
+  background: transparent;
+  color: var(--muted);
+}
+
+.navbar .nav-list a {
+  color: var(--text);
+}
+
+.navbar-actions a,
+.site-navbar-actions a,
+.button-create-your-own-design,
+.cart {
+  background: transparent;
+  color: var(--btn-text);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.footer {
+  background: var(--surface);
+  color: var(--muted);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.card,
+.cards .card,
+.filter-bar,
+.filters,
+.page,
+.hero,
+.banner,
+.section,
+.details__info,
+.about__grid {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Buttons and interactive elements */
+.btn,
+button,
+input[type="button"],
+input[type="submit"],
+.button-go-to-constructor {
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Form elements */
+input,
+select,
+textarea {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Search bar */
+.search-bar input#searchInput {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Improve image contrast on dark bg */
+.banner-img img,
+.hero__img img,
+.card img,
+.portfolio__gallery img {
+  filter: none;
+}
+
+/* Small tweaks for readability */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--primary);
+}
+
+/* Ensure toasts look good on dark */
+body.dark-theme #toast-container .toast {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Stronger dark-theme overrides for elements that have hard-coded light styles */
+body.dark-theme .nav-list {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+body.dark-theme .nav-list li a,
+body.dark-theme nav a {
+  color: var(--text) !important;
+}
+
+body.dark-theme .top-header {
+  background: transparent !important;
+  color: var(--muted) !important;
+}
+
+body.dark-theme .banner,
+body.dark-theme .custom-design,
+body.dark-theme .popular-shoes,
+body.dark-theme .why,
+body.dark-theme .services,
+body.dark-theme .details,
+body.dark-theme .cat,
+body.dark-theme .cards-for-index,
+body.dark-theme .cards,
+body.dark-theme .card__media,
+body.dark-theme .card,
+body.dark-theme .page,
+body.dark-theme .hero,
+body.dark-theme .section {
+  background: var(--surface) !important;
+  color: var(--text) !important;
+  border-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+body.dark-theme .card {
+  box-shadow: 0 6px 20px rgba(2, 6, 23, 0.6) !important;
+}
+
+body.dark-theme .banner-text .button-in-the-banner,
+body.dark-theme .button-go-to-constructor,
+body.dark-theme .button-create-your-own-design,
+body.dark-theme .cart,
+body.dark-theme .nav-btn,
+body.dark-theme .btn {
+  background: var(--btn-bg) !important;
+  color: var(--btn-text) !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+body.dark-theme .breadcrumb,
+body.dark-theme .breadcrumbs,
+body.dark-theme .muted,
+body.dark-theme .topbar {
+  color: var(--muted) !important;
+  border-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+body.dark-theme input,
+body.dark-theme select,
+body.dark-theme textarea {
+  background: rgba(255, 255, 255, 0.03) !important;
+  color: var(--text) !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+body.dark-theme .copyable-text {
+  background: rgba(255, 255, 255, 0.02) !important;
+  color: var(--text) !important;
+  border-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+/* make hr and separators subtle */
+body.dark-theme hr,
+body.dark-theme .bordered {
+  border-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+/* ensure images don't get lost on dark bg */
+body.dark-theme .hero__img img,
+body.dark-theme .banner-img img {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* small helpers for very bright elements defined in other CSS */
+body.dark-theme [style*="background: white"],
+body.dark-theme [style*="background: #fff"],
+body.dark-theme [style*="background-color: #fff"] {
+  background: var(--surface) !important;
+}
+
+/* Specific fixes requested: accordion (about), category cards/pagination, services chips */
+/* Accordion headers (FAQ) — make them subtle and readable on dark bg */
+body.dark-theme .accordion-header {
+  background: rgba(255, 255, 255, 0.03) !important;
+  color: var(--muted) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
+  box-shadow: none !important;
+}
+
+body.dark-theme .accordion-content {
+  background: rgba(255, 255, 255, 0.02) !important;
+  color: var(--text) !important;
+}
+
+/* Pagination: make container subtle and current page highlighted */
+body.dark-theme .pagination {
+  background: rgba(255, 255, 255, 0.02) !important;
+  padding: 18px !important;
+  border-radius: 20px !important;
+  box-shadow: 0 6px 20px rgba(2, 6, 23, 0.6) !important;
+}
+
+body.dark-theme .pagination a,
+body.dark-theme .pagination span {
+  color: rgba(230, 238, 248, 0.6) !important;
+}
+
+body.dark-theme .pagination a[aria-current="page"] {
+  background: var(--btn-bg) !important;
+  color: var(--btn-text) !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Services page chips/buttons: remove bright backgrounds, use subtle pill on dark bg */
+body.dark-theme .chip {
+  background: rgba(255, 255, 255, 0.03) !important;
+  color: var(--text) !important;
+  border: 1px solid rgba(255, 255, 255, 0.04) !important;
+  box-shadow: none !important;
+}
+
+/* Also reduce bright card/button styles used across pages */
+body.dark-theme .button-go-to-constructor,
+body.dark-theme .custom-text .button-go-to-constructor,
+body.dark-theme .custom-text .button-go-to-constructor:hover {
+  background: var(--btn-bg) !important;
+  color: var(--btn-text) !important;
+  box-shadow: none !important;
+}
+
+body #toast-container .toast {
+  pointer-events: all !important;
+  position: relative !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  transform: none !important;
+  float: none !important;
+}
+
+#toast-container .toast {
+  background: rgba(255, 255, 255, 0.98) !important;
+  backdrop-filter: blur(15px);
+  border-radius: 12px !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25), 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.8) !important;
+  display: none !important;
+  overflow: hidden;
+  position: relative !important;
+  width: 100%;
+  margin-bottom: 8px;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all 0.1s ease;
+  cursor: pointer;
+}
+
+#toast-container .toast:hover {
+  opacity: 0.8;
+  backdrop-filter: blur(20px);
+  border-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+#toast-container .toast:hover::after {
+  animation-play-state: paused;
+}
+
+#toast-container .toast.toast-show {
+  animation: slideInRight 0.2s ease forwards;
+}
+
+#toast-container .toast.toast-show.bounce-in {
+  animation: bounceIn 0.2s ease forwards;
+}
+
+#toast-container .toast.toast-hide {
+  animation: slideOutRight 0.2s ease forwards;
+}
+
+#toast-container .toast.toast-hide.fade-out {
+  animation: fadeOutDown 0.3s ease-in-out forwards;
+}
+
+.toast.toast-success {
+  border-left: 6px solid #10b981;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.98),
+    rgba(236, 253, 245, 0.95)
+  ) !important;
+  box-shadow: 0 12px 40px rgba(16, 185, 129, 0.2), 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+.toast.toast-success::before {
+  content: "✓";
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #059669;
+  font-weight: 900;
+  font-size: 18px;
+  animation: iconPulse 0.6s ease-out;
+  text-shadow: 0 2px 4px rgba(16, 185, 129, 0.3);
+  background: rgba(16, 185, 129, 0.1);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.toast::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #10b981, #059669);
+  animation: progressBar 3s linear forwards;
+  border-radius: 0 0 12px 12px;
+}
+
+.toast.toast-info::after {
+  background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+}
+
+.toast.toast-warning::after {
+  background: linear-gradient(90deg, #f59e0b, #d97706);
+}
+
+.toast.toast-error::after {
+  background: linear-gradient(90deg, #ef4444, #dc2626);
+}
+
+.toast.toast-info {
+  border-left: 6px solid #3b82f6;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.98),
+    rgba(239, 246, 255, 0.95)
+  ) !important;
+  box-shadow: 0 12px 40px rgba(59, 130, 246, 0.2), 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+.toast.toast-info::before {
+  content: "ℹ";
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #1d4ed8;
+  font-weight: 900;
+  font-size: 18px;
+  animation: iconPulse 0.6s ease-out;
+  text-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+  background: rgba(59, 130, 246, 0.1);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.toast.toast-warning {
+  border-left: 6px solid #f59e0b;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.98),
+    rgba(255, 251, 235, 0.95)
+  ) !important;
+  box-shadow: 0 12px 40px rgba(245, 158, 11, 0.2), 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+.toast.toast-error {
+  border-left: 6px solid #ef4444;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.98),
+    rgba(254, 242, 242, 0.95)
+  ) !important;
+  box-shadow: 0 12px 40px rgba(239, 68, 68, 0.2), 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+.toast.toast-warning::before {
+  content: "⚠";
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #d97706;
+  font-weight: 900;
+  font-size: 18px;
+  animation: iconPulse 0.6s ease-out;
+  text-shadow: 0 2px 4px rgba(245, 158, 11, 0.3);
+  background: rgba(245, 158, 11, 0.1);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.toast.toast-error::before {
+  content: "✕";
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #dc2626;
+  font-weight: 900;
+  font-size: 18px;
+  animation: iconPulse 0.6s ease-out;
+  text-shadow: 0 2px 4px rgba(239, 68, 68, 0.3);
+  background: rgba(239, 68, 68, 0.1);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.toast-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px 16px 45px;
+  gap: 12px;
+  position: relative;
+}
+
+.toast-message {
+  font-size: 15px;
+  color: #1f2937;
+  flex: 1;
+  line-height: 1.4;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.toast-close {
+  background: rgba(107, 114, 128, 0.15);
+  border: 1px solid rgba(107, 114, 128, 0.2);
+  font-size: 16px;
+  color: #4b5563;
+  cursor: pointer;
+  padding: 0;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: all 0.1s ease;
+  flex-shrink: 0;
+  font-weight: bold;
+}
+
+.toast-close:hover {
+  background: rgba(107, 114, 128, 0.3);
+  border-color: rgba(107, 114, 128, 0.4);
+  color: #1f2937;
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Toast Animations */
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutRight {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes iconPulse {
+  0% {
+    transform: translateY(-50%) scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-50%) scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-50%) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes progressBar {
+  0% {
+    width: 100%;
+    opacity: 1;
+  }
+  90% {
+    width: 10%;
+    opacity: 0.8;
+  }
+  100% {
+    width: 0%;
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Copy to Clipboard Styles */
+.copyable-text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0;
+  padding: 8px 12px;
+  background: rgba(249, 250, 251, 0.8);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.copyable-text:hover {
+  background: rgba(243, 244, 246, 0.9);
+  transform: translateY(-1px);
+}
+
+.copy-btn {
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+  border: 1px solid rgba(209, 213, 219, 0.6);
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.1s ease;
+  color: #6b7280;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.copy-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+}
+
+.copy-btn:hover {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.copy-btn-small {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.copy-btn:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.copy-btn.copied {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  border-color: #10b981;
+}
+
+.copy-btn.copied:hover {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+/* Lazy Loading Images Styles */
+.lazy-image {
+  transition: opacity 0.2s ease;
+  opacity: 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.lazy-image.loaded {
+  opacity: 1;
+}
+
+/* Loading placeholder for images */
+.lazy-image:not(.loaded) {
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.lazy-image:not(.loaded)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Smooth transitions for interactive elements */
+.card .btn {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card .btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.card .btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Enhance image hover effects */
+.card__media .lazy-image.loaded {
+  transition: transform 0.3s ease;
+}
+
+.card:hover .lazy-image.loaded {
+  transform: scale(1.05);
+}
+
+.portfolio__gallery .lazy-image.loaded:hover {
+  transform: scale(1.02) rotate(1deg);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  body #toast-container {
+    right: 12px !important;
+    left: 12px !important;
+    max-width: none !important;
+    top: 12px !important;
+    bottom: auto !important;
+    width: auto !important;
+  }
+
+  .toast-content {
+    padding: 14px 18px 14px 40px;
+  }
+
+  .toast-message {
+    font-size: 13px;
+    line-height: 1.3;
+  }
+
+  .copyable-text {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 12px;
+    margin: 6px 0;
+  }
+
+  .copy-btn {
+    align-self: flex-start;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .copy-btn-small {
+    width: auto;
+    align-self: flex-end;
+  }
+
+  /* Mobile toast animations */
+  body #toast-container .toast:hover {
+    transform: translateY(-2px) scale(1.01);
+  }
+
+  @keyframes slideInRightMobile {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  body #toast-container .toast.toast-show {
+    animation: slideInRightMobile 0.4s ease-out forwards;
+  }
+}
+
+/* EMERGENCY FIX - Toast positioning override with maximum specificity */
+html body div#toast-container {
+  position: fixed !important;
+  top: 20px !important;
+  right: 20px !important;
+  bottom: unset !important;
+  left: unset !important;
+  z-index: 9999999 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+html body div#toast-container div.toast {
+  position: relative !important;
+  margin-bottom: 8px !important;
+  display: block !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+}

@@ -1,115 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name = "description" content = "Assignment 2">
-  <meta name = "author" content = "Manat Alikhan, Iskander Akipov, Rauan Kuntuganov">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <title>Shoes Shop</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Assignment 7 - jQuery Search">
+    <meta name="author" content="Manat Alikhan, Iskander Akipov, Rauan Kuntuganov">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>Shoes Shop — Catalog</title>
+    <link rel="stylesheet" href="astyle.css">
+    <link rel="stylesheet" href="rstyles.css">
 </head>
 <body>
-<header>
-  <div class="top-header">
-    <div class="top-header-left">
-      <span>Режим работы: 10:00–20:00</span>
-      <span>Телефон: <a href="#">8(771)2159509</a></span>
+<header class="header">
+    <div class="top-header">
+        <div class="top-header-left">
+            <span>Режим работы: 10:00–20:00</span>
+            <span>Телефон: <a href="#">8(771)2159509</a></span>
+        </div>
+        <div class="top-header-right">
+            <span>Почта: <a href="#">iskander_alipov@mail.ru</a></span>
+            <span>Язык сайта: EN/RU</span>
+        </div>
     </div>
-    <div class="top-header-right">
-      <span>Почта: <a href="#">iskander_alipov@mail.ru</a></span>
-      <span>Язык сайта: EN/RU</span>
-    </div>
-  </div>
 
-  <nav class="navbar container">
-      <a href="index.html" class="logo">
-          <img src="Assets/sneaker21.jpeg" alt="Shoes Shop">
-      </a>
-    <ul class="nav-list">
-      <li><a href="about.html">О нас</a></li>
-      <li><a href="catalog.html">Каталог</a></li>
-      <li><a href="category.html">Категория</a></li>
-      <li><a href="order.html">Форма под заказ</a></li>
-      <li><a href="#">Вопросы</a></li>
-      <li><a href="#">Отзывы</a></li>
-      <li><a href="services.html">Услуги</a></li>
-    </ul>
+    <nav class="navbar container">
+        <a href="index.html" class="logo">
+            <img src="Assets/sneaker21.jpeg" alt="Shoes Shop">
+        </a>
+        <ul class="nav-list">
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="catalog.html" aria-current="page">Каталог</a></li>
+            <li><a href="category.html">Категория</a></li>
+            <li><a href="order.html">Форма под заказ</a></li>
+            <li><a href="#">Вопросы</a></li>
+            <li><a href="#">Отзывы</a></li>
+            <li><a href="services.html">Услуги</a></li>
+        </ul>
 
-    <div class="navbar-actions">
-      <a class="button-create-your-own-design" href="order.html">Создать свой дизайн</a>
-      <a class="cart" href="#">Корзина</a>
-    </div>
-  </nav>
+        <div class="navbar-actions">
+            <a class="button-create-your-own-design" href="order.html">Создать свой дизайн</a>
+            <a class="cart" href="#">Корзина</a>
+        </div>
+    </nav>
 </header>
+
 <main>
+
+
+    <section class="search-bar container">
+        <input type="text" id="searchInput" placeholder="Поиск по каталогу...">
+        <ul id="suggestions"></ul>
+    </section>
+
+
     <section class="container">
         <p>Выберите категорию</p>
         <div class="cards-for-index">
-            <div class="card">
-                <p>Мужская кроссовки</p>
-                <img src="Assets/sneaker7.jpeg" alt="Кроссовок">
-                <a href="#" class="btn">Купить</a>
-            </div>
-            <div class="card">
-                <p>Женские кроссовки</p>
-                <img src="Assets/sneaker6.jpeg" alt="Кроссовок">
-                <a href="#" class="btn">Купить</a>
-            </div>
-            <div class="card">
-                <p>Беговые</p>
-                <img src="Assets/sneaker5.jpeg" alt="Кроссовок">
-                <a href="#" class="btn">Купить</a>
-            </div>
-            <div class="card">
-                <p>Волейбольные</p>
-                <img src="Assets/sneaker1.jpeg" alt="Кроссовок">
-                <a href="#" class="btn">Купить</a>
-            </div>
-            <div class="card">
-                <p>Борцовки</p>
-                <img src="Assets/sneaker9.jpeg" alt="Кроссовок">
-                <a href="#" class="btn">Купить</a>
-            </div>
-            <div class="card">
-                <p>Боксерки</p>
-                <img src="Assets/sneaker12.jpeg" alt="Кроссовок">
-                <a href="#" class="btn">Купить</a>
-            </div>
-            <div class="card">
-                <p>Баскетбольные</p>
-                <img src="Assets/sneaker10.jpeg" alt="Кроссовок">
-                <a href="#" class="btn">Купить</a>
-            </div>
-            <div class="card">
-                <p>Тренировочные</p>
-                <img src="Assets/sneaker13.jpeg" alt="Кроссовок">
-                <a href="#" class="btn">Купить</a>
-            </div>
-            <div class="card">
-                <p>Лайфстайл</p>
-                <img src="Assets/sneaker19.jpeg" alt="Кроссовок">
-                <a href="#" class="btn">Купить</a>
-            </div>
-            <div class="card">
-                <p>Горные</p>
-                <img src="Assets/sneaker16.jpeg" alt="Кроссовок">
-                <a href="#" class="btn">Купить</a>
-            </div>
-            <div class="card">
-                <p>Теннисные</p>
-                <img src="Assets/sneaker6.jpeg" alt="Кроссовок">
-                <a href="#" class="btn">Купить</a>
-            </div>
-            <div class="card">
-                <p>Скейтерские</p>
-                <img src="Assets/sneaker2.jpeg" alt="Кроссовок">
-                <a href="#" class="btn">Купить</a>
-            </div>
+            <div class="card"><p>Мужские кроссовки</p><img src="Assets/sneaker7.jpeg" alt="Кроссовок"><a href="#" class="btn">Купить</a></div>
+            <div class="card"><p>Женские кроссовки</p><img src="Assets/sneaker6.jpeg" alt="Кроссовок"><a href="#" class="btn">Купить</a></div>
+            <div class="card"><p>Беговые</p><img src="Assets/sneaker5.jpeg" alt="Кроссовок"><a href="#" class="btn">Купить</a></div>
+            <div class="card"><p>Волейбольные</p><img src="Assets/sneaker1.jpeg" alt="Кроссовок"><a href="#" class="btn">Купить</a></div>
+            <div class="card"><p>Борцовки</p><img src="Assets/sneaker9.jpeg" alt="Кроссовок"><a href="#" class="btn">Купить</a></div>
+            <div class="card"><p>Боксерки</p><img src="Assets/sneaker12.jpeg" alt="Кроссовок"><a href="#" class="btn">Купить</a></div>
+            <div class="card"><p>Баскетбольные</p><img src="Assets/sneaker10.jpeg" alt="Кроссовок"><a href="#" class="btn">Купить</a></div>
+            <div class="card"><p>Тренировочные</p><img src="Assets/sneaker13.jpeg" alt="Кроссовок"><a href="#" class="btn">Купить</a></div>
+            <div class="card"><p>Лайфстайл</p><img src="Assets/sneaker19.jpeg" alt="Кроссовок"><a href="#" class="btn">Купить</a></div>
+            <div class="card"><p>Горные</p><img src="Assets/sneaker16.jpeg" alt="Кроссовок"><a href="#" class="btn">Купить</a></div>
+            <div class="card"><p>Теннисные</p><img src="Assets/sneaker6.jpeg" alt="Кроссовок"><a href="#" class="btn">Купить</a></div>
+            <div class="card"><p>Скейтерские</p><img src="Assets/sneaker2.jpeg" alt="Кроссовок"><a href="#" class="btn">Купить</a></div>
         </div>
     </section>
+
+
     <section class="popular-shoes container">
         <h2>Популярные кроссовки</h2>
         <div class="cards">
@@ -136,31 +100,35 @@
         </div>
     </section>
 
+
     <section class="custom-design container">
-    <div class="custom-text">
-      <h2>Создайте свою уникальную обувь</h2>
-      <p>
-        Воспользуйтесь нашим онлайн-конструктором кроссовок
-        и создайте модель по своему вкусу.
-        Вы можете выбрать цвет, добавить логотип или рисунок.
-        А мы изготовим для вас уникальную пару обуви.
-      </p>
-      <a href="order.html" class="button-go-to-constructor">Открыть конструктор</a>
-    </div>
-    <div class="custom-img">
-      <img src="Assets/sneaker14.jpeg" alt="Кроссовки с уникальным дизайном">
-    </div>
-  </section>
+        <div class="custom-text">
+            <h2>Создайте свою уникальную обувь</h2>
+            <p>
+                Воспользуйтесь нашим онлайн-конструктором кроссовок
+                и создайте модель по своему вкусу. Вы можете выбрать цвет,
+                добавить логотип или рисунок, а мы изготовим для вас уникальную пару обуви.
+            </p>
+            <a href="order.html" class="button-go-to-constructor">Открыть конструктор</a>
+        </div>
+        <div class="custom-img">
+            <img src="Assets/sneaker14.jpeg" alt="Кроссовки с уникальным дизайном">
+        </div>
+    </section>
 </main>
+
 <footer class="footer">
-  <div class="footer__text">
-    Команда: <strong>KAA</strong> • Участники: Rauan K., Alikhan M., Iskander A. • Группа: SE-2401
-  </div>
-  <a href="https://github.com/alishahmanov/shoes-shop-project"
-     target="_blank" rel="noopener"
-     aria-label="Открыть наш GitHub">
-    <img src="Assets/git-hub-logo.png" alt="GitHub" id="footer__logo">
-  </a>
+    <div class="footer__text">
+        Команда: <strong>KAA</strong> • Участники: Rauan K., Alikhan M., Iskander A. • Группа: SE-2401
+    </div>
+    <a href="https://github.com/alishahmanov/shoes-shop-project" target="_blank" rel="noopener" aria-label="GitHub">
+        <img src="Assets/git-hub-logo.png" alt="GitHub" id="footer__logo">
+    </a>
 </footer>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="search.js"></script>
+<script src="rscripts.js"></script>
 </body>
 </html>
