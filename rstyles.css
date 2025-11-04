@@ -19,9 +19,9 @@
 
 /* Dark theme overrides when body has .dark-theme */
 body.dark-theme {
-  --bg: #0b0f14; /* dark background */
-  --surface: #0f1724; /* slightly lighter surface */
-  --text: #e6eef8; /* light text */
+  --bg: #0b0f14;
+  --surface: #0f1724;
+  --text: #e6eef8;
   --muted: #9ca3af;
   --primary: #ffffff;
   --accent: #34d399;
@@ -32,7 +32,7 @@ body.dark-theme {
   --link: #60a5fa;
 }
 
-/* Smoothly animate theme changes */
+
 body,
 .header,
 .navbar,
@@ -43,18 +43,18 @@ body,
     border-color 160ms ease;
 }
 
-/* Apply variables */
+
 body {
   background-color: var(--bg);
   color: var(--text);
 }
 
-/* Links */
+
 a {
   color: var(--link);
 }
 
-/* Buttons in navbar for toggle */
+
 .nav-btn {
   background: var(--btn-bg);
   color: var(--btn-text);
@@ -71,7 +71,7 @@ a {
   box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
 }
 
-/* Toast adapt to theme */
+
 body.dark-theme #toast-container .toast {
   background: var(--toast-bg) !important;
   color: var(--toast-text);
@@ -82,13 +82,13 @@ body.dark-theme .toast-message {
   color: var(--toast-text);
 }
 
-/* Copy button adapt */
+
 .copy-btn {
   background: var(--btn-bg);
   color: var(--btn-text);
 }
 
-/* Toast Notification Styles - High Priority */
+
 body #toast-container {
   position: fixed !important;
   top: 20px !important;
@@ -171,7 +171,6 @@ input[type="submit"],
   border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-/* Form elements */
 input,
 select,
 textarea {
@@ -180,14 +179,14 @@ textarea {
   border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-/* Search bar */
+
 .search-bar input#searchInput {
   background: rgba(255, 255, 255, 0.03);
   color: var(--text);
   border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-/* Improve image contrast on dark bg */
+
 .banner-img img,
 .hero__img img,
 .card img,
@@ -195,7 +194,7 @@ textarea {
   filter: none;
 }
 
-/* Small tweaks for readability */
+
 h1,
 h2,
 h3,
@@ -205,12 +204,12 @@ h6 {
   color: var(--primary);
 }
 
-/* Ensure toasts look good on dark */
+
 body.dark-theme #toast-container .toast {
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(0, 0, 0, 0.4) !important;
 }
 
-/* Stronger dark-theme overrides for elements that have hard-coded light styles */
+
 body.dark-theme .nav-list {
   background: rgba(255, 255, 255, 0.02) !important;
   border-color: rgba(255, 255, 255, 0.06) !important;
@@ -301,8 +300,7 @@ body.dark-theme [style*="background-color: #fff"] {
   background: var(--surface) !important;
 }
 
-/* Specific fixes requested: accordion (about), category cards/pagination, services chips */
-/* Accordion headers (FAQ) — make them subtle and readable on dark bg */
+
 body.dark-theme .accordion-header {
   background: rgba(255, 255, 255, 0.03) !important;
   color: var(--muted) !important;
