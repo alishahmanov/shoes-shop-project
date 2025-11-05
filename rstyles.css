@@ -32,7 +32,6 @@ body.dark-theme {
   --link: #60a5fa;
 }
 
-
 body,
 .header,
 .navbar,
@@ -43,17 +42,14 @@ body,
     border-color 160ms ease;
 }
 
-
 body {
   background-color: var(--bg);
   color: var(--text);
 }
 
-
 a {
   color: var(--link);
 }
-
 
 .nav-btn {
   background: var(--btn-bg);
@@ -71,7 +67,6 @@ a {
   box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
 }
 
-
 body.dark-theme #toast-container .toast {
   background: var(--toast-bg) !important;
   color: var(--toast-text);
@@ -82,12 +77,10 @@ body.dark-theme .toast-message {
   color: var(--toast-text);
 }
 
-
 .copy-btn {
   background: var(--btn-bg);
   color: var(--btn-text);
 }
-
 
 body #toast-container {
   position: fixed !important;
@@ -179,13 +172,11 @@ textarea {
   border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-
 .search-bar input#searchInput {
   background: rgba(255, 255, 255, 0.03);
   color: var(--text);
   border: 1px solid rgba(255, 255, 255, 0.06);
 }
-
 
 .banner-img img,
 .hero__img img,
@@ -193,7 +184,6 @@ textarea {
 .portfolio__gallery img {
   filter: none;
 }
-
 
 h1,
 h2,
@@ -204,11 +194,9 @@ h6 {
   color: var(--primary);
 }
 
-
 body.dark-theme #toast-container .toast {
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(0, 0, 0, 0.4) !important;
 }
-
 
 body.dark-theme .nav-list {
   background: rgba(255, 255, 255, 0.02) !important;
@@ -299,7 +287,6 @@ body.dark-theme [style*="background: #fff"],
 body.dark-theme [style*="background-color: #fff"] {
   background: var(--surface) !important;
 }
-
 
 body.dark-theme .accordion-header {
   background: rgba(255, 255, 255, 0.03) !important;
@@ -918,4 +905,199 @@ html body div#toast-container div.toast {
   right: auto !important;
   bottom: auto !important;
   left: auto !important;
+}
+
+/* =========================================================
+   Dark Theme Styles for FAQ & Reviews Pages
+========================================================= */
+
+/* FAQ Page Dark Styles */
+body.dark-theme .faq {
+  background: var(--surface) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+}
+
+body.dark-theme .faq summary {
+  background: rgba(255, 255, 255, 0.03) !important;
+  color: var(--text) !important;
+}
+
+body.dark-theme .faq[open] summary {
+  background: rgba(255, 255, 255, 0.06) !important;
+}
+
+body.dark-theme .faq__content {
+  color: var(--text) !important;
+}
+
+body.dark-theme .faq__content p {
+  color: var(--text) !important;
+}
+
+body.dark-theme .faq__content a {
+  color: var(--link) !important;
+}
+
+body.dark-theme .filters {
+  background: var(--surface) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+body.dark-theme .filters h3 {
+  color: var(--primary) !important;
+}
+
+body.dark-theme .filters label {
+  color: var(--text) !important;
+}
+
+/* Reviews Page Dark Styles */
+body.dark-theme .review-card {
+  background: var(--surface) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+}
+
+body.dark-theme .review-meta {
+  color: var(--muted) !important;
+}
+
+body.dark-theme .review-text {
+  color: var(--text) !important;
+}
+
+body.dark-theme .stars {
+  color: #f59e0b !important;
+}
+
+body.dark-theme .avatar {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Form elements on Reviews page */
+body.dark-theme .form-label {
+  color: var(--text) !important;
+}
+
+body.dark-theme .form-control,
+body.dark-theme .form-select {
+  background: rgba(255, 255, 255, 0.03) !important;
+  color: var(--text) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+body.dark-theme .form-control:focus,
+body.dark-theme .form-select:focus {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: var(--accent) !important;
+  color: var(--text) !important;
+}
+
+body.dark-theme .form-control::placeholder {
+  color: var(--muted) !important;
+  opacity: 0.7;
+}
+
+/* =========================================================
+   Dark Theme Styles for Order Page
+========================================================= */
+
+/* Form check elements (checkboxes & radio) */
+body.dark-theme .form-check-label {
+  color: var(--text) !important;
+}
+
+body.dark-theme .form-check-input {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+body.dark-theme .form-check-input:checked {
+  background-color: var(--accent) !important;
+  border-color: var(--accent) !important;
+}
+
+body.dark-theme .form-check-input:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 0.25rem rgba(52, 211, 153, 0.25) !important;
+}
+
+/* Form text (helper text) */
+body.dark-theme .form-text {
+  color: var(--muted) !important;
+}
+
+/* Color input */
+body.dark-theme .form-control-color {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Preview section borders */
+body.dark-theme .ratio.border,
+body.dark-theme .border {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+body.dark-theme .rounded {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* Preview reference image background */
+body.dark-theme #previewRef {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Text muted in order page */
+body.dark-theme .text-muted,
+body.dark-theme .small.text-muted {
+  color: var(--muted) !important;
+}
+
+/* HR separator */
+body.dark-theme hr {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  opacity: 1;
+}
+
+/* Price display elements */
+body.dark-theme #priceBase,
+body.dark-theme #priceExtras,
+body.dark-theme #priceDelivery,
+body.dark-theme #priceTotal,
+body.dark-theme #qtyText {
+  color: var(--text) !important;
+}
+
+/* Submit button message area */
+body.dark-theme #formMessage {
+  color: var(--text) !important;
+}
+
+/* File input */
+body.dark-theme input[type="file"].form-control {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+  color: var(--text) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+body.dark-theme input[type="file"].form-control::file-selector-button {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  color: var(--text) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Number input buttons */
+body.dark-theme input[type="number"] {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+  color: var(--text) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Color input specific styling */
+body.dark-theme input[type="color"] {
+  border-color: rgba(255, 255, 255, 0.08) !important;
 }
