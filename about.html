@@ -49,22 +49,19 @@
             <li><a href="catalog.html">Каталог</a></li>
             <li><a href="category.html">Категория</a></li>
             <li><a href="order.html">Форма под заказ</a></li>
-            <li><a href="#faq">Вопросы</a></li>
-            <li><a href="#reviews">Отзывы</a></li>
+            <li><a href="faq.html">Вопросы</a></li>
+            <li><a href="reviews.html">Отзывы</a></li>
             <li><a href="services.html">Услуги</a></li>
         </ul>
 
         <div class="navbar-actions">
             <a class="button-create-your-own-design nav-btn" href="order.html">Создать свой дизайн</a>
             <a class="cart nav-btn" href="#cart" aria-label="Открыть корзину">Корзина</a>
-            <!-- Кнопка темы добавится скриптом -->
         </div>
     </nav>
 </header>
 
-<!-- Main -->
 <main id="main">
-    <!-- Hero / Banner -->
     <section class="banner container" aria-labelledby="hero-title">
         <div class="banner-text">
             <h1 id="hero-title">Кастомные кроссовки под ваш стиль</h1>
@@ -76,7 +73,6 @@
         </div>
     </section>
 
-    <!-- Что ищете -->
     <section class="container what-do-you-searching" aria-labelledby="searching-title">
         <h2 id="searching-title">Что ищете?</h2>
         <div class="cards-for-index" role="list">
@@ -100,7 +96,6 @@
             </article>
         </div>
 
-        <!-- Фильтр по цене (пример рабочей кнопки/селекта) -->
         <div class="filter-bar" style="margin-top:16px;">
             <label for="priceFilter">Фильтр по цене:</label>
             <select id="priceFilter" aria-controls="product-list">
@@ -112,7 +107,6 @@
         </div>
     </section>
 
-    <!-- Галерея + кнопка "Показать больше" -->
     <section class="portfolio container" aria-labelledby="portfolio-title">
         <h2 id="portfolio-title">Галерея</h2>
         <div class="portfolio__gallery" id="product-list">
@@ -126,7 +120,6 @@
         </div>
     </section>
 
-    <!-- FAQ (аккордеон) -->
     <section class="section faq container" id="faq" aria-labelledby="faq-title">
         <h2 id="faq-title">Часто задаваемые вопросы</h2>
         <div class="accordion" role="region" aria-label="FAQ">
@@ -151,7 +144,6 @@
         </div>
     </section>
 
-    <!-- Статистика (счётчики) -->
     <section class="section stats container" aria-labelledby="stats-title">
         <h2 id="stats-title">Нам доверяют</h2>
         <div class="stats__grid">
@@ -162,7 +154,6 @@
     </section>
 </main>
 
-<!-- Footer -->
 <footer class="footer" role="contentinfo">
     <div class="footer__text">
         Команда: <strong>KAA</strong> • Участники: Rauan K., Alikhan M., Iskander A. • Группа: SE-2401
@@ -172,7 +163,7 @@
     </a>
 </footer>
 
-<!-- Popup (пример рабочей кнопки/модалки) -->
+
 <div id="popup" class="popup" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
     <div class="popup-content" role="document" tabindex="-1">
         <h3 id="popupTitle">Подписка на новости</h3>
@@ -187,9 +178,7 @@
     </div>
 </div>
 
-<!-- jQuery (для уведомлений/совместимости) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<!-- Main scripts (Part 2) -->
 <script src="rscripts.js"></script>
 </body>
 </html>

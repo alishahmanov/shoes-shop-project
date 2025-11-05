@@ -776,10 +776,6 @@ a {
   gap: 16px;
 }
 
-/* =========================================================
-   Accordion (Task 2)
-   (анимация переименована в fadeInDown)
-========================================================= */
 .accordion {
   margin-top: 20px;
   border-radius: 8px;
@@ -815,15 +811,13 @@ a {
   display: block;
 }
 
-/* была конфликтная @keyframes fadeIn — разделил на две */
+
 @keyframes fadeInDown {
   from { opacity: 0; transform: translateY(-5px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* =========================================================
-   Popup Contact/Subscription Form (Task 3)
-========================================================= */
+
 .popup {
   display: none;
   position: fixed;
@@ -861,10 +855,7 @@ a {
   cursor: pointer;
 }
 
-/* =========================================================
-   Current Time Block (Task 5)
-   (анимация — fadeInUp, чтобы не конфликтовала с аккордеоном)
-========================================================= */
+
 #current-time {
   background: linear-gradient(135deg, #fafafa 0%, #f3f3f3 100%);
   border-top: 2px solid #e5e5e5;
@@ -989,4 +980,129 @@ a {
     height: 40px;
     padding: 0 12px;
   }
+}
+
+html { scroll-behavior: smooth; }
+body { overflow-x: hidden; }
+img { height: auto; }
+
+.hero__img img,
+.image-box img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.banner-text h1 {
+    font-size: clamp(28px, 6vw, 82px);
+}
+.banner-text p {
+    font-size: clamp(16px, 3.2vw, 42px);
+}
+
+
+@media (max-width: 1200px) {
+    .page {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+    }
+    .filters { position: static; }
+}
+
+.cards { --min: 220px; }
+
+.card img {
+    object-fit: contain;
+}
+
+
+
+@media (max-width: 992px) {
+    .custom-design {
+        flex-direction: column;
+        gap: 18px;
+        text-align: center;
+    }
+    .custom-text {
+        max-width: 100%;
+    }
+    .custom-img {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+
+.about__grid {
+    flex-wrap: wrap;
+}
+.image-box {
+    max-width: 100%;
+}
+.features__list {
+    grid-template-columns: 1fr;
+}
+
+@media (max-width: 992px) {
+    .works__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .cats__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .details__grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 576px) {
+    .works__grid,
+    .cats__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.req__grid {
+    grid-template-columns: 1fr;
+}
+.req__item {
+    grid-template-columns: 1fr;
+}
+.req__img {
+    height: auto;
+}
+
+
+.navbar,
+.navbar-actions,
+.nav-list {
+    min-width: 0;
+}
+
+@media (max-width: 420px) {
+    .top-header-left,
+    .top-header-right {
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.footer a {
+    display: inline-block;
+    padding: 6px 2px;
+}
+
+
+a:focus-visible,
+button:focus-visible,
+.nav-btn:focus-visible {
+    outline: 2px solid #111;
+    outline-offset: 2px;
+    box-shadow: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
 }
