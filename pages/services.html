@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8" />
@@ -9,9 +9,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
     <title>Shoes Shop — Услуги</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="astyles.css" />
-    <link rel="stylesheet" href="rstyles.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/astyles.css" />
+    <link rel="stylesheet" href="../css/rstyles.css" />
+    
+    <!-- Адаптивные стили для мобильных устройств -->
+    <link rel="stylesheet" href="../css/istyle.css" />
+    <link rel="stylesheet" href="../css/mobile-nav.css" />
 </head>
 
 <body>
@@ -29,7 +33,7 @@
 
     <nav class="navbar container">
         <a href="index.html" class="logo">
-            <img src="Assets/sneaker21.jpeg" alt="Shoes Shop" />
+            <img src="../Assets/sneaker21.jpeg" alt="Shoes Shop" />
         </a>
         <ul class="nav-list">
             <li><a href="about.html">О нас</a></li>
@@ -43,7 +47,7 @@
 
         <div class="navbar-actions">
             <a class="button-create-your-own-design" href="order.html">Создать свой дизайн</a>
-            <a class="cart" href="#">Корзина</a>
+            <a class="cart" href="cart.html" aria-label="Открыть корзину">Корзина (<span id="cart-count">0</span>)</a>
         </div>
     </nav>
 </header>
@@ -68,9 +72,9 @@
     <section class="portfolio container">
         <h3>Примеры наших работ</h3>
         <div class="portfolio__gallery">
-            <img src="Assets/sneaker15.jpeg" alt="Пример работы #1" loading="lazy" />
-            <img src="Assets/sneaker17.jpeg" alt="Пример работы #2" loading="lazy" />
-            <img src="Assets/sneaker14.jpeg" alt="Пример работы #3" loading="lazy" />
+            <img src="../Assets/sneaker15.jpeg" alt="Пример работы #1" loading="lazy" />
+            <img src="../Assets/sneaker17.jpeg" alt="Пример работы #2" loading="lazy" />
+            <img src="../Assets/sneaker14.jpeg" alt="Пример работы #3" loading="lazy" />
         </div>
     </section>
 
@@ -89,7 +93,7 @@
                 <p>ОГРН: 1047712345678</p>
             </div>
             <div class="details__map">
-                <img src="Assets/map.jpeg" alt="Карта проезда" loading="lazy" />
+                <img src="../Assets/map.jpeg" alt="Карта проезда" loading="lazy" />
             </div>
         </div>
     </section>
@@ -109,7 +113,7 @@
         Команда: <strong>KAA</strong> • Участники: Rauan K., Alikhan M., Iskander A. • Группа: SE-2401
     </div>
     <a href="https://github.com/alishahmanov/shoes-shop-project" target="_blank" rel="noopener" aria-label="Открыть наш GitHub">
-        <img src="Assets/git-hub-logo.png" alt="GitHub" id="footer__logo" />
+        <img src="../Assets/git-hub-logo.png" alt="GitHub" id="footer__logo" />
     </a>
 </footer>
 
@@ -129,8 +133,11 @@
 </div>
 
 <!-- общий проектный скрипт (если используешь) -->
-<script src="rscripts.js" defer></script>
+<script src="../js/rscripts.js" defer></script>
 <!-- скрипт только для этой страницы -->
 <script src="services.js" defer></script>
+
+<!-- Мобильная навигация и адаптивные улучшения -->
+<script src="../js/mobile-nav.js"></script>
 </body>
 </html>
