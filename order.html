@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name = "description" content = "Assignment 2">
-    <meta name = "author" content = "Manat Alikhan, Iskander Akipov, Rauan Kuntuganov">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <title>Shoes Shop</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Shoes Shop — оформить индивидуальный заказ" />
+    <meta name="author" content="Manat Alikhan, Iskander Akipov, Rauan Kuntuganov" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+
+    <title>Shoes Shop — Форма под заказ</title>
+
+    <!-- libs + твои стили -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="astyles.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="istyle.css" />
+    <link rel="stylesheet" href="rstyles.css" />
 </head>
 
 <body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-<header>
+<header class="header">
     <div class="top-header">
         <div class="top-header-left">
             <span>Режим работы: 10:00–20:00</span>
@@ -28,179 +32,219 @@
         </div>
     </div>
 
-    <nav class="site-navbar container">
-        <a href="index.html" class="logo">
-            <img src="Assets/sneaker21.jpeg" alt="Shoes Shop">
+    <nav class="navbar container">
+        <a href="index.html" class="logo" aria-label="На главную">
+            <img src="Assets/sneaker21.jpeg" alt="Логотип Shoes Shop" />
         </a>
         <ul class="nav-list">
             <li><a href="about.html">О нас</a></li>
             <li><a href="catalog.html">Каталог</a></li>
             <li><a href="category.html">Категория</a></li>
-            <li><a href="order.html">Форма под заказ</a></li>
-            <li><a href="#">Вопросы</a></li>
-            <li><a href="#">Отзывы</a></li>
+            <li><a href="order.html" aria-current="page">Форма под заказ</a></li>
+            <li><a href="faq.html">Вопросы</a></li>
+            <li><a href="reviews.html">Отзывы</a></li>
             <li><a href="services.html">Услуги</a></li>
         </ul>
 
-        <div class="site-navbar-actions">
+        <div class="navbar-actions">
             <a class="button-create-your-own-design" href="order.html">Создать свой дизайн</a>
             <a class="cart" href="#">Корзина</a>
+            <button id="changeColorBtn" class="nav-btn" type="button">Сменить фон</button>
         </div>
     </nav>
 </header>
-<div class="container breadcrumbs my-3 my-lg-4">
 
-    <a href="#">Каталог обуви</a> · <a href="#">Спортивная обувь</a> · <span>Обувь под заказ</span>
-    <hr>
-    <section class="typography-demo container my-3 my-lg-4">
-        <h1>Shoes Shop — кастом кроссовок</h1>
-        <h2>Дизайн под ваш стиль</h2>
-        <p>Носибельные материалы, стойкое покрытие, индивидуальные эскизы.</p>
-    </section>
-</div>
+<main class="container my-4 my-lg-5">
+    <h1 class="mb-3">Индивидуальный заказ</h1>
+    <p class="text-muted mb-4">Заполните форму, выберите модель, цвет и опции — стоимость посчитается автоматически.</p>
 
-
-<section class="hero py-3 py-lg-4">
-    <div class="container py-3 py-lg-4">
-        <div class="hero__grid">
-            <div>
-                <h1 class="hero__title">Разработка и пошив спортивной обуви с индивидуальным дизайном</h1>
-            </div>
-            <div class ="hero__img">
-                <img src="Assets/sneaker23.jpeg" alt="sneakers">
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<section class="section cats" id="cats">
-    <div class="container py-3 py-lg-4">
-        <h2>Какая обувь вам нужна?</h2>
-        <div class="cats__grid" style="margin-top:14px">
-            <figure class="cat">
-                <img src="Assets/sneaker18.jpeg" alt="Боксерки" />
-                <figcaption class="cat__title">Боксерки</figcaption>
-            </figure>
-
-            <figure class="cat">
-                <img src="Assets/sneaker20.jpeg" alt="Борцовки" />
-                <figcaption class="cat__title">Борцовки</figcaption>
-            </figure>
-
-            <figure class="cat">
-                <img src="Assets/sneaker19.jpeg" alt="Бутцы" />
-                <figcaption class="cat__title">Бутцы</figcaption>
-            </figure>
-
-            <figure class="cat">
-                <img src="Assets/sneaker22.jpeg" alt="Волейбольные кроссовки" />
-                <figcaption class="cat__title">Волейбольные кроссовки</figcaption>
-            </figure>
-
-            <figure class="cat">
-                <img src="Assets/sneaker4.jpeg" alt="Беговые кроссовки" />
-                <figcaption class="cat__title">Беговые кроссовки</figcaption>
-            </figure>
-
-            <figure class="cat">
-                <img src="Assets/sneaker2.jpeg" alt="Баскетбольные кроссовки" />
-                <figcaption class="cat__title">Баскетбольный кроссовки</figcaption>
-            </figure>
-        </div>
-    </div>
-</section>
-
-
-<section class="section why" id="why">
-    <div class="container why__box">
-        <h2>Почему изготовление обуви нужно заказать у нас:</h2>
-        <ul class="ul">
-            <li>Быстрое изготовление.</li>
-            <li>Контролируем качество на каждом этапе.</li>
-            <li>Создаём заметные и яркие модели.</li>
-            <li>Обувь уникальна и отражает дух команды.</li>
-            <li>Профессиональные «дышащие» материалы.</li>
-            <li>Износостойкость, выдерживает постоянные стирки.</li>
-            <li>Комфорт: не жмёт и не натирает.</li>
-        </ul>
-    </div>
-</section>
-
-
-<section class="section req" id="req">
-    <div class="container py-3 py-lg-4">
-        <h2>Что вам требуется?</h2>
-        <div class="req__grid" style="margin-top:12px">
-            <div class="card req__item">
-                <div>
-                    <h3>Разработка уникального дизайна командной обуви</h3>
-                    <p class="muted">Единый стиль обуви разрабатывается по вашему запросу профессиональными дизайнерами с учётом пожеланий и фирменной айдентики.</p>
-                    <p class="muted">Дальнейшее шьём по меркам и с возможностью корректировок.</p>
-
-                    <form id="requestForm" class="req__cta">
-                        <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
-                        <input type="email" id="email" name="email" placeholder="Введите ваш email" required>
-                        <input type="tel" id="phone" name="phone" placeholder="Введите номер телефона" required>
-                        <button type="submit" class="btn w-100 mt-2">Оставить заявку</button>
-                        <p id="formMessage" class="mt-2 text-danger"></p>
-                    </form>
-
-
-
+    <div class="row g-4">
+        <!-- Колонка: форма -->
+        <div class="col-12 col-lg-7">
+            <form id="orderForm" novalidate>
+                <!-- Контакты -->
+                <div class="card p-3 p-lg-4 mb-3">
+                    <h5 class="mb-3">Контактные данные</h5>
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <label for="name" class="form-label">Имя</label>
+                            <input id="name" name="name" class="form-control" type="text" placeholder="Введите ваше имя" required />
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label for="phone" class="form-label">Телефон</label>
+                            <input id="phone" name="phone" class="form-control" type="tel" placeholder="+7 700 000 00 00" required />
+                        </div>
+                        <div class="col-12">
+                            <label for="email" class="form-label">Email</label>
+                            <input id="email" name="email" class="form-control" type="email" placeholder="you@mail.com" required />
+                        </div>
+                    </div>
                 </div>
-                    <img src="Assets/planOfSneaker.jpeg" alt="planOfSneaker" />
+
+                <!-- Параметры модели -->
+                <div class="card p-3 p-lg-4 mb-3">
+                    <h5 class="mb-3">Параметры модели</h5>
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <label for="model" class="form-label">Модель</label>
+                            <select id="model" name="model" class="form-select" required>
+                                <!-- data-price — базовая цена модели -->
+                                <option value="" disabled selected>Выберите модель</option>
+                                <option value="runner" data-price="350">Runner (беговые)</option>
+                                <option value="basket" data-price="420">Basket Pro (баскетбольные)</option>
+                                <option value="volley" data-price="390">Volley Air (волейбольные)</option>
+                                <option value="lifestyle" data-price="320">Lifestyle (лёгкие)</option>
+                            </select>
+                        </div>
+
+                        <div class="col-6 col-md-3">
+                            <label for="size" class="form-label">Размер (EU)</label>
+                            <select id="size" name="size" class="form-select" required>
+                                <option value="" disabled selected>—</option>
+                                <option>38</option><option>39</option><option>40</option><option>41</option>
+                                <option>42</option><option>43</option><option>44</option><option>45</option>
+                            </select>
+                        </div>
+
+                        <div class="col-6 col-md-3">
+                            <label for="qty" class="form-label">Количество</label>
+                            <input id="qty" name="qty" class="form-control" type="number" min="1" value="1" required />
+                        </div>
+
+                        <div class="col-12">
+                            <label for="color" class="form-label">Цвет основы</label>
+                            <input id="color" name="color" type="color" class="form-control form-control-color" value="#111111" />
+                            <div class="form-text">Цвет подсветит превью (не заливает картинку полностью).</div>
+                        </div>
+                    </div>
+
+                    <hr class="my-3" />
+
+                    <div class="row g-3">
+                        <!-- Допы: наценки в data-extra -->
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">Материал верха</label>
+                            <select id="material" class="form-select">
+                                <option value="textile" data-extra="0" selected>Текстиль (0 ₸)</option>
+                                <option value="leather" data-extra="120">Кожа (+120 ₸)</option>
+                                <option value="suede" data-extra="90">Замша (+90 ₸)</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">Стелька</label>
+                            <select id="insole" class="form-select">
+                                <option value="standard" data-extra="0" selected>Стандарт (0 ₸)</option>
+                                <option value="gel" data-extra="60">Гелевая (+60 ₸)</option>
+                                <option value="orth" data-extra="80">Ортопедическая (+80 ₸)</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label">Индивидуальные элементы</label>
+                            <div class="row g-2">
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input extra-check" type="checkbox" id="extraLogo" data-extra="70" />
+                                        <label class="form-check-label" for="extraLogo">Логотип/надпись (+70 ₸)</label>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input extra-check" type="checkbox" id="extraPaint" data-extra="110" />
+                                        <label class="form-check-label" for="extraPaint">Художественная роспись (+110 ₸)</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <input id="logoText" type="text" class="form-control mt-2" placeholder="Текст надписи (необязательно)" />
+                        </div>
+
+                        <div class="col-12">
+                            <label for="reference" class="form-label">Референс-дизайн (изображение)</label>
+                            <input id="reference" type="file" accept="image/*" class="form-control" />
+                            <div class="form-text">Если прикрепите, превью обновится.</div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+
+                <!-- Доставка/оплата -->
+                <div class="card p-3 p-lg-4 mb-3">
+                    <h5 class="mb-3">Доставка и оплата</h5>
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">Способ доставки</label>
+                            <select id="delivery" class="form-select">
+                                <option value="pickup" data-extra="0" selected>Самовывоз (0 ₸)</option>
+                                <option value="city" data-extra="20">Доставка по городу (+20 ₸)</option>
+                                <option value="region" data-extra="60">Доставка по РК (+60 ₸)</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">Оплата</label>
+                            <select id="pay" class="form-select">
+                                <option>Kaspi</option>
+                                <option>Карта</option>
+                                <option>Наличными</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Подтверждение -->
+                <div class="card p-3 p-lg-4 mb-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="agree" required />
+                        <label class="form-check-label" for="agree">Я согласен с условиями обработки данных</label>
+                    </div>
+                    <div id="formMessage" class="mt-2"></div>
+                    <button id="submitOrder" class="btn btn--full mt-3" type="submit">Отправить заявку</button>
+                </div>
+            </form>
         </div>
-</section>
+
+        <!-- Колонка: превью/итог -->
+        <aside class="col-12 col-lg-5">
+            <div class="card p-3 p-lg-4 mb-3">
+                <h5 class="mb-3">Превью</h5>
+                <div class="ratio ratio-4x3 border rounded position-relative overflow-hidden">
+                    <img id="previewBase" src="Assets/sneaker14.jpeg" alt="Превью модели" class="w-100 h-100 object-fit-contain" />
+                    <!-- цветовая «плёнка» -->
+                    <div id="previewTint" class="position-absolute top-0 start-0 w-100 h-100" style="mix-blend-mode:multiply; pointer-events:none;"></div>
+                    <img id="previewRef" alt="Референс" class="position-absolute bottom-0 end-0 m-2 d-none border rounded" style="width:90px;height:90px;object-fit:cover;background:#fff;" />
+                </div>
+                <div class="small text-muted mt-2">Оттенок и реальный вид могут отличаться на готовом изделии.</div>
+            </div>
+
+            <div class="card p-3 p-lg-4">
+                <h5 class="mb-3">Итого</h5>
+                <div class="d-flex justify-content-between"><span>База модели:</span><strong><span id="priceBase">0</span> ₸</strong></div>
+                <div class="d-flex justify-content-between"><span>Опции:</span><strong><span id="priceExtras">0</span> ₸</strong></div>
+                <div class="d-flex justify-content-between"><span>Доставка:</span><strong><span id="priceDelivery">0</span> ₸</strong></div>
+                <hr />
+                <div class="d-flex justify-content-between fs-5"><span>К оплате:</span><strong><span id="priceTotal">0</span> ₸</strong></div>
+                <div class="small text-muted mt-2">Цена за <span id="qtyText">1</span> шт.</div>
+            </div>
+        </aside>
+    </div>
+</main>
 
 <footer class="footer">
     <div class="footer__text">
         Команда: <strong>KAA</strong> • Участники: Rauan K., Alikhan M., Iskander A. • Группа: SE-2401
     </div>
-    <a href="https://github.com/alishahmanov/shoes-shop-project"
-       target="_blank" rel="noopener"
-       aria-label="Открыть наш GitHub">
-        <img src="Assets/git-hub-logo.png" alt="GitHub" id="footer__logo">
+    <a href="https://github.com/alishahmanov/shoes-shop-project" target="_blank" rel="noopener" aria-label="Открыть наш GitHub">
+        <img src="Assets/git-hub-logo.png" alt="GitHub" id="footer__logo" />
     </a>
 </footer>
 
+<!-- libs -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-<script>
-    document.getElementById("requestForm").addEventListener("submit", function(event) {
-        event.preventDefault();
+<!-- общий проектный -->
+<script src="rscripts.js"></script>
 
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const phone = document.getElementById("phone").value.trim();
-        const message = document.getElementById("formMessage");
-
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const phonePattern = /^[0-9+\-\s]{8,15}$/;
-
-        if (name === "") {
-            message.textContent = "Пожалуйста, введите ваше имя dad a.";
-            message.className = "mt-2 text-danger";
-            return;
-        }
-        if (!emailPattern.test(email)) {
-            message.textContent = "Введите корректный адрес электронной почты.";
-            message.className = "mt-2 text-danger";
-            return;
-        }
-        if (!phonePattern.test(phone)) {
-            message.textContent = "Введите корректный номер телефона (8–15 символов).";
-            message.className = "mt-2 text-danger";
-            return;
-        }
-
-        message.textContent = "Заявка успешно отправлена!";
-        message.className = "mt-2 text-success";
-
-        this.reset();
-    });
-</script>
-
+<!-- логика страницы заказа -->
+<script src="order.js"></script>
 </body>
 </html>
