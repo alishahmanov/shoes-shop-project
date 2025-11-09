@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8" />
@@ -13,9 +13,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700&display=swap" rel="stylesheet" />
 
     <!-- Your base styles -->
-    <link rel="stylesheet" href="astyles.css" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="rstyles.css" />
+    <link rel="stylesheet" href="../css/astyles.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/rstyles.css" />
+    
+    <!-- Адаптивные стили для мобильных устройств -->
+    <link rel="stylesheet" href="../css/istyle.css" />
+    <link rel="stylesheet" href="../css/mobile-nav.css" />
 
 
 </head>
@@ -41,7 +45,7 @@
 
     <nav class="navbar container" role="navigation" aria-label="Основная навигация">
         <a href="index.html" class="logo">
-            <img src="Assets/sneaker21.jpeg" alt="Shoes Shop" width="60" height="60" />
+            <img src="../Assets/sneaker21.jpeg" alt="Shoes Shop" width="60" height="60" />
         </a>
 
         <ul class="nav-list">
@@ -56,7 +60,7 @@
 
         <div class="navbar-actions">
             <a class="button-create-your-own-design nav-btn" href="order.html">Создать свой дизайн</a>
-            <a class="cart nav-btn" href="#cart" aria-label="Открыть корзину">Корзина</a>
+            <a class="cart nav-btn" href="cart.html" aria-label="Открыть корзину">Корзина (<span id="cart-count">0</span>)</a>
         </div>
     </nav>
 </header>
@@ -69,7 +73,7 @@
             <a class="button-in-the-banner" href="catalog.html">Смотреть каталог</a>
         </div>
         <div class="banner-img" aria-hidden="true">
-            <img src="Assets/sneaker21.jpeg" alt="" width="520" height="360" loading="lazy" />
+            <img src="../Assets/sneaker21.jpeg" alt="" width="520" height="360" loading="lazy" />
         </div>
     </section>
 
@@ -77,19 +81,19 @@
         <h2 id="searching-title">Что ищете?</h2>
         <div class="cards-for-index" role="list">
             <article class="card" role="listitem">
-                <img class="lazy-image" data-src="Assets/sneaker19.jpeg" src="Assets/placeholder.webp" alt="Лёгкие повседневные кроссовки" width="420" height="220" />
+                <img class="lazy-image" data-src="../Assets/sneaker19.jpeg" src="../placeholder.webp" alt="Лёгкие повседневные кроссовки" width="420" height="220" />
                 <h3 class="card__title">Повседневные</h3>
                 <p class="price">₸ 299 000</p>
                 <button class="btn add-to-cart" type="button" data-name="Повседневные">Добавить в корзину</button>
             </article>
             <article class="card" role="listitem">
-                <img class="lazy-image" data-src="Assets/sneaker20.jpeg" src="Assets/placeholder.webp" alt="Кроссовки для спорта и бега" width="420" height="220" />
+                <img class="lazy-image" data-src="../Assets/sneaker20.jpeg" src="../placeholder.webp" alt="Кроссовки для спорта и бега" width="420" height="220" />
                 <h3 class="card__title">Спортивные</h3>
                 <p class="price">₸ 349 000</p>
                 <button class="btn add-to-cart" type="button" data-name="Спортивные">Добавить в корзину</button>
             </article>
             <article class="card" role="listitem">
-                <img class="lazy-image" data-src="Assets/sneaker18.jpeg" src="Assets/placeholder.webp" alt="Кроссовки с индивидуальным принтом" width="420" height="220" />
+                <img class="lazy-image" data-src="../Assets/sneaker18.jpeg" src="../placeholder.webp" alt="Кроссовки с индивидуальным принтом" width="420" height="220" />
                 <h3 class="card__title">С принтом</h3>
                 <p class="price">₸ 459 000</p>
                 <button class="btn add-to-cart" type="button" data-name="С принтом">Добавить в корзину</button>
@@ -110,9 +114,9 @@
     <section class="portfolio container" aria-labelledby="portfolio-title">
         <h2 id="portfolio-title">Галерея</h2>
         <div class="portfolio__gallery" id="product-list">
-            <img class="lazy-image" data-src="Assets/sneaker17.jpeg" src="Assets/placeholder.webp" alt="Пример работы #1" width="200" height="200" />
-            <img class="lazy-image" data-src="Assets/sneaker16.jpeg" src="Assets/placeholder.webp" alt="Пример работы #2" width="200" height="200" />
-            <img class="lazy-image" data-src="Assets/sneaker15.jpeg" src="Assets/placeholder.webp" alt="Пример работы #3" width="200" height="200" />
+            <img class="lazy-image" data-src="../Assets/sneaker17.jpeg" src="../placeholder.webp" alt="Пример работы #1" width="200" height="200" />
+            <img class="lazy-image" data-src="../Assets/sneaker16.jpeg" src="../placeholder.webp" alt="Пример работы #2" width="200" height="200" />
+            <img class="lazy-image" data-src="../Assets/sneaker15.jpeg" src="../placeholder.webp" alt="Пример работы #3" width="200" height="200" />
         </div>
         <div class="contact__actions" style="text-align:center; margin-top:12px;">
             <button id="changeColorBtn" class="btn" type="button">Случайный фон</button>
@@ -159,7 +163,7 @@
         Команда: <strong>KAA</strong> • Участники: Rauan K., Alikhan M., Iskander A. • Группа: SE-2401
     </div>
     <a href="https://github.com/alishahmanov/shoes-shop-project" target="_blank" rel="noopener" aria-label="Открыть наш GitHub">
-        <img src="Assets/git-hub-logo.png" alt="GitHub" id="footer__logo" width="36" height="36" loading="lazy" />
+        <img src="../Assets/git-hub-logo.png" alt="GitHub" id="footer__logo" width="36" height="36" loading="lazy" />
     </a>
 </footer>
 
@@ -179,6 +183,9 @@
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="rscripts.js"></script>
+<script src="../js/rscripts.js"></script>
+
+<!-- Мобильная навигация и адаптивные улучшения -->
+<script src="../js/mobile-nav.js"></script>
 </body>
 </html>
