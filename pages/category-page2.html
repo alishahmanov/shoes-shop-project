@@ -15,10 +15,11 @@
   <link rel="stylesheet" href="../css/astyles.css" />
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/rstyles.css" />
-  
+
   <!-- Адаптивные стили для мобильных устройств -->
   <link rel="stylesheet" href="../css/istyle.css" />
   <link rel="stylesheet" href="../css/mobile-nav.css" />
+  <link rel="stylesheet" href="../css/header.css">
 </head>
 
 <body>
@@ -39,7 +40,7 @@
       <img src="../Assets/sneaker21.jpeg" alt="Shoes Shop логотип" />
     </a>
 
-    <ul class="nav-list">
+    <ul class="nav-list" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center; align-items:center; list-style:none; flex:1;">
       <li><a href="about.html">О нас</a></li>
       <li><a href="catalog.html">Каталог</a></li>
       <li><a href="category.html" aria-current="page">Категория</a></li>
@@ -52,6 +53,7 @@
     <div class="navbar-actions">
       <a class="button-create-your-own-design" href="order.html">Создать свой дизайн</a>
       <a class="cart" href="cart.html" aria-label="Открыть корзину">Корзина (<span id="cart-count">0</span>)</a>
+      <a id="loginLink" class="nav-btn" href="login.html">Войти</a>
       <button id="changeColorBtn" class="nav-btn" type="button">Сменить фон</button>
     </div>
   </nav>
@@ -196,5 +198,7 @@
 <!-- Мобильная навигация и адаптивные улучшения -->
 <script src="../js/mobile-nav.js"></script>
 <script src="../js/category-filters.js"></script>
+<script src="../js/auth.js"></script>
+
 </body>
 </html>

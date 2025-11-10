@@ -1,0 +1,7 @@
+.faq-list { margin-top: 16px; }
+.faq { border:1px solid #ddd; border-radius:6px; background:#fff; box-shadow:0 1px 0 rgba(0,0,0,.03); }
+.faq + .faq { margin-top:10px; }
+.faq summary { list-style:none; padding:15px 20px; font-weight:600; cursor:pointer; background:#f8f8f8; outline:none; }
+.faq[open] summary { background:#eaeaea; }
+.faq__content { padding:15px 20px; }
+.faq summary::-webkit-details-marker { display:none; }

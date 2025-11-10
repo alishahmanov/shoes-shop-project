@@ -15,10 +15,11 @@
   <link rel="stylesheet" href="../css/astyles.css" />
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/rstyles.css" />
-  
+
   <!-- Адаптивные стили для мобильных устройств -->
   <link rel="stylesheet" href="../css/istyle.css" />
   <link rel="stylesheet" href="../css/mobile-nav.css" />
+  <link rel="stylesheet" href="../css/header.css">
 </head>
 
 <body>
@@ -34,12 +35,14 @@
     </div>
   </div>
 
-  <nav class="navbar container">
-    <a href="index.html" class="logo" aria-label="На главную">
+  <nav class="navbar container" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+    <!-- Логотип -->
+    <a href="index.html" class="logo" aria-label="На главную" style="flex-shrink:0;">
       <img src="../Assets/sneaker21.jpeg" alt="Shoes Shop логотип" />
     </a>
 
-    <ul class="nav-list">
+    <!-- Главное меню -->
+    <ul class="nav-list" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center; align-items:center; list-style:none; flex:1;">
       <li><a href="about.html">О нас</a></li>
       <li><a href="catalog.html">Каталог</a></li>
       <li><a href="category.html" aria-current="page">Категория</a></li>
@@ -49,10 +52,11 @@
       <li><a href="services.html">Услуги</a></li>
     </ul>
 
-    <div class="navbar-actions">
+    <!-- Кнопки справа -->
+    <div class="navbar-actions" style="display:flex; align-items:center; gap:10px; flex-shrink:0; flex-wrap:wrap; justify-content:flex-end;">
       <a class="button-create-your-own-design" href="order.html">Создать свой дизайн</a>
       <a class="cart" href="cart.html" aria-label="Открыть корзину">Корзина (<span id="cart-count">0</span>)</a>
-      <button id="changeColorBtn" class="nav-btn" type="button">Сменить фон</button>
+      <a id="loginLink" class="nav-btn" href="login.html">Войти</a>
     </div>
   </nav>
 
@@ -66,7 +70,6 @@
     </select>
   </div>
 </header>
-
 <main>
   <div class="page">
     <aside class="filters" aria-label="Фильтры">
@@ -196,5 +199,7 @@
 <!-- Мобильная навигация и адаптивные улучшения -->
 <script src="../js/mobile-nav.js"></script>
 <script src="../js/category-filters.js"></script>
+<script src="../js/auth.js"></script>
+
 </body>
 </html>
