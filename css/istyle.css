@@ -11,99 +11,6 @@
     padding-right: 24px;
   }
 
-  /* ========== HEADER ОПТИМИЗАЦИЯ ========== */
-
-  /* Top header - компактнее */
-  .top-header {
-    height: 60px;
-    padding: 6px 16px;
-    font-size: 13px;
-  }
-
-  .top-header-left,
-  .top-header-right {
-    gap: 20px;
-    font-size: 13px;
-  }
-
-  .top-header a {
-    font-weight: 600;
-  }
-
-  /* Navbar - оптимальная компоновка */
-  .navbar {
-    grid-template-columns: auto 1fr auto;
-    gap: 18px;
-    padding: 12px 20px;
-  }
-
-  /* Логотип */
-  .logo img {
-    height: 54px;
-    width: auto;
-  }
-
-  /* Навигационное меню */
-  .nav-list {
-    gap: 20px;
-    padding: 10px 20px;
-    border-radius: 24px;
-  }
-
-  .nav-list li {
-    margin: 0;
-  }
-
-  .nav-list li a {
-    font-size: 14px;
-    padding: 8px 12px;
-    display: inline-block;
-    transition: all 0.2s ease;
-  }
-
-  .nav-list li a:hover {
-    background: rgba(0, 0, 0, 0.05);
-    border-radius: 12px;
-  }
-
-  /* Navbar actions - кнопки */
-  .navbar-actions {
-    gap: 14px;
-    flex-wrap: nowrap;
-  }
-
-  .navbar-actions a,
-  .navbar-actions button {
-    padding: 10px 14px;
-    font-size: 13px;
-    white-space: nowrap;
-    border-radius: 18px;
-  }
-
-  .button-create-your-own-design,
-  .cart,
-  .nav-btn {
-    height: auto;
-    padding: 10px 14px;
-    font-size: 13px;
-  }
-
-  /* Если navbar становится слишком плотным */
-  .navbar-actions {
-    min-width: auto;
-  }
-
-  /* Dark theme adjustments */
-  body.dark-theme .nav-list {
-    background: #16202a;
-  }
-
-  body.dark-theme .nav-list li a:hover {
-    background: rgba(255, 255, 255, 0.08);
-  }
-
-  /* ========== END HEADER ОПТИМИЗАЦИЯ ========== */
-
   /* Карточки - 3 в ряд */
   .cards-for-index {
     gap: 16px;
@@ -111,16 +18,14 @@
 
   .card {
     flex: 1 1 calc(33.333% - 16px);
-  }
-
-  /* Формы */
-  .card {
     padding: 18px !important;
   }
 
   .card h5 {
     font-size: 17px;
-  } /* Превью */
+  }
+
+  /* Превью */
   #orderPreview {
     padding: 18px;
   }
@@ -239,6 +144,7 @@
   }
 }
 
+/* Остальные медиазапросы и стили */
 @media (max-width: 576px) {
   .card {
     padding: 12px !important;
@@ -290,7 +196,7 @@
   }
 }
 
-/* Чекбоксы и радио на мобильных */
+/* Чекбоксы и радио */
 @media (max-width: 576px) {
   .form-check {
     padding-left: 1.5em;
@@ -306,7 +212,7 @@
   }
 }
 
-/* Селекты и инпуты на мобильных */
+/* Селекты и инпуты */
 @media (max-width: 768px) {
   .form-select,
   .form-control {
@@ -323,7 +229,7 @@
 @media (max-width: 576px) {
   .form-select,
   .form-control {
-    font-size: 16px; /* Предотвращает зум на iOS */
+    font-size: 16px;
   }
 }
 
@@ -354,7 +260,7 @@
   }
 }
 
-/* ===== Мобильная кнопка фильтров ===== */
+/* Мобильная кнопка фильтров */
 .mobile-filter-toggle {
   display: none;
   align-items: center;
@@ -393,40 +299,7 @@
   transform: rotate(90deg);
 }
 
-/* Группы фильтров */
-.filter-group {
-  transition: max-height 0.3s ease, opacity 0.3s ease;
-  max-height: 1000px;
-  opacity: 1;
-  overflow: hidden;
-}
-
-.filter-group.collapsed {
-  max-height: 0;
-  opacity: 0;
-  margin-bottom: 0;
-}
-
-/* Заголовки фильтров */
-.filter-heading {
-  cursor: pointer;
-  user-select: none;
-}
-
-.filter-heading .filter-icon {
-  font-size: 12px;
-  margin-left: 8px;
-  transition: transform 0.3s ease;
-  display: none;
-}
-
-.filter-heading[aria-expanded="false"] .filter-icon {
-  transform: rotate(-90deg);
-}
-
-/* Фильтры на странице категорий */
-
-/* Общие стили для меньших разрешений */
+/* Фильтры и категории */
 @media (max-width: 1200px) {
   .filters {
     display: grid;
@@ -457,13 +330,6 @@
     flex-shrink: 0;
   }
 
-  .filters a {
-    font-size: 12px;
-    margin-top: 4px;
-    display: inline-block;
-  }
-
-  /* Группы фильтров */
   .filters > div,
   .filters > section {
     background: rgba(255, 255, 255, 0.5);

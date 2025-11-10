@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Профиль — Shoes Shop</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/astyles.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/rstyles.css" />
+
+    <!-- Адаптивные стили для мобильных устройств -->
+    <link rel="stylesheet" href="../css/istyle.css" />
+    <link rel="stylesheet" href="../css/mobile-nav.css" />
+    <link rel="stylesheet" href="../css/header.css">
+
+    <style>
+
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            transition: background-color 0.4s ease;
+        }
+        main {
+            flex: 1;
+        }
+        .footer {
+            margin-top: auto;
+        }
+
+
+        #changeColorBtn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #f7f7f7;
+            color: #000;
+            border: 1px solid #000;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        #changeColorBtn:hover {
+            background: #e9e9e9;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+
+<header class="header">
+    <div class="top-header">
+        <div class="top-header-left">
+            <span>Режим работы: 10:00–20:00</span>
+            <span>Телефон: <a href="tel:+77712159509">8(771)215-9509</a></span>
+        </div>
+        <div class="top-header-right">
+            <span>Почта: <a href="mailto:iskander_alipov@mail.ru">iskander_alipov@mail.ru</a></span>
+            <span>Язык сайта: EN/RU</span>
+        </div>
+    </div>
+
+    <nav class="navbar container">
+        <a href="index.html" class="logo">
+            <img src="../Assets/sneaker21.jpeg" alt="Shoes Shop" />
+        </a>
+        <ul class="nav-list" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center; align-items:center; list-style:none; flex:1;">
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="catalog.html">Каталог</a></li>
+            <li><a href="category.html">Категории</a></li>
+            <li><a href="order.html">Форма под заказ</a></li>
+            <li><a href="faq.html">Вопросы</a></li>
+            <li><a href="reviews.html">Отзывы</a></li>
+            <li><a href="services.html">Услуги</a></li>
+        </ul>
+
+        <div class="navbar-actions">
+            <a class="button-create-your-own-design" href="order.html">Создать свой дизайн</a>
+            <a class="cart" href="cart.html">Корзина (<span id="cart-count">0</span>)</a>
+            <a id="loginLink" class="nav-btn" href="profile.html">Профиль</a>
+        </div>
+    </nav>
+</header>
+
+
+<main class="container" style="max-width:650px; padding:40px;">
+    <h2 class="text-center mb-4">Профиль</h2>
+    <p class="text-center">Добро пожаловать, <strong id="usernameDisplay"></strong>!</p>
+
+
+    <div class="text-center mt-3 mb-4">
+        <button id="changeColorBtn" type="button">Сменить фон</button>
+    </div>
+
+
+    <form id="profileForm" class="mt-4">
+        <div class="mb-3">
+            <label for="firstName" class="form-label">Имя</label>
+            <input type="text" class="form-control" id="firstName" placeholder="Введите имя" />
+        </div>
+        <div class="mb-3">
+            <label for="lastName" class="form-label">Фамилия</label>
+            <input type="text" class="form-control" id="lastName" placeholder="Введите фамилию" />
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Почта</label>
+            <input type="email" class="form-control" id="email" placeholder="Введите почту" />
+        </div>
+        <div class="d-flex gap-3 mt-4">
+            <button type="submit" class="btn btn-dark flex-fill">Сохранить</button>
+            <a href="cart.html" class="btn btn-outline-dark flex-fill">В корзину</a>
+        </div>
+    </form>
+
+    <div class="text-center mt-4">
+        <button id="logoutBtn" class="btn btn-danger">Выйти</button>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="footer__text">
+        Команда: <strong>KAA</strong> • Rauan K., Alikhan M., Iskander A. • SE-2401
+    </div>
+    <a href="https://github.com/alishahmanov/shoes-shop-project" target="_blank">
+        <img src="../Assets/git-hub-logo.png" alt="GitHub" id="footer__logo" />
+    </a>
+</footer>
+
+
+<script>
+
+    const user = localStorage.getItem("loggedUser");
+    if (!user) {
+        window.location.href = "login.html";
+    }
+
+    document.getElementById("usernameDisplay").textContent = user;
+
+    // Загрузка данных профиля
+    const form = document.getElementById("profileForm");
+    const firstName = document.getElementById("firstName");
+    const lastName = document.getElementById("lastName");
+    const email = document.getElementById("email");
+    const savedData = JSON.parse(localStorage.getItem(`profile_${user}`) || "{}");
+
+    firstName.value = savedData.firstName || "";
+    lastName.value = savedData.lastName || "";
+    email.value = savedData.email || "";
+
+
+    form.addEventListener("submit", e => {
+        e.preventDefault();
+        const data = {
+            firstName: firstName.value.trim(),
+            lastName: lastName.value.trim(),
+            email: email.value.trim()
+        };
+        localStorage.setItem(`profile_${user}`, JSON.stringify(data));
+        alert("Профиль сохранён!");
+    });
+
+
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+        localStorage.removeItem("loggedUser");
+        window.location.href = "index.html";
+    });
+
+
+    (function randomBgInit(){
+        const colorBtn = document.getElementById('changeColorBtn');
+        if (!colorBtn) return;
+        const colors = ['#f4f5f6','#ffe4e1','#e6f7ff','#e8ffe8','#fffbe6','#f0e6ff'];
+        colorBtn.addEventListener('click', ()=>{
+            const randomColor = colors[Math.floor(Math.random()*colors.length)];
+            document.body.style.backgroundColor = randomColor;
+        });
+    })();
+</script>
+
+</body>
+</html>

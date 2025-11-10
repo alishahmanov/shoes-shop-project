@@ -13,52 +13,52 @@
     <link rel="stylesheet" href="../css/astyles.css" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/rstyles.css" />
-    
+
     <!-- Адаптивные стили для мобильных устройств -->
     <link rel="stylesheet" href="../css/istyle.css" />
     <link rel="stylesheet" href="../css/mobile-nav.css" />
-    <style>
-        .faq-list { margin-top: 16px; }
-        .faq { border:1px solid #ddd; border-radius:6px; background:#fff; box-shadow:0 1px 0 rgba(0,0,0,.03); }
-        .faq + .faq { margin-top:10px; }
-        .faq summary { list-style:none; padding:15px 20px; font-weight:600; cursor:pointer; background:#f8f8f8; outline:none; }
-        .faq[open] summary { background:#eaeaea; }
-        .faq__content { padding:15px 20px; }
-        .faq summary::-webkit-details-marker { display:none; }
-    </style>
+    <link rel="stylesheet" href="../css/faq-reviews.css">
+    <link rel="stylesheet" href="../css/header.css">
+
 </head>
 <body>
 <a class="skip-link" href="#main">Перейти к основному содержанию</a>
 <div id="scrollProgress" aria-hidden="true"></div>
 
-<header class="header" role="banner">
-    <div class="top-header" aria-label="Служебная информация">
+<header class="header">
+    <div class="top-header">
         <div class="top-header-left">
             <span>Режим работы: 10:00–20:00</span>
-            <span>Телефон: <a href="tel:+77712159509">8 (771) 215-95-09</a></span>
+            <span>Телефон: <a href="#">8(771)2159509</a></span>
         </div>
         <div class="top-header-right">
-            <span>Почта: <a href="mailto:iskander_alipov@mail.ru">iskander_alipov@mail.ru</a></span>
+            <span>Почта: <a href="#">iskander_alipov@mail.ru</a></span>
             <span>Язык сайта: EN/RU</span>
         </div>
     </div>
 
-    <nav class="navbar container" role="navigation" aria-label="Основная навигация">
-        <a href="index.html" class="logo" aria-label="На главную">
-            <img src="../Assets/sneaker21.jpeg" alt="Логотип Shoes Shop" width="60" height="60" />
+    <nav class="navbar container" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+        <!-- Логотип -->
+        <a href="index.html" class="logo" aria-label="На главную" style="flex-shrink:0;">
+            <img src="../Assets/sneaker21.jpeg" alt="Shoes Shop логотип" />
         </a>
-        <ul class="nav-list">
+
+        <!-- Главное меню -->
+        <ul class="nav-list" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center; align-items:center; list-style:none; flex:1;">
             <li><a href="about.html">О нас</a></li>
             <li><a href="catalog.html">Каталог</a></li>
-            <li><a href="category.html">Категория</a></li>
+            <li><a href="category.html" aria-current="page">Категория</a></li>
             <li><a href="order.html">Форма под заказ</a></li>
-            <li><a href="faq.html" aria-current="page">Вопросы</a></li>
+            <li><a href="faq.html">Вопросы</a></li>
             <li><a href="reviews.html">Отзывы</a></li>
             <li><a href="services.html">Услуги</a></li>
         </ul>
-        <div class="navbar-actions">
-            <a class="button-create-your-own-design nav-btn" href="order.html">Создать свой дизайн</a>
-            <a class="cart nav-btn" href="cart.html" aria-label="Открыть корзину">Корзина (<span id="cart-count">0</span>)</a>
+
+        <!-- Кнопки справа -->
+        <div class="navbar-actions" style="display:flex; align-items:center; gap:10px; flex-shrink:0; flex-wrap:wrap; justify-content:flex-end;">
+            <a class="button-create-your-own-design" href="order.html">Создать свой дизайн</a>
+            <a class="cart" href="cart.html" aria-label="Открыть корзину">Корзина (<span id="cart-count">0</span>)</a>
+            <a id="loginLink" class="nav-btn" href="login.html">Войти</a>
         </div>
     </nav>
 </header>
@@ -179,6 +179,7 @@
 
 <!-- Мобильная навигация и адаптивные улучшения -->
 <script src="../js/mobile-nav.js"></script>
+<script src="../js/auth.js"></script>
 
 </body>
 </html>
