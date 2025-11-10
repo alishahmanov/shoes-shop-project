@@ -33,8 +33,6 @@ body.dark-theme {
 }
 
 body,
-.header,
-.navbar,
 .footer,
 .card,
 .toast {
@@ -102,22 +100,21 @@ body #toast-container {
 }
 
 /* More theme-aware component styles */
-header,
 .top-header,
 .navbar,
 .site-navbar,
 .site-navbar-actions,
-.header {
-  background: var(--surface);
-  color: var(--text);
-}
+/*.header {*/
+/*  background: var(--surface);*/
+/*  color: var(--text);*/
+/*}*/
 
-.top-header,
-.top-header-left,
-.top-header-right {
-  background: transparent;
-  color: var(--muted);
-}
+/*.top-header,*/
+/*.top-header-left,*/
+/*.top-header-right {*/
+/*  background: transparent;*/
+/*  color: var(--muted);*/
+/*}*/
 
 .navbar .nav-list a {
   color: var(--text);

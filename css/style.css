@@ -26,127 +26,127 @@ body {
 /* =========================================================
    headerCSS
 ========================================================= */
-.header {
-  width: 100%;
-}
-.top-header {
-  display: flex;
-  height: 70px;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 14px;
-  padding: 8px 20px;
-  background: lightgray;
-  color: #333;
-}
-.top-header-left {
-  display: flex;
-  font-size: 15px;
-  gap: 30px;
-}
-.top-header-right {
-  display: flex;
-  font-size: 15px;
-  gap: 30px;
-}
-.top-header a {
-  color: #000;
-  text-decoration: none;
-  font-weight: bold;
-}
+/*.header {*/
+/*  width: 100%;*/
+/*}*/
+/*.top-header {*/
+/*  display: flex;*/
+/*  height: 70px;*/
+/*  justify-content: space-between;*/
+/*  align-items: center;*/
+/*  font-size: 14px;*/
+/*  padding: 8px 20px;*/
+/*  background: lightgray;*/
+/*  color: #333;*/
+/*}*/
+/*.top-header-left {*/
+/*  display: flex;*/
+/*  font-size: 15px;*/
+/*  gap: 30px;*/
+/*}*/
+/*.top-header-right {*/
+/*  display: flex;*/
+/*  font-size: 15px;*/
+/*  gap: 30px;*/
+/*}*/
+/*.top-header a {*/
+/*  color: #000;*/
+/*  text-decoration: none;*/
+/*  font-weight: bold;*/
+/*}*/
 
-.navbar {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 24px;
-  padding: 16px 20px;
-  background: transparent;
-  border-radius: 0;
-}
-.navbar > * {
-  min-width: 0;
-}
+/*.navbar {*/
+/*  display: grid;*/
+/*  grid-template-columns: auto 1fr auto;*/
+/*  align-items: center;*/
+/*  gap: 24px;*/
+/*  padding: 16px 20px;*/
+/*  background: transparent;*/
+/*  border-radius: 0;*/
+/*}*/
+/*.navbar > * {*/
+/*  min-width: 0;*/
+/*}*/
 
-.logo img {
-  height: 60px;
-  width: auto;
-  display: block;
-  border-radius: 50%;
-}
+/*.logo img {*/
+/*  height: 60px;*/
+/*  width: auto;*/
+/*  display: block;*/
+/*  border-radius: 50%;*/
+/*}*/
 
-.nav-list {
-  display: flex;
-  justify-content: center;
-  gap: 32px;
-  list-style: none;
-  margin: 0;
-  padding: 12px 32px;
-  border: 1px solid #000;
-  border-radius: 28px;
-  background: whitesmoke;
-}
-.nav-list li a {
-  text-decoration: none;
-  color: black;
-}
-.nav-list li a:hover {
-  text-decoration: underline;
-}
+/*.nav-list {*/
+/*  display: flex;*/
+/*  justify-content: center;*/
+/*  gap: 32px;*/
+/*  list-style: none;*/
+/*  margin: 0;*/
+/*  padding: 12px 32px;*/
+/*  border: 1px solid #000;*/
+/*  border-radius: 28px;*/
+/*  background: whitesmoke;*/
+/*}*/
+/*.nav-list li a {*/
+/*  text-decoration: none;*/
+/*  color: black;*/
+/*}*/
+/*.nav-list li a:hover {*/
+/*  text-decoration: underline;*/
+/*}*/
 
-.navbar-actions {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
+/*.navbar-actions {*/
+/*  display: flex;*/
+/*  gap: 20px;*/
+/*  align-items: center;*/
+/*}*/
 
-/* универсальная кнопка в навигации */
-.nav-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 44px;
-  padding: 0 16px;
-  background: whitesmoke;
-  color: #000;
-  border: 1px solid #000;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1;
-  box-shadow: none;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: background 0.2s, transform 0.05s;
-}
-.nav-btn:hover {
-  background: #e9e9e9;
-}
-.nav-btn:active {
-  transform: translateY(1px);
-}
-.nav-btn:focus-visible {
-  outline: 2px solid #0000;
-  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.15);
-}
+/*!* универсальная кнопка в навигации *!*/
+/*.nav-btn {*/
+/*  display: inline-flex;*/
+/*  align-items: center;*/
+/*  justify-content: center;*/
+/*  height: 44px;*/
+/*  padding: 0 16px;*/
+/*  background: whitesmoke;*/
+/*  color: #000;*/
+/*  border: 1px solid #000;*/
+/*  border-radius: 20px;*/
+/*  font-size: 14px;*/
+/*  font-weight: 500;*/
+/*  line-height: 1;*/
+/*  box-shadow: none;*/
+/*  cursor: pointer;*/
+/*  white-space: nowrap;*/
+/*  transition: background 0.2s, transform 0.05s;*/
+/*}*/
+/*.nav-btn:hover {*/
+/*  background: #e9e9e9;*/
+/*}*/
+/*.nav-btn:active {*/
+/*  transform: translateY(1px);*/
+/*}*/
+/*.nav-btn:focus-visible {*/
+/*  outline: 2px solid #0000;*/
+/*  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.15);*/
+/*}*/
 
-/* исторические классы кнопок (оставлены для совместимости) */
-.button-create-your-own-design {
-  padding: 15px 14px;
-  background: whitesmoke;
-  border-radius: 20px;
-  text-decoration: none;
-  color: black;
-  border: 1px solid black;
-}
-.cart {
-  padding: 15px 14px;
-  background: whitesmoke;
-  border-radius: 20px;
-  text-decoration: none;
-  color: black;
-  border: 1px solid black;
-}
+/*!* исторические классы кнопок (оставлены для совместимости) *!*/
+/*.button-create-your-own-design {*/
+/*  padding: 15px 14px;*/
+/*  background: whitesmoke;*/
+/*  border-radius: 20px;*/
+/*  text-decoration: none;*/
+/*  color: black;*/
+/*  border: 1px solid black;*/
+/*}*/
+/*.cart {*/
+/*  padding: 15px 14px;*/
+/*  background: whitesmoke;*/
+/*  border-radius: 20px;*/
+/*  text-decoration: none;*/
+/*  color: black;*/
+/*  border: 1px solid black;*/
+/*}*/
 
 /* =========================================================
    footerCSS
@@ -170,6 +170,7 @@ body {
 /* =========================================================
    indexPageCSS
 ========================================================= */
+/* ====== Баннер ====== */
 .banner {
   display: flex;
   align-items: center;
@@ -179,16 +180,22 @@ body {
   padding: 40px;
   border-radius: 8px;
   width: 100%;
+  gap: 40px;
+  margin-top: 40px;
+  margin-bottom: 80px; /* добавлен отступ вниз */
 }
+
 .banner-text h1 {
   font-size: 82px;
   font-weight: 300;
   margin: 0;
 }
+
 .banner-text p {
   font-size: 42px;
   margin: 10px 0 20px;
 }
+
 .banner-text .button-in-the-banner {
   display: inline-block;
   background: whitesmoke;
@@ -201,46 +208,105 @@ body {
   font-weight: 300;
   position: relative;
   box-shadow: 5px 5px 0 #000;
-  left: 0;
-  top: 0;
-  transition: 1s;
+  transition: all 0.4s ease;
 }
+
 .banner-text .button-in-the-banner:hover {
-  left: 5px;
-  top: 5px;
+  transform: translate(5px, 5px);
   box-shadow: 0 0 0 #000;
   background: lightgray;
 }
+
 .banner-img img {
   border-radius: 8px;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
-.what-do-you-searching p {
-  font-size: 42px;
+/* ====== Секция "Что вы ищете?" ====== */
+.what-do-you-searching {
+  margin-top: 60px; /* отступ сверху */
+  margin-bottom: 40px; /* отступ снизу */
+  text-align: center;
 }
+
+.what-do-you-searching > p {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+
+/* ====== Карточки ====== */
 .cards-for-index {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 24px;
+  justify-content: center;
 }
+
 .card {
-  flex: 1 1 calc(33.333% - 20px);
-  background: white;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 10px 12px rgba(0, 0, 0, 0.1);
+  flex: 1 1 calc(33.333% - 24px);
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.25s ease;
+  text-align: center;
 }
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
 .card img {
   width: 100%;
   height: 220px;
   object-fit: contain;
-  border-radius: 8px;
+  border-radius: 10px;
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 16px;
 }
+
 .card p {
-  font-size: 25px;
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* ====== Адаптив ====== */
+@media (max-width: 992px) {
+  .banner-text h1 {
+    font-size: 64px;
+  }
+  .banner-text p {
+    font-size: 28px;
+  }
+  .card {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 576px) {
+  .banner {
+    flex-direction: column;
+    padding: 24px;
+    text-align: center;
+  }
+  .banner-text h1 {
+    font-size: 48px;
+  }
+  .banner-text p {
+    font-size: 22px;
+  }
+  .card {
+    flex: 1 1 100%;
+  }
+  .what-do-you-searching > p {
+    font-size: 28px;
+  }
 }
 
 /* =========================================================
@@ -497,8 +563,9 @@ nav a:hover {
 /* =========================================================
    orderAndAboutPagesCSS
 ========================================================= */
-.section {
-  padding: 8px 0;
+section {
+  margin-top: 80px;   /* больше воздуха сверху */
+  margin-bottom: 80px;
 }
 .breadcrumbs {
   font-size: 14px;
@@ -721,6 +788,61 @@ a {
   background: #e9e9e9;
 }
 
+.section.container {
+  padding-left: 32px;
+  padding-right: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px; /* чтобы не растягивалось по всей ширине */
+}
+
+.faq, .stats {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px 48px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  margin-top: 100px;
+  margin-bottom: 80px;
+}
+
+/* Центрирование сетки статистики */
+.stats__grid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-top: 24px;
+  text-align: center;
+}
+
+.stat {
+  flex: 1 1 200px;
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.stat p {
+  margin-top: 8px;
+  font-size: 16px;
+  color: #555;
+}
+
+.stat .counter {
+  display: block;
+  font-size: 36px;
+  font-weight: 700;
+  color: #000;
+}
+section.container {
+  padding-left: 32px;
+  padding-right: 32px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
 /* =========================================================
    servicesPageCSS
 ========================================================= */

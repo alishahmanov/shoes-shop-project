@@ -1,0 +1,96 @@
+/* ==========================================
+   Login Page Styles (Shoes Shop)
+========================================== */
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background: #f6f7f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background: #fff;
+    padding: 48px 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 32px;
+    font-weight: 700;
+    font-size: 28px;
+    color: #111;
+}
+
+label {
+    display: block;
+    text-align: left;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #111;
+}
+
+/* Кнопка в стиле всего сайта */
+.nav-btn {
+    display: inline-block;
+    background: #111;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 14px 0;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 24px;
+}
+
+.nav-btn:hover {
+    background: #333;
+    transform: translateY(-2px);
+}
+
+#loginError {
+    color: red;
+    margin-top: 14px;
+    display: none;
+    font-size: 14px;
+}
+
+p {
+    margin-top: 28px;
+    font-size: 14px;
+    color: #555;
+}
+
+a {
+    color: #111;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+a:hover {
+    text-decoration: none;
+}
