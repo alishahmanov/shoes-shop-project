@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Shoes Shop — главная страница" />
+    <meta name="author" content="Manat Alikhan, Iskander Akipov, Rauan Kuntuganov" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+    <title>Shoes Shop</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/astyles.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/rstyles.css" />
+    <link rel="stylesheet" href="css/index.css">
+
+
+
+    <link rel="stylesheet" href="css/istyle.css" />
+    <link rel="stylesheet" href="css/mobile-nav.css" />
+    <link rel="stylesheet" href="css/header.css">
+</head>
+<body>
+<header class="header">
+    <div class="top-header">
+        <div class="top-header-left">
+            <span>Режим работы: 10:00–20:00</span>
+            <span>Телефон: <a href="#">8(771)2159509</a></span>
+        </div>
+        <div class="top-header-right">
+            <span>Почта: <a href="#">iskander_alipov@mail.ru</a></span>
+            <span>Язык сайта: EN/RU</span>
+        </div>
+    </div>
+
+    <nav class="navbar container" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+        <a href="index.html" class="logo" aria-label="На главную" style="flex-shrink:0;">
+            <img src="Assets/sneaker21.jpeg" alt="Shoes Shop логотип" />
+        </a>
+
+        <ul class="nav-list" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center; align-items:center; list-style:none; flex:1;">
+            <li><a href="pages/about.html">О нас</a></li>
+            <li><a href="pages/catalog.html">Каталог</a></li>
+            <li><a href="pages/category.html" aria-current="page">Категория</a></li>
+            <li><a href="pages/order.html">Форма под заказ</a></li>
+            <li><a href="pages/faq.html">Вопросы</a></li>
+            <li><a href="pages/reviews.html">Отзывы</a></li>
+            <li><a href="pages/services.html">Услуги</a></li>
+        </ul>
+
+        <div class="navbar-actions" style="display:flex; align-items:center; gap:10px; flex-shrink:0; flex-wrap:wrap; justify-content:flex-end;">
+            <a class="button-create-your-own-design" href="pages/order.html">Создать свой дизайн</a>
+            <a class="cart" href="pages/cart.html" aria-label="Открыть корзину">Корзина (<span id="cart-count">0</span>)</a>
+            <a id="loginLink" class="nav-btn" href="pages/login.html">Войти</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="banner container">
+        <div class="row align-items-center g-4 w-100">
+            <div class="col-12 col-md-6">
+                <div class="banner-text">
+                    <h1>3 = 2</h1>
+                    <p>Закажи три пары обуви, а заплати только за две</p>
+                    <a href="pages/catalog.html" class="button-in-the-banner">Перейти в каталог</a>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="banner-img">
+                    <img src="Assets/shoes-for-banner.jpeg" alt="Коллекция кроссовок в баннере" loading="eager" decoding="async" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="what-do-you-searching container">
+        <p>Что вы ищете?</p>
+        <div class="row cards-for-index">
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="card">
+                    <p>Беговые</p>
+                    <img src="Assets/sneaker1.jpeg" alt="Беговые кроссовки" loading="lazy" decoding="async" />
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="card">
+                    <p>Баскетбольные</p>
+                    <img src="Assets/sneaker2.jpeg" alt="Баскетбольные кроссовки" loading="lazy" decoding="async" />
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="card">
+                    <p>Футбольные</p>
+                    <img src="Assets/sneaker4.jpeg" alt="Футбольные бутсы" loading="lazy" decoding="async" />
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="card">
+                    <p>Волейбольные</p>
+                    <img src="Assets/sneaker5.jpeg" alt="Волейбольная обувь" loading="lazy" decoding="async" />
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="card">
+                    <p>Борцовки</p>
+                    <img src="Assets/sneaker6.jpeg" alt="Борцовки" loading="lazy" decoding="async" />
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="card">
+                    <p>Боксерки</p>
+                    <img src="Assets/sneaker7.jpeg" alt="Боксерки" loading="lazy" decoding="async" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="current-time" class="text-center py-4 container">
+        <h4 id="datetime"></h4>
+        <p class="time-message">Время тикает, а вы так и не заказали кроссовки?</p>
+    </section>
+
+    <section id="cart" class="container py-5">
+        <h2 class="h4 mb-3">Корзина</h2>
+        <p class="muted">Корзина пуста. Перейдите в <a href="pages/catalog.html">каталог</a>, чтобы добавить товары.</p>
+    </section>
+
+    <section id="faq" class="container py-5">
+        <h2 class="h4 mb-3">Вопросы</h2>
+        <div class="accordion" id="faq-accordion">
+            <div class="accordion-item">
+                <button class="accordion-header" type="button">Как оформить заказ?</button>
+                <div class="accordion-content">
+                    <p>Выберите модель в каталоге и нажмите «Добавить в корзину» или заполните форму под заказ.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header" type="button">Сроки доставки</button>
+                <div class="accordion-content">
+                    <p>Обычно 2–5 рабочих дней по Казахстану. Уточняем при оформлении.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header" type="button">Оплата</button>
+                <div class="accordion-content">
+                    <p>Карта, Kaspi QR, наложенный платёж при самовывозе.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="container py-5">
+        <h2 class="h4 mb-3">Отзывы</h2>
+        <div class="row g-3">
+            <div class="col-12 col-md-6">
+                <blockquote class="p-3 border rounded-3 bg-light">
+                    «Получил быстро. Качество огонь, размер подошёл.» — Алмаз
+                </blockquote>
+            </div>
+            <div class="col-12 col-md-6">
+                <blockquote class="p-3 border rounded-3 bg-light">
+                    «Удобные для бега, точно как на фото.» — Аяулым
+                </blockquote>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="footer__text">
+        Команда: <strong>KAA</strong> • Участники: Rauan K., Alikhan M., Iskander A. • Группа: SE-2401
+    </div>
+    <a href="https://github.com/alishahmanov/shoes-shop-project" target="_blank" rel="noopener" aria-label="Открыть наш GitHub">
+        <img src="Assets/git-hub-logo.png" alt="GitHub" id="footer__logo" />
+    </a>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="rscripts.js"></script>
+<script src="index.js"></script>
+
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+        a.addEventListener('click', e=>{
+            const t = document.querySelector(a.getAttribute('href'));
+            if (t) { e.preventDefault(); t.scrollIntoView({behavior:'smooth'}); }
+        });
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+        const id = a.getAttribute('href');
+        if (id.length > 1 && !document.querySelector(id)) {
+            console.warn('Missing anchor target for', id, 'linked from', a);
+        }
+    });
+
+    (async ()=>{
+        const localLinks = [...document.querySelectorAll('a[href$=".html"]')].map(a=>a.getAttribute('href'));
+        const unique = [...new Set(localLinks)];
+        for (const href of unique) {
+            try {
+                const r = await fetch(href, {method:'HEAD'});
+                if (!r.ok) console.warn('Broken page link:', href, r.status);
+            } catch(e) { console.warn('Link check failed:', href, e.message); }
+        }
+    })();
+
+    document.querySelectorAll('.accordion-header').forEach(btn=>{
+        btn.addEventListener('click', ()=>{
+            btn.classList.toggle('active');
+            const content = btn.nextElementSibling;
+            content.classList.toggle('show');
+        });
+    });
+</script>
+
+
+<script src="js/mobile-nav.js"></script>
+<script src="js/index.js"></script>
+<script src="js/auth.js"></script>
+
+
+</body>
+</html>
