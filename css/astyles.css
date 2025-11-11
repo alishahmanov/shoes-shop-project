@@ -605,12 +605,12 @@ a.skip-link:focus-visible {
   outline: 0;
 }
 
-/* чтобы список был под инпутом */
+
 .search-bar {
   position: relative;
 }
 
-/* карточки в каталоге чуть ровнее */
+
 .cards-for-index .card {
   display: flex;
   flex-direction: column;
@@ -635,9 +635,9 @@ a.skip-link:focus-visible {
   background: #111a2a;
 }
 
-/* ===== Category page hard-fix (drop-in) ===== */
 
-/* 1) Грид карточек — всегда как сетка, без “склейки” в одну колонку */
+
+
 .page .cards {
   display: grid !important;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
@@ -646,7 +646,7 @@ a.skip-link:focus-visible {
   align-items: start;
 }
 
-/* 2) Нормализация карточки */
+
 .page .card {
   display: flex;
   flex-direction: column;
@@ -654,11 +654,11 @@ a.skip-link:focus-visible {
   overflow: hidden;
 }
 
-/* 3) Контейнер для картинки — квадрат/вариант 4:3 (выбери один) */
+
 .page .card__media {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3; /* можно поменять на 1/1, если нужен квадрат */
+  aspect-ratio: 4 / 3;
   background: #fafafa;
   border-radius: 12px;
   display: flex;
@@ -667,16 +667,16 @@ a.skip-link:focus-visible {
   overflow: hidden;
 }
 
-/* 4) Картинка внутри — без инлайновых размеров, не вылезает */
+
 .page .card__media img {
   max-width: 100% !important;
-  width: 100% !important; /* перекрываем инлайн width=310px и т.п. */
+  width: 100% !important;
   height: 100% !important;
   object-fit: contain !important;
   display: block;
 }
 
-/* 5) Текст/кнопка — аккуратно сверху/снизу, не “тянут” карточку */
+
 .page .card__title {
   margin: 10px 0 4px;
   font-size: 16px;

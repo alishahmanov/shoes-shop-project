@@ -1349,10 +1349,10 @@ body.dark-theme input[type="color"] {
     font-size: 12px;
   }
 
-  /* Формы - компактнее */
+
   .form-control,
   .form-select {
-    font-size: 16px; /* Предотвращает зум на iOS */
+    font-size: 16px;
     padding: 8px 10px;
   }
 
@@ -1708,7 +1708,7 @@ body.dark-theme .toast-warning {
   font-size: 36px;
   font-weight: 700;
   margin-bottom: 40px;
-  color: var(--text-color);
+  /*color: var(--text-color);*/
   text-align: center;
 }
 
@@ -1723,7 +1723,7 @@ body.dark-theme .toast-warning {
 .cart-empty {
   text-align: center;
   padding: 80px 20px;
-  background: var(--card-bg);
+  /*background: var(--card-bg);*/
   border-radius: 16px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
@@ -1738,12 +1738,12 @@ body.dark-theme .toast-warning {
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 12px;
-  color: var(--text-color);
+  /*color: var(--text-color);*/
 }
 
 .cart-empty p {
   font-size: 16px;
-  color: var(--text-secondary);
+  /*color: var(--text-secondary);*/
   margin-bottom: 32px;
 }
 
@@ -1766,7 +1766,7 @@ body.dark-theme .toast-warning {
   grid-template-columns: 120px 1fr auto;
   gap: 20px;
   padding: 20px;
-  background: var(--card-bg);
+  /*background: var(--card-bg);*/
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
@@ -1801,13 +1801,13 @@ body.dark-theme .toast-warning {
 .cart-item-title {
   font-size: 18px;
   font-weight: 600;
-  color: var(--text-color);
+  /*color: var(--text-color);*/
   margin: 0;
 }
 
 .cart-item-description {
   font-size: 14px;
-  color: var(--text-secondary);
+  /*color: var(--text-secondary);*/
   margin: 0;
 }
 
@@ -1884,7 +1884,7 @@ body.dark-theme .toast-warning {
 .cart-item-total {
   font-size: 24px;
   font-weight: 700;
-  color: var(--text-color);
+  /*color: var(--text-color);*/
   margin-bottom: 8px;
 }
 
@@ -1934,7 +1934,7 @@ body.dark-theme .toast-warning {
 .cart-summary {
   position: sticky;
   top: 20px;
-  background: var(--card-bg);
+  /*background: var(--card-bg);*/
   padding: 30px;
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -1944,7 +1944,7 @@ body.dark-theme .toast-warning {
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 24px;
-  color: var(--text-color);
+  /*color: var(--text-color);*/
 }
 
 .cart-summary-details {
@@ -1959,7 +1959,7 @@ body.dark-theme .toast-warning {
   justify-content: space-between;
   align-items: center;
   font-size: 16px;
-  color: var(--text-color);
+  /*color: var(--text-color);*/
 }
 
 .summary-row span:last-child {
