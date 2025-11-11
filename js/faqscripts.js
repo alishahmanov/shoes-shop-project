@@ -30,3 +30,17 @@ document.addEventListener('click', function (e) {
     radios.forEach(function (r) { r.addEventListener('change', applyFilters); });
     applyFilters();
 })();
+
+document.querySelectorAll('.faq').forEach(faq => {
+    faq.addEventListener('toggle', function () {
+        if (this.open) {
+            document.querySelectorAll('.faq').forEach(other => {
+                if (other !== this) {
+                    other.open = false;
+                    other.classList.remove('open');
+                }
+            });
+        }
+        this.classList.toggle('open', this.open);
+    });
+});
