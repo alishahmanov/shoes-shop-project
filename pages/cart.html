@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Shoes Shop — Корзина покупок" />
+  <meta name="author" content="Manat Alikhan, Iskander Akipov, Rauan Kuntuganov" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+
+  <title>Shoes Shop — Корзина</title>
+
+  <link rel="stylesheet" href="../css/astyles.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/rstyles.css" />
+
+  <link rel="stylesheet" href="../css/istyle.css" />
+  <link rel="stylesheet" href="../css/mobile-nav.css" />
+  <link rel="stylesheet" href="../css/header.css">
+</head>
+
+<body>
+<header class="header">
+  <div class="top-header">
+    <div class="top-header-left">
+      <span>Режим работы: 10:00–20:00</span>
+      <span>Телефон: <a href="#">8(771)2159509</a></span>
+    </div>
+    <div class="top-header-right">
+      <span>Почта: <a href="#">iskander_alipov@mail.ru</a></span>
+      <span>Язык сайта: EN/RU</span>
+    </div>
+  </div>
+
+  <nav class="navbar container" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+    <a href="index.html" class="logo" aria-label="На главную" style="flex-shrink:0;">
+      <img src="../Assets/sneaker21.jpeg" alt="Shoes Shop логотип" />
+    </a>
+
+    <!-- Главное меню -->
+    <ul class="nav-list" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center; align-items:center; list-style:none; flex:1;">
+      <li><a href="about.html">О нас</a></li>
+      <li><a href="catalog.html">Каталог</a></li>
+      <li><a href="category.html" aria-current="page">Категория</a></li>
+      <li><a href="order.html">Форма под заказ</a></li>
+      <li><a href="faq.html">Вопросы</a></li>
+      <li><a href="reviews.html">Отзывы</a></li>
+      <li><a href="services.html">Услуги</a></li>
+    </ul>
+
+    <div class="navbar-actions" style="display:flex; align-items:center; gap:10px; flex-shrink:0; flex-wrap:wrap; justify-content:flex-end;">
+      <a class="button-create-your-own-design" href="order.html">Создать свой дизайн</a>
+      <a class="cart" href="cart.html" aria-label="Открыть корзину">Корзина (<span id="cart-count">0</span>)</a>
+      <a id="loginLink" class="nav-btn" href="login.html">Войти</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="container cart-page">
+    <h1 class="cart-title">Корзина покупок</h1>
+    
+    <div class="cart-content">
+      <div class="cart-items" id="cart-items">
+        <div class="cart-empty" id="cart-empty">
+          <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="9" cy="21" r="1"/>
+            <circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          <h2>Ваша корзина пуста</h2>
+          <p>Добавьте товары из каталога, чтобы начать покупки</p>
+          <a href="category.html" class="btn btn-primary">Перейти в категорию</a>
+        </div>
+      </div>
+
+      <aside class="cart-summary" id="cart-summary" style="display: none;">
+        <h2>Итого</h2>
+        <div class="cart-summary-details">
+          <div class="summary-row">
+            <span>Товары (<span id="summary-count">0</span>):</span>
+            <span id="summary-subtotal">0 ₸</span>
+          </div>
+          <div class="summary-row">
+            <span>Доставка:</span>
+            <span id="summary-shipping">Бесплатно</span>
+          </div>
+          <div class="summary-row summary-total">
+            <span>Итого:</span>
+            <span id="summary-total">0 ₸</span>
+          </div>
+        </div>
+        <button class="btn btn-checkout" id="checkout-btn">Оформить заказ</button>
+        <button class="btn btn-secondary" id="clear-cart-btn">Очистить корзину</button>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <a href="https://github.com/alishahmanov/shoes-shop-project" target="_blank" rel="noopener" aria-label="GitHub">
+    <img src="../Assets/git-hub-logo.png" alt="GitHub" id="footer__logo" />
+  </a>
+</footer>
+
+<script src="../js/rscripts.js"></script>
+<script src="../js/cart.js"></script>
+
+<script src="../js/mobile-nav.js"></script>
+<script src="../js/auth.js"></script>
+</body>
+</html>

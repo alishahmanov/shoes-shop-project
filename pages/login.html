@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Вход — Shoes Shop</title>
+
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/login.css" />
+</head>
+<body>
+<main class="login-container">
+    <h2>Вход</h2>
+    <form id="loginForm">
+        <label for="username">Логин</label>
+        <input type="text" id="username" required placeholder="Введите логин" />
+
+        <label for="password" style="margin-top:15px;">Пароль</label>
+        <input type="password" id="password" required placeholder="Введите пароль" />
+
+        <button type="submit" class="nav-btn">Войти</button>
+    </form>
+
+    <p id="loginError">Неверный логин или пароль</p>
+    <p>Нет аккаунта? <a href="signup.html">Регистрация</a></p>
+</main>
+
+<script>
+    const form = document.getElementById("loginForm");
+    const error = document.getElementById("loginError");
+
+    form.addEventListener("submit", e => {
+        e.preventDefault();
+        const username = document.getElementById("username").value.trim();
+        const password = document.getElementById("password").value.trim();
+
+        const users = JSON.parse(localStorage.getItem("users") || "{}");
+
+        if (users[username] && users[username] === password) {
+            localStorage.setItem("loggedUser", username);
+            window.location.href = "profile.html";
+        } else {
+            error.style.display = "block";
+        }
+    });
+</script>
+</body>
+</html>

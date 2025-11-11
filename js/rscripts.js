@@ -135,10 +135,15 @@ function showToast(message, type='success'){
     </div>`;
   container.appendChild(toast);
 
-  const remove = ()=>{ toast.classList.add('toast-hide'); setTimeout(()=>toast.remove(), 300); };
+  const remove = ()=>{ 
+    toast.classList.remove('toast-show');
+    toast.classList.add('toast-hide'); 
+    setTimeout(()=>{
+      if(toast.parentNode) toast.remove();
+    }, 400); 
+  };
   toast.querySelector('.toast-close')?.addEventListener('click', remove);
-  toast.addEventListener('click', remove);
-  setTimeout(remove, 3000);
+  setTimeout(remove, 8000);
 }
 
 /* 5) “Добавить в корзину” */
@@ -299,3 +304,61 @@ observeLazy($$('.lazy-image[data-src]'));
     form.reset();
   });
 })();
+
+/* ============================================
+   КОРЗИНА ПОКУПОК
+   ============================================ */
+
+// Добавление товара в корзину
+function addToCart(product) {
+  try {
+    // Получаем текущую корзину
+    const cart = JSON.parse(localStorage.getItem('shoppingCart') || '[]');
+    
+    // Проверяем, есть ли товар уже в корзине
+    const existingItemIndex = cart.findIndex(item => item.id === product.id);
+    
+    if (existingItemIndex !== -1) {
+      // Увеличиваем количество
+      cart[existingItemIndex].quantity += 1;
+    } else {
+      // Добавляем новый товар
+      cart.push({
+        id: product.id || Date.now(),
+        title: product.title,
+        description: product.description || '',
+        price: product.price,
+        image: product.image || 'Assets/sneaker21.jpeg',
+        quantity: 1
+      });
+    }
+    
+    // Сохраняем корзину
+    localStorage.setItem('shoppingCart', JSON.stringify(cart));
+    
+    // Обновляем счетчик
+    updateCartCount();
+    
+    return true;
+  } catch (error) {
+    console.error('Ошибка при добавлении в корзину:', error);
+    return false;
+  }
+}
+
+// Обновление счетчика товаров в корзине (для всех страниц)
+function updateCartCount() {
+  try {
+    const cart = JSON.parse(localStorage.getItem('shoppingCart') || '[]');
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    const cartCountElement = document.getElementById('cart-count');
+    if (cartCountElement) {
+      cartCountElement.textContent = totalItems;
+    }
+  } catch (error) {
+    console.error('Ошибка при обновлении счетчика:', error);
+  }
+}
+
+// Инициализация счетчика при загрузке страницы
+document.addEventListener('DOMContentLoaded', updateCartCount);

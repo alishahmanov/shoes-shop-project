@@ -1,0 +1,275 @@
+/* =====================================================
+   mobile-nav.css - Улучшенная мобильная навигация
+   с гамбургер-меню для телефонов
+===================================================== */
+
+/* Гамбургер кнопка - показывается только на мобильных */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 1001;
+}
+
+.mobile-menu-toggle span {
+  width: 100%;
+  height: 3px;
+  background: #000;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+body.dark-theme .mobile-menu-toggle span {
+  background: #fff;
+}
+
+/* Анимация гамбургера в X */
+.mobile-menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Планшет landscape 1047x749 - оптимизация навигации */
+@media (min-width: 992px) and (max-width: 1047px) {
+  .mobile-menu-toggle {
+    display: none;
+  }
+
+  .navbar {
+    padding: 14px 18px;
+  }
+
+  .nav-list {
+    gap: 18px;
+    padding: 10px 18px;
+  }
+
+  .nav-list li a {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .navbar-actions {
+    gap: 16px;
+  }
+
+  .navbar-actions a,
+  .navbar-actions button {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
+  .logo img {
+    height: 54px;
+  }
+}
+
+/* Показываем кнопку на мобильных */
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: flex;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+  }
+
+  /* Навигация становится выдвижной панелью */
+  .nav-list {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: #fff;
+    flex-direction: column;
+    padding: 80px 20px 20px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+  }
+
+  body.dark-theme .nav-list {
+    background: #16202a;
+  }
+
+  .nav-list.mobile-active {
+    right: 0;
+  }
+
+  .nav-list li {
+    width: 100%;
+    margin: 4px 0;
+  }
+
+  .nav-list li a {
+    display: block;
+    padding: 12px 16px;
+    border-radius: 8px;
+    transition: background 0.2s;
+  }
+
+  .nav-list li a:hover {
+    background: rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+  }
+
+  body.dark-theme .nav-list li a:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  /* Overlay */
+  .mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 999;
+  }
+
+  .mobile-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Navbar actions под меню */
+  .navbar-actions {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  body.dark-theme .navbar-actions {
+    border-top-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Улучшения для очень маленьких экранов */
+@media (max-width: 420px) {
+  .nav-list {
+    width: 260px;
+  }
+
+  .mobile-menu-toggle {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* Дополнительная адаптация навбара */
+@media (max-width: 768px) {
+  .navbar {
+    position: relative;
+    padding: 12px 16px;
+  }
+
+  .logo {
+    z-index: 1001;
+  }
+}
+
+/* Smooth scroll для якорных ссылок */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Улучшения для top-header на мобильных */
+@media (max-width: 768px) {
+  .top-header {
+    position: relative;
+    z-index: 998;
+  }
+}
+
+/* Фикс для липкого футера */
+@media (max-width: 768px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  main {
+    flex: 1;
+  }
+}
+
+/* Дополнительные touch-friendly улучшения */
+@media (hover: none) and (pointer: coarse) {
+  .nav-list li a {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+  }
+
+  .mobile-menu-toggle {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+/* Анимация появления меню */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-list.mobile-active {
+    animation: slideInRight 0.3s ease;
+  }
+}
+
+/* Закрытие кнопка внутри меню (опционально) */
+.mobile-menu-close {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-close {
+    display: block;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #000;
+    line-height: 1;
+  }
+
+  body.dark-theme .mobile-menu-close {
+    color: #fff;
+  }
+}

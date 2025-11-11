@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8" />
@@ -11,12 +11,14 @@
 
     <title>Shoes Shop — Форма под заказ</title>
 
-    <!-- libs + твои стили -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="astyles.css" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="istyle.css" />
-    <link rel="stylesheet" href="rstyles.css" />
+    <link rel="stylesheet" href="../css/astyles.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/rstyles.css" />
+
+    <link rel="stylesheet" href="../css/istyle.css" />
+    <link rel="stylesheet" href="../css/mobile-nav.css" />
+    <link rel="stylesheet" href="../css/header.css">
 </head>
 
 <body>
@@ -32,24 +34,25 @@
         </div>
     </div>
 
-    <nav class="navbar container">
-        <a href="index.html" class="logo" aria-label="На главную">
-            <img src="Assets/sneaker21.jpeg" alt="Логотип Shoes Shop" />
+    <nav class="navbar container" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+        <a href="index.html" class="logo" aria-label="На главную" style="flex-shrink:0;">
+            <img src="../Assets/sneaker21.jpeg" alt="Shoes Shop логотип" />
         </a>
-        <ul class="nav-list">
+
+        <ul class="nav-list" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center; align-items:center; list-style:none; flex:1;">
             <li><a href="about.html">О нас</a></li>
             <li><a href="catalog.html">Каталог</a></li>
-            <li><a href="category.html">Категория</a></li>
-            <li><a href="order.html" aria-current="page">Форма под заказ</a></li>
+            <li><a href="category.html" aria-current="page">Категория</a></li>
+            <li><a href="order.html">Форма под заказ</a></li>
             <li><a href="faq.html">Вопросы</a></li>
             <li><a href="reviews.html">Отзывы</a></li>
             <li><a href="services.html">Услуги</a></li>
         </ul>
 
-        <div class="navbar-actions">
+        <div class="navbar-actions" style="display:flex; align-items:center; gap:10px; flex-shrink:0; flex-wrap:wrap; justify-content:flex-end;">
             <a class="button-create-your-own-design" href="order.html">Создать свой дизайн</a>
-            <a class="cart" href="#">Корзина</a>
-            <button id="changeColorBtn" class="nav-btn" type="button">Сменить фон</button>
+            <a class="cart" href="cart.html" aria-label="Открыть корзину">Корзина (<span id="cart-count">0</span>)</a>
+            <a id="loginLink" class="nav-btn" href="login.html">Войти</a>
         </div>
     </nav>
 </header>
@@ -59,10 +62,8 @@
     <p class="text-muted mb-4">Заполните форму, выберите модель, цвет и опции — стоимость посчитается автоматически.</p>
 
     <div class="row g-4">
-        <!-- Колонка: форма -->
         <div class="col-12 col-lg-7">
             <form id="orderForm" novalidate>
-                <!-- Контакты -->
                 <div class="card p-3 p-lg-4 mb-3">
                     <h5 class="mb-3">Контактные данные</h5>
                     <div class="row g-3">
@@ -81,14 +82,12 @@
                     </div>
                 </div>
 
-                <!-- Параметры модели -->
                 <div class="card p-3 p-lg-4 mb-3">
                     <h5 class="mb-3">Параметры модели</h5>
                     <div class="row g-3">
                         <div class="col-12 col-md-6">
                             <label for="model" class="form-label">Модель</label>
                             <select id="model" name="model" class="form-select" required>
-                                <!-- data-price — базовая цена модели -->
                                 <option value="" disabled selected>Выберите модель</option>
                                 <option value="runner" data-price="350">Runner (беговые)</option>
                                 <option value="basket" data-price="420">Basket Pro (баскетбольные)</option>
@@ -121,7 +120,6 @@
                     <hr class="my-3" />
 
                     <div class="row g-3">
-                        <!-- Допы: наценки в data-extra -->
                         <div class="col-12 col-md-6">
                             <label class="form-label">Материал верха</label>
                             <select id="material" class="form-select">
@@ -167,7 +165,6 @@
                     </div>
                 </div>
 
-                <!-- Доставка/оплата -->
                 <div class="card p-3 p-lg-4 mb-3">
                     <h5 class="mb-3">Доставка и оплата</h5>
                     <div class="row g-3">
@@ -190,7 +187,6 @@
                     </div>
                 </div>
 
-                <!-- Подтверждение -->
                 <div class="card p-3 p-lg-4 mb-3">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="agree" required />
@@ -202,13 +198,11 @@
             </form>
         </div>
 
-        <!-- Колонка: превью/итог -->
         <aside class="col-12 col-lg-5">
             <div class="card p-3 p-lg-4 mb-3">
                 <h5 class="mb-3">Превью</h5>
                 <div class="ratio ratio-4x3 border rounded position-relative overflow-hidden">
-                    <img id="previewBase" src="Assets/sneaker14.jpeg" alt="Превью модели" class="w-100 h-100 object-fit-contain" />
-                    <!-- цветовая «плёнка» -->
+                    <img id="previewBase" src="../Assets/sneaker14.jpeg" alt="Превью модели" class="w-100 h-100 object-fit-contain" />
                     <div id="previewTint" class="position-absolute top-0 start-0 w-100 h-100" style="mix-blend-mode:multiply; pointer-events:none;"></div>
                     <img id="previewRef" alt="Референс" class="position-absolute bottom-0 end-0 m-2 d-none border rounded" style="width:90px;height:90px;object-fit:cover;background:#fff;" />
                 </div>
@@ -233,18 +227,18 @@
         Команда: <strong>KAA</strong> • Участники: Rauan K., Alikhan M., Iskander A. • Группа: SE-2401
     </div>
     <a href="https://github.com/alishahmanov/shoes-shop-project" target="_blank" rel="noopener" aria-label="Открыть наш GitHub">
-        <img src="Assets/git-hub-logo.png" alt="GitHub" id="footer__logo" />
+        <img src="../Assets/git-hub-logo.png" alt="GitHub" id="footer__logo" />
     </a>
 </footer>
 
-<!-- libs -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-<!-- общий проектный -->
-<script src="rscripts.js"></script>
+<script src="../js/rscripts.js"></script>
+<script src="../js/order.js"></script>
 
-<!-- логика страницы заказа -->
-<script src="order.js"></script>
+<script src="../js/mobile-nav.js"></script>
+<script src="../js/auth.js"></script>
+
 </body>
 </html>

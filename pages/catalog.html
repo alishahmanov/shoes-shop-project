@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8" />
@@ -10,48 +10,56 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet" />
     <title>Shoes Shop — Catalog</title>
 
-    <!-- порядок: astyles -> style -> rstyles -->
-    <link rel="stylesheet" href="astyles.css" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="rstyles.css" />
+
+    <link rel="stylesheet" href="../css/astyles.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/rstyles.css" />
+
+
+    <link rel="stylesheet" href="../css/istyle.css" />
+    <link rel="stylesheet" href="../css/mobile-nav.css" />
+    <link rel="stylesheet" href="../css/header.css">
 </head>
 <body>
 <header class="header">
     <div class="top-header">
         <div class="top-header-left">
             <span>Режим работы: 10:00–20:00</span>
-            <span>Телефон: <a href="tel:+77712159509">8 (771) 215-95-09</a></span>
+            <span>Телефон: <a href="#">8(771)2159509</a></span>
         </div>
         <div class="top-header-right">
-            <span>Почта: <a href="mailto:iskander_alipov@mail.ru">iskander_alipov@mail.ru</a></span>
+            <span>Почта: <a href="#">iskander_alipov@mail.ru</a></span>
             <span>Язык сайта: EN/RU</span>
         </div>
     </div>
 
-    <nav class="navbar container">
-        <a href="index.html" class="logo" aria-label="На главную">
-            <img src="Assets/sneaker21.jpeg" alt="Shoes Shop логотип" />
+    <nav class="navbar container" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+
+        <a href="index.html" class="logo" aria-label="На главную" style="flex-shrink:0;">
+            <img src="../Assets/sneaker21.jpeg" alt="Shoes Shop логотип" />
         </a>
 
-        <ul class="nav-list">
+        <ul class="nav-list" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center; align-items:center; list-style:none; flex:1;">
             <li><a href="about.html">О нас</a></li>
-            <li><a href="catalog.html" aria-current="page">Каталог</a></li>
-            <li><a href="category.html">Категория</a></li>
+            <li><a href="catalog.html">Каталог</a></li>
+            <li><a href="category.html" aria-current="page">Категория</a></li>
             <li><a href="order.html">Форма под заказ</a></li>
             <li><a href="faq.html">Вопросы</a></li>
             <li><a href="reviews.html">Отзывы</a></li>
             <li><a href="services.html">Услуги</a></li>
         </ul>
 
-        <div class="navbar-actions">
+
+        <div class="navbar-actions" style="display:flex; align-items:center; gap:10px; flex-shrink:0; flex-wrap:wrap; justify-content:flex-end;">
             <a class="button-create-your-own-design" href="order.html">Создать свой дизайн</a>
-            <a class="cart" href="#" aria-label="Открыть корзину">Корзина</a>
+            <a class="cart" href="cart.html" aria-label="Открыть корзину">Корзина (<span id="cart-count">0</span>)</a>
+            <a id="loginLink" class="nav-btn" href="login.html">Войти</a>
         </div>
     </nav>
 </header>
 
 <main id="main-content">
-    <!-- Поиск: доступный combobox + подсказки -->
+
     <section class="search-bar container" role="search" aria-label="Поиск по каталогу">
         <label class="visually-hidden" for="searchInput">Поиск по каталогу</label>
         <input
@@ -68,107 +76,107 @@
         <ul id="suggestions" role="listbox" aria-label="Подсказки поиска"></ul>
     </section>
 
-    <!-- Категории (карточки с lazy-image) -->
+
     <section class="container">
         <p>Выберите категорию</p>
         <div class="cards-for-index">
             <div class="card">
                 <p>Мужские кроссовки</p>
-                <img class="lazy-image" data-src="Assets/sneaker7.jpeg" alt="Мужские кроссовки" />
-                <a href="#" class="btn add-to-cart">Купить</a>
+                <img class="lazy-image" data-src="../Assets/sneaker7.jpeg" alt="Мужские кроссовки" />
+
             </div>
             <div class="card">
                 <p>Женские кроссовки</p>
-                <img class="lazy-image" data-src="Assets/sneaker6.jpeg" alt="Женские кроссовки" />
-                <a href="#" class="btn add-to-cart">Купить</a>
+                <img class="lazy-image" data-src="../Assets/sneaker6.jpeg" alt="Женские кроссовки" />
+
             </div>
             <div class="card">
                 <p>Беговые</p>
-                <img class="lazy-image" data-src="Assets/sneaker5.jpeg" alt="Беговые кроссовки" />
-                <a href="#" class="btn add-to-cart">Купить</a>
+                <img class="lazy-image" data-src="../Assets/sneaker5.jpeg" alt="Беговые кроссовки" />
+
             </div>
             <div class="card">
                 <p>Волейбольные</p>
-                <img class="lazy-image" data-src="Assets/sneaker1.jpeg" alt="Волейбольные кроссовки" />
-                <a href="#" class="btn add-to-cart">Купить</a>
+                <img class="lazy-image" data-src="../Assets/sneaker1.jpeg" alt="Волейбольные кроссовки" />
+
             </div>
             <div class="card">
                 <p>Борцовки</p>
-                <img class="lazy-image" data-src="Assets/sneaker9.jpeg" alt="Борцовки" />
-                <a href="#" class="btn add-to-cart">Купить</a>
+                <img class="lazy-image" data-src="../Assets/sneaker9.jpeg" alt="Борцовки" />
+
             </div>
             <div class="card">
                 <p>Боксерки</p>
-                <img class="lazy-image" data-src="Assets/sneaker12.jpeg" alt="Боксерские ботинки" />
-                <a href="#" class="btn add-to-cart">Купить</a>
+                <img class="lazy-image" data-src="../Assets/sneaker12.jpeg" alt="Боксерские ботинки" />
+
             </div>
             <div class="card">
                 <p>Баскетбольные</p>
-                <img class="lazy-image" data-src="Assets/sneaker10.jpeg" alt="Баскетбольные кроссовки" />
-                <a href="#" class="btn add-to-cart">Купить</a>
+                <img class="lazy-image" data-src="../Assets/sneaker10.jpeg" alt="Баскетбольные кроссовки" />
+
             </div>
             <div class="card">
                 <p>Тренировочные</p>
-                <img class="lazy-image" data-src="Assets/sneaker13.jpeg" alt="Тренировочные кроссовки" />
-                <a href="#" class="btn add-to-cart">Купить</a>
+                <img class="lazy-image" data-src="../Assets/sneaker13.jpeg" alt="Тренировочные кроссовки" />
+
             </div>
             <div class="card">
                 <p>Лайфстайл</p>
-                <img class="lazy-image" data-src="Assets/sneaker19.jpeg" alt="Лайфстайл кроссовки" />
-                <a href="#" class="btn add-to-cart">Купить</a>
+                <img class="lazy-image" data-src="../Assets/sneaker19.jpeg" alt="Лайфстайл кроссовки" />
+
             </div>
             <div class="card">
                 <p>Горные</p>
-                <img class="lazy-image" data-src="Assets/sneaker16.jpeg" alt="Горные кроссовки" />
-                <a href="#" class="btn add-to-cart">Купить</a>
+                <img class="lazy-image" data-src="../Assets/sneaker16.jpeg" alt="Горные кроссовки" />
+
             </div>
             <div class="card">
                 <p>Теннисные</p>
-                <img class="lazy-image" data-src="Assets/sneaker6.jpeg" alt="Теннисные кроссовки" />
-                <a href="#" class="btn add-to-cart">Купить</a>
+                <img class="lazy-image" data-src="../Assets/sneaker6.jpeg" alt="Теннисные кроссовки" />
+
             </div>
             <div class="card">
                 <p>Скейтерские</p>
-                <img class="lazy-image" data-src="Assets/sneaker2.jpeg" alt="Скейтерские кеды" />
-                <a href="#" class="btn add-to-cart">Купить</a>
+                <img class="lazy-image" data-src="../Assets/sneaker2.jpeg" alt="Скейтерские кеды" />
+
             </div>
         </div>
     </section>
 
-    <!-- Популярные модели (lazy + кнопки) -->
+
     <section class="popular-shoes container">
         <h2>Популярные кроссовки</h2>
         <div class="cards">
             <div class="card">
                 <div class="card__media">
-                    <img class="lazy-image" data-src="Assets/sneaker6.jpeg" alt="Air Zoom Pegasus" />
+                    <img class="lazy-image" data-src="../Assets/sneaker6.jpeg" alt="Air Zoom Pegasus" />
                 </div>
                 <h3>Air Zoom Pegasus</h3>
                 <p class="price">9 000 ₸</p>
-                <button class="btn add-to-cart">В корзину</button>
+
             </div>
 
             <div class="card">
                 <div class="card__media">
-                    <img class="lazy-image" data-src="Assets/sneaker10.jpeg" alt="Adidas Ultraboost" />
+                    <img class="lazy-image" data-src="../Assets/sneaker10.jpeg" alt="Adidas Ultraboost" />
                 </div>
                 <h3>Adidas Ultraboost</h3>
                 <p class="price">12 000 ₸</p>
-                <button class="btn add-to-cart">В корзину</button>
+
             </div>
 
             <div class="card">
                 <div class="card__media">
-                    <img class="lazy-image" data-src="Assets/sneaker4.jpeg" alt="Puma RS-X" />
+                    <img class="lazy-image" data-src="../Assets/sneaker4.jpeg" alt="Puma RS-X" />
                 </div>
                 <h3>Puma RS-X</h3>
                 <p class="price">8 000 ₸</p>
-                <button class="btn add-to-cart">В корзину</button>
+
             </div>
         </div>
     </section>
 
-    <!-- Промо-блок -->
+
     <section class="custom-design container">
         <div class="custom-text">
             <h2>Создайте свою уникальную обувь</h2>
@@ -180,7 +188,7 @@
             <a href="order.html" class="button-go-to-constructor">Открыть конструктор</a>
         </div>
         <div class="custom-img">
-            <img class="lazy-image" data-src="Assets/sneaker14.jpeg" alt="Кроссовки с уникальным дизайном" />
+            <img class="lazy-image" data-src="../Assets/sneaker14.jpeg" alt="Кроссовки с уникальным дизайном" />
         </div>
     </section>
 </main>
@@ -190,14 +198,18 @@
         Команда: <strong>KAA</strong> • Участники: Rauan K., Alikhan M., Iskander A. • Группа: SE-2401
     </div>
     <a href="https://github.com/alishahmanov/shoes-shop-project" target="_blank" rel="noopener" aria-label="GitHub">
-        <img src="Assets/git-hub-logo.png" alt="GitHub" id="footer__logo" />
+        <img src="../Assets/git-hub-logo.png" alt="GitHub" id="footer__logo" />
     </a>
 </footer>
 
-<!-- Скрипты -->
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="search.js"></script>
-<script src="rscripts.js"></script>
-<script src="catalog.js"></script>
+<script src="../js/rscripts.js"></script>
+<script src="../js/catalog.js"></script>
+
+<script src="../js/mobile-nav.js"></script>
+<script src="../js/auth.js"></script>
+
 </body>
 </html>

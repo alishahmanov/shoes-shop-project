@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Shoes Shop — Часто задаваемые вопросы" />
+    <meta name="author" content="KAA Team: Manat Alikhan, Iskander Akipov, Rauan Kuntuganov" />
+    <title>Shoes Shop — Вопросы (FAQ)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/astyles.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/rstyles.css" />
+
+    <link rel="stylesheet" href="../css/istyle.css" />
+    <link rel="stylesheet" href="../css/mobile-nav.css" />
+    <link rel="stylesheet" href="../css/faq-reviews.css">
+    <link rel="stylesheet" href="../css/header.css">
+
+</head>
+<body>
+<a class="skip-link" href="#main">Перейти к основному содержанию</a>
+<div id="scrollProgress" aria-hidden="true"></div>
+
+<header class="header">
+    <div class="top-header">
+        <div class="top-header-left">
+            <span>Режим работы: 10:00–20:00</span>
+            <span>Телефон: <a href="#">8(771)2159509</a></span>
+        </div>
+        <div class="top-header-right">
+            <span>Почта: <a href="#">iskander_alipov@mail.ru</a></span>
+            <span>Язык сайта: EN/RU</span>
+        </div>
+    </div>
+
+    <nav class="navbar container" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+
+        <a href="index.html" class="logo" aria-label="На главную" style="flex-shrink:0;">
+            <img src="../Assets/sneaker21.jpeg" alt="Shoes Shop логотип" />
+        </a>
+
+
+        <ul class="nav-list" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center; align-items:center; list-style:none; flex:1;">
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="catalog.html">Каталог</a></li>
+            <li><a href="category.html" aria-current="page">Категория</a></li>
+            <li><a href="order.html">Форма под заказ</a></li>
+            <li><a href="faq.html">Вопросы</a></li>
+            <li><a href="reviews.html">Отзывы</a></li>
+            <li><a href="services.html">Услуги</a></li>
+        </ul>
+
+        <div class="navbar-actions" style="display:flex; align-items:center; gap:10px; flex-shrink:0; flex-wrap:wrap; justify-content:flex-end;">
+            <a class="button-create-your-own-design" href="order.html">Создать свой дизайн</a>
+            <a class="cart" href="cart.html" aria-label="Открыть корзину">Корзина (<span id="cart-count">0</span>)</a>
+            <a id="loginLink" class="nav-btn" href="login.html">Войти</a>
+        </div>
+    </nav>
+</header>
+
+<main id="main">
+    <section class="hero">
+        <div class="container hero__grid">
+            <div>
+                <div class="breadcrumbs">Главная / <strong>Вопросы</strong></div>
+                <h1 class="hero__title" style="font-size:clamp(28px,4.5vw,42px);">Часто задаваемые вопросы</h1>
+                <p class="muted">Ответы про заказ, оплату, доставку и возврат.</p>
+            </div>
+            <div class="hero__img">
+                <img src="../Assets/shoes-for-banner.jpeg" alt="Коллекция кастомных кроссовок" loading="lazy" />
+            </div>
+        </div>
+    </section>
+
+    <section class="container section">
+        <input id="faqSearch" type="search" class="form-control" placeholder="Поиск по вопросам (например, «доставка», «оплата»)" />
+    </section>
+
+    <section class="container section">
+        <div class="row g-4">
+            <aside class="col-12 col-lg-4">
+                <div class="filters">
+                    <h3>Категории</h3>
+                    <label><input type="radio" name="faq-cat" value="all" checked /> Все</label>
+                    <label><input type="radio" name="faq-cat" value="order" /> Заказ</label>
+                    <label><input type="radio" name="faq-cat" value="payment" /> Оплата</label>
+                    <label><input type="radio" name="faq-cat" value="delivery" /> Доставка</label>
+                    <label><input type="radio" name="faq-cat" value="return" /> Возврат</label>
+                </div>
+            </aside>
+
+            <div class="col-12 col-lg-8">
+                <div class="faq-list" id="faqList">
+                    <details class="faq" data-cat="order">
+                        <summary>Как оформить заказ?</summary>
+                        <div class="faq__content">
+                            <p>Выберите модель в <a href="catalog.html">каталоге</a>, добавьте в корзину и оформите заказ. Для индивидуального дизайна — <a href="order.html">«Форма под заказ»</a>.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq" data-cat="order">
+                        <summary>Можно ли свой дизайн?</summary>
+                        <div class="faq__content">
+                            <p>Да. Опишите идею и приложите референсы на странице <a href="order.html">«Форма под заказ»</a>.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq" data-cat="payment">
+                        <summary>Какие способы оплаты доступны?</summary>
+                        <div class="faq__content">
+                            <p>Карта, Kaspi QR, оплата при самовывозе.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq" data-cat="delivery">
+                        <summary>Сроки и стоимость доставки?</summary>
+                        <div class="faq__content">
+                            <p>По Казахстану 2–5 рабочих дней. Стоимость считается при оформлении.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq" data-cat="delivery">
+                        <summary>Есть ли международная доставка?</summary>
+                        <div class="faq__content">
+                            <p>Да, по запросу. Напишите на <a href="mailto:iskander_alipov@mail.ru">почту</a>.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq" data-cat="return">
+                        <summary>Как оформить возврат или обмен?</summary>
+                        <div class="faq__content">
+                            <p>Свяжитесь с нами в течение 14 дней: <a href="tel:+77712159509">+7 771 215-95-09</a>.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="mt-4">
+                    <a class="btn btn--ghost" href="index.html#reviews">Читать отзывы</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container section" id="contact">
+        <div class="details">
+            <div class="details__grid">
+                <div>
+                    <h2 class="h4">Не нашли ответ?</h2>
+                    <p>Задайте вопрос — ответим в ближайшее время.</p>
+                    <ul class="ul">
+                        <li>Телефон: <a href="tel:+77712159509">+7 (771) 215-95-09</a></li>
+                        <li>Почта: <a href="mailto:iskander_alipov@mail.ru">iskander_alipov@mail.ru</a></li>
+                    </ul>
+                    <a class="btn" href="order.html">Оформить индивидуальный заказ</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer" role="contentinfo">
+    <div class="footer__text">
+        Команда: <strong>KAA</strong> • Участники: Rauan K., Alikhan M., Iskander A. • Группа: SE-2401
+    </div>
+    <a href="https://github.com/alishahmanov/shoes-shop-project" target="_blank" rel="noopener" aria-label="Открыть наш GitHub">
+        <img src="../Assets/git-hub-logo.png" alt="GitHub" id="footer__logo" width="36" height="36" loading="lazy" />
+    </a>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/rscripts.js"></script>
+<script src="../js/faqscripts.js"></script>
+
+
+<script src="../js/mobile-nav.js"></script>
+<script src="../js/auth.js"></script>
+
+</body>
+</html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8" />
@@ -12,51 +12,56 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700&display=swap" rel="stylesheet" />
 
-    <!-- Your base styles -->
-    <link rel="stylesheet" href="astyles.css" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="rstyles.css" />
+    <!--  Base -->
+    <link rel="stylesheet" href="../css/astyles.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/rstyles.css" />
 
+    <!-- Adaptive mobile -->
+    <link rel="stylesheet" href="../css/istyle.css" />
+    <link rel="stylesheet" href="../css/mobile-nav.css" />
+    <link rel="stylesheet" href="../css/header.css">
 
 </head>
 <body>
 <!-- Skip to content -->
 <a class="skip-link" href="#main">Перейти к основному содержанию</a>
 
-<!-- Scroll progress (можно скрыть, если не используете) -->
-<div id="scrollProgress" aria-hidden="true"></div>
-
 <!-- Header -->
-<header role="banner">
-    <div class="top-header" aria-label="Служебная информация">
+<header class="header">
+    <div class="top-header">
         <div class="top-header-left">
             <span>Режим работы: 10:00–20:00</span>
-            <span>Телефон: <a href="tel:+77712159509">8 (771) 215-95-09</a></span>
+            <span>Телефон: <a href="#">8(771)2159509</a></span>
         </div>
         <div class="top-header-right">
-            <span>Почта: <a href="mailto:iskander_alipov@mail.ru">iskander_alipov@mail.ru</a></span>
+            <span>Почта: <a href="#">iskander_alipov@mail.ru</a></span>
             <span>Язык сайта: EN/RU</span>
         </div>
     </div>
 
-    <nav class="navbar container" role="navigation" aria-label="Основная навигация">
-        <a href="index.html" class="logo">
-            <img src="Assets/sneaker21.jpeg" alt="Shoes Shop" width="60" height="60" />
+    <nav class="navbar container" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+        <!-- Logo -->
+        <a href="index.html" class="logo" aria-label="На главную" style="flex-shrink:0;">
+            <img src="../Assets/sneaker21.jpeg" alt="Shoes Shop логотип" />
         </a>
 
-        <ul class="nav-list">
+        <!-- Menu -->
+        <ul class="nav-list" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center; align-items:center; list-style:none; flex:1;">
             <li><a href="about.html">О нас</a></li>
             <li><a href="catalog.html">Каталог</a></li>
-            <li><a href="category.html">Категория</a></li>
+            <li><a href="category.html" aria-current="page">Категория</a></li>
             <li><a href="order.html">Форма под заказ</a></li>
             <li><a href="faq.html">Вопросы</a></li>
             <li><a href="reviews.html">Отзывы</a></li>
             <li><a href="services.html">Услуги</a></li>
         </ul>
 
-        <div class="navbar-actions">
-            <a class="button-create-your-own-design nav-btn" href="order.html">Создать свой дизайн</a>
-            <a class="cart nav-btn" href="#cart" aria-label="Открыть корзину">Корзина</a>
+        <!-- R Buttons -->
+        <div class="navbar-actions" style="display:flex; align-items:center; gap:10px; flex-shrink:0; flex-wrap:wrap; justify-content:flex-end;">
+            <a class="button-create-your-own-design" href="order.html">Создать свой дизайн</a>
+            <a class="cart" href="cart.html" aria-label="Открыть корзину">Корзина (<span id="cart-count">0</span>)</a>
+            <a id="loginLink" class="nav-btn" href="login.html">Войти</a>
         </div>
     </nav>
 </header>
@@ -69,7 +74,7 @@
             <a class="button-in-the-banner" href="catalog.html">Смотреть каталог</a>
         </div>
         <div class="banner-img" aria-hidden="true">
-            <img src="Assets/sneaker21.jpeg" alt="" width="520" height="360" loading="lazy" />
+            <img src="../Assets/sneaker21.jpeg" alt="" width="520" height="360" loading="lazy" />
         </div>
     </section>
 
@@ -77,19 +82,19 @@
         <h2 id="searching-title">Что ищете?</h2>
         <div class="cards-for-index" role="list">
             <article class="card" role="listitem">
-                <img class="lazy-image" data-src="Assets/sneaker19.jpeg" src="Assets/placeholder.webp" alt="Лёгкие повседневные кроссовки" width="420" height="220" />
+                <img class="lazy-image" data-src="../Assets/sneaker19.jpeg" src="../placeholder.webp" alt="Лёгкие повседневные кроссовки" width="420" height="220" />
                 <h3 class="card__title">Повседневные</h3>
                 <p class="price">₸ 299 000</p>
                 <button class="btn add-to-cart" type="button" data-name="Повседневные">Добавить в корзину</button>
             </article>
             <article class="card" role="listitem">
-                <img class="lazy-image" data-src="Assets/sneaker20.jpeg" src="Assets/placeholder.webp" alt="Кроссовки для спорта и бега" width="420" height="220" />
+                <img class="lazy-image" data-src="../Assets/sneaker20.jpeg" src="../placeholder.webp" alt="Кроссовки для спорта и бега" width="420" height="220" />
                 <h3 class="card__title">Спортивные</h3>
                 <p class="price">₸ 349 000</p>
                 <button class="btn add-to-cart" type="button" data-name="Спортивные">Добавить в корзину</button>
             </article>
             <article class="card" role="listitem">
-                <img class="lazy-image" data-src="Assets/sneaker18.jpeg" src="Assets/placeholder.webp" alt="Кроссовки с индивидуальным принтом" width="420" height="220" />
+                <img class="lazy-image" data-src="../Assets/sneaker18.jpeg" src="../placeholder.webp" alt="Кроссовки с индивидуальным принтом" width="420" height="220" />
                 <h3 class="card__title">С принтом</h3>
                 <p class="price">₸ 459 000</p>
                 <button class="btn add-to-cart" type="button" data-name="С принтом">Добавить в корзину</button>
@@ -110,9 +115,9 @@
     <section class="portfolio container" aria-labelledby="portfolio-title">
         <h2 id="portfolio-title">Галерея</h2>
         <div class="portfolio__gallery" id="product-list">
-            <img class="lazy-image" data-src="Assets/sneaker17.jpeg" src="Assets/placeholder.webp" alt="Пример работы #1" width="200" height="200" />
-            <img class="lazy-image" data-src="Assets/sneaker16.jpeg" src="Assets/placeholder.webp" alt="Пример работы #2" width="200" height="200" />
-            <img class="lazy-image" data-src="Assets/sneaker15.jpeg" src="Assets/placeholder.webp" alt="Пример работы #3" width="200" height="200" />
+            <img class="lazy-image" data-src="../Assets/sneaker17.jpeg" src="../placeholder.webp" alt="Пример работы #1" width="200" height="200" />
+            <img class="lazy-image" data-src="../Assets/sneaker16.jpeg" src="../placeholder.webp" alt="Пример работы #2" width="200" height="200" />
+            <img class="lazy-image" data-src="../Assets/sneaker15.jpeg" src="../placeholder.webp" alt="Пример работы #3" width="200" height="200" />
         </div>
         <div class="contact__actions" style="text-align:center; margin-top:12px;">
             <button id="changeColorBtn" class="btn" type="button">Случайный фон</button>
@@ -159,7 +164,7 @@
         Команда: <strong>KAA</strong> • Участники: Rauan K., Alikhan M., Iskander A. • Группа: SE-2401
     </div>
     <a href="https://github.com/alishahmanov/shoes-shop-project" target="_blank" rel="noopener" aria-label="Открыть наш GitHub">
-        <img src="Assets/git-hub-logo.png" alt="GitHub" id="footer__logo" width="36" height="36" loading="lazy" />
+        <img src="../Assets/git-hub-logo.png" alt="GitHub" id="footer__logo" width="36" height="36" loading="lazy" />
     </a>
 </footer>
 
@@ -179,6 +184,11 @@
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="rscripts.js"></script>
+<script src="../js/rscripts.js"></script>
+
+<!-- Mob nav -->
+<script src="../js/mobile-nav.js"></script>
+<script src="../js/auth.js"></script>
+
 </body>
 </html>
