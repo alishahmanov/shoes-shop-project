@@ -36,7 +36,7 @@
         col.innerHTML =
             '<div class="review-card">' +
             '<div class="review-head">' +
-            '<img class="avatar" src="Assets/avatars/placeholder.jpg" alt="'+ name +'" />' +
+            '<img class="avatar" src="../Assets/avatr.png" alt="'+ name +'" />' +
             '<div>' +
             '<div class="stars" aria-label="'+ rating +' из 5">' + '★★★★★'.slice(0, rating) + '☆☆☆☆☆'.slice(0, 5 - rating) + '</div>' +
             '<div class="review-meta">' + meta + '</div>' +
