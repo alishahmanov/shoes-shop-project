@@ -206,8 +206,27 @@ body.dark-theme nav a {
 }
 
 body.dark-theme .top-header {
-  background: transparent !important;
-  color: var(--muted) !important;
+  background: rgba(15, 23, 36, 0.7) !important;
+  color: var(--text) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.dark-theme .top-header a {
+  color: var(--link) !important;
+  font-weight: 600;
+}
+
+body.dark-theme .top-header a:hover {
+  color: var(--accent) !important;
+}
+
+body.dark-theme .top-header-left,
+body.dark-theme .top-header-right {
+  color: var(--text) !important;
+}
+
+body.dark-theme .top-header span {
+  color: var(--text) !important;
 }
 
 body.dark-theme .banner,
@@ -1348,7 +1367,6 @@ body.dark-theme input[type="color"] {
   .toast-message {
     font-size: 12px;
   }
-
 
   .form-control,
   .form-select {

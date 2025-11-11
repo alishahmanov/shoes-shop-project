@@ -1,6 +1,3 @@
-/* ===== Part 2: чистый скрипт без дублей ===== */
-
-/* Утилита */
 const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
 
 /* 1) Тема День/Ночь — с защитой от дублей кнопки */
@@ -44,7 +41,6 @@ const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
   });
 })();
 
-/* 2) Аккордеон с aria (один открыт за раз) */
 (function accordionInit(){
   const accButtons = $$('.accordion-header');
   if (!accButtons.length) return;
@@ -70,16 +66,13 @@ const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
   });
 })();
 
-/* 3) Popup / Modal — доступно, без автоподключения ко всем .btn
-      Используй data-open="popup" на кнопке-открывателе */
 (function popupInit(){
   const popup = document.getElementById('popup');
   if (!popup) return;
 
   const content = popup.querySelector('.popup-content');
   const closeBtn = popup.querySelector('.close-btn');
-  const openers = $$('[data-open="popup"]');           // только метки-открыватели
-
+  const openers = $$('[data-open="popup"]');        
   let lastFocused = null;
   const getFocusable = (root) =>
       $$('a,button,input,textarea,select,[tabindex]:not([tabindex="-1"])', root)
@@ -114,7 +107,6 @@ const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
   window.addEventListener('click', (e)=>{ if (e.target === popup) closePopup(); });
 })();
 
-/* 4) Тосты / уведомления (aria-live), без jQuery */
 function showToast(message, type='success'){
   let container = document.getElementById('toast-container');
   if (!container){
@@ -146,7 +138,6 @@ function showToast(message, type='success'){
   setTimeout(remove, 8000);
 }
 
-/* 5) “Добавить в корзину” */
 (function cartButtonsInit(){
   $$('.add-to-cart').forEach(btn=>{
     btn.addEventListener('click', (e)=>{
@@ -157,7 +148,6 @@ function showToast(message, type='success'){
   });
 })();
 
-/* 6) Случайный фон (по id="changeColorBtn") */
 (function randomBgInit(){
   const colorBtn = document.getElementById('changeColorBtn');
   if (!colorBtn) return;
@@ -168,7 +158,6 @@ function showToast(message, type='success'){
   });
 })();
 
-/* 7) Галерея: показать больше (id="showMoreBtn") + lazy подключение */
 (function showMoreInit(){
   const gallery = document.querySelector('.portfolio__gallery');
   const btn = document.getElementById('showMoreBtn');
@@ -187,7 +176,6 @@ function showToast(message, type='success'){
   });
 })();
 
-/* 8) Лёгкий кликовый эффект (если motion не урезан) */
 (function clickScaleInit(){
   const prefersReduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
   if (prefersReduced) return;
@@ -199,7 +187,6 @@ function showToast(message, type='success'){
   });
 })();
 
-/* 9) Фильтр по цене (₸: 299 000 → 299000) */
 (function priceFilterInit(){
   const priceFilter = document.getElementById('priceFilter');
   const cards = $$('.cards-for-index .card');
@@ -223,7 +210,6 @@ function showToast(message, type='success'){
   });
 })();
 
-/* 10) Lazy-loading для .lazy-image[data-src] */
 let io;
 function observeLazy(nodes){
   if (!('IntersectionObserver' in window)){
@@ -253,7 +239,6 @@ function observeLazy(nodes){
 }
 observeLazy($$('.lazy-image[data-src]'));
 
-/* 11) Счётчики с учётом reduced motion */
 (function countersInit(){
   const counters = $$('.counter');
   if (!counters.length) return;
@@ -282,7 +267,6 @@ observeLazy($$('.lazy-image[data-src]'));
   counters.forEach(c => io.observe(c));
 })();
 
-/* 12) Пример: форма подписки в модалке */
 (function subscribeFormInit(){
   const form = document.getElementById('subscribeForm');
   if (!form) return;

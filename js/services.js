@@ -57,7 +57,7 @@
         form.reset();
 
         if (typeof window.showToast === "function") {
-            window.showToast("Запрос отправлен ✅", "success");
+            window.showToast("Запрос отправлен", "success");
         }
         setTimeout(closePopup, 800);
 

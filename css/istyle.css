@@ -39,24 +39,38 @@
     font-size: 38px !important;
   }
 
+  /* Страница с фильтрами - уменьшаем ширину фильтров */
+  .page {
+    grid-template-columns: 220px 1fr !important;
+    gap: 20px !important;
+    padding: 20px !important;
+  }
+
   /* Фильтры */
   .filters {
-    padding: 14px;
+    padding: 12px !important;
+    top: 12px !important;
   }
 
   .filters h3 {
     font-size: 13px;
-    margin: 12px 0 6px;
+    margin: 10px 0 6px;
   }
 
   .filters label {
-    font-size: 14px;
+    font-size: 13px;
+    margin-bottom: 4px;
   }
 
-  /* Карточки каталога */
+  /* Карточки каталога - оптимизация для 2 колонок */
   .page .cards {
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)) !important;
-    gap: 20px !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+  }
+
+  .card {
+    flex: 1 1 100% !important;
+    padding: 16px !important;
   }
 
   /* Популярная обувь */

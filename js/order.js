@@ -150,7 +150,7 @@
 
         // если есть глобальная showToast из rscripts.js — воспользуемся
         if (typeof window.showToast === "function") {
-            window.showToast("Заявка отправлена ✅", "success");
+            window.showToast("Заявка отправлена", "success");
         }
         console.log("[order] payload:", payload);
     });

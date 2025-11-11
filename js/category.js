@@ -195,7 +195,7 @@ document.addEventListener('click', (e) => {
     
     // Добавляем в корзину
     if (addToCart(product)) {
-        showToast(`«${title}» добавлен в корзину ✅`, 'success');
+        showToast(`«${title}» добавлен в корзину`, 'success');
     } else {
         showToast('Ошибка при добавлении в корзину', 'error');
     }
